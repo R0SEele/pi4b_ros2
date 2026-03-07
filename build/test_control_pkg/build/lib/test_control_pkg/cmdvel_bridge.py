@@ -1,0 +1,44 @@
+#!/usr/bin/env python3
+import struct
+import serial
+import rclpy
+from rclpy.node import Node
+from geometry_msgs.msg import Twist
+
+SERIAL_PORT = '/dev/ttyACM0'   # 你的口
+BAUD = 115200
+
+def clamp_i16(v):
+    return max(-32768, min(32767, int(v)))
+
+class CmdVelBridge(Node):
+    def __init__(self):
+        super().__init__('cmdvel_bridge')
+        self.ser = serial.Serial(SERIAL_PORT, BAUD, timeout=0.02)
+        self.sub = self.create_subscription(Twist, '/cmd_vel', self.cb, 10)
+        self.get_logger().info(f'Bridge started: {SERIAL_PORT}@{BAUD}, sub=/cmd_vel')
+
+    def cb(self, msg: Twist):
+        vx_mm = clamp_i16(msg.linear.x * 1000.0)
+        vy_mm = clamp_i16(msg.linear.y * 1000.0)
+        wz_mrad = clamp_i16(msg.angular.z * 1000.0)
+
+        body = struct.pack('<Bhhh', 6, vx_mm, vy_mm, wz_mrad)  # len + payload
+        cs = 0
+        for b in body:
+            cs ^= b
+        frame = bytes([0xAA, 0x55]) + body + bytes([cs, 0x0D, 0x0A])
+        self.ser.write(frame)
+
+def main():
+    rclpy.init()
+    node = CmdVelBridge()
+    try:
+        rclpy.spin(node)
+    except KeyboardInterrupt:
+        pass
+    node.destroy_node()
+    rclpy.shutdown()
+
+if __name__ == '__main__':
+    main()
