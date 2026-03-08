@@ -1,0 +1,48 @@
+# 景点配置（5个景点）
+scenic_spots:
+  1:
+    name: "spot1"
+    distance: 5.0          # 距起点距离（米）
+    video_path: "/home/rose/pi4b_ros2/car_ws/src/yolo_counting_pkg/data/vedio/spot1.mp4"  # 替换为实际视频路径
+    action: "forward_1m"   # 对应动作
+    action_duration: 5.0   # 执行时长（秒）：0.2m/s → 1米需要5秒
+  2:
+    name: "spot2"
+    distance: 3.0
+    video_path: "/home/rose/pi4b_ros2/car_ws/src/yolo_counting_pkg/data/vedio/spot2.mp4"
+    action: "backward_1m"
+    action_duration: 5.0
+  3:
+    name: "spot3"
+    distance: 4.0
+    video_path: "/home/rose/pi4b_ros2/car_ws/src/yolo_counting_pkg/data/vedio/spot3.mp4"
+    action: "left_1m"
+    action_duration: 5.0
+  4:
+    name: "spot4"
+    distance: 6.0
+    video_path: "/home/rose/pi4b_ros2/car_ws/src/yolo_counting_pkg/data/vedio/spot4.mp4"
+    action: "right_1m"
+    action_duration: 5.0
+  5:
+    name: "spot5"
+    distance: 2.0
+    video_path: "/home/rose/pi4b_ros2/car_ws/src/yolo_counting_pkg/data/vedio/spot5.mp4"
+    action: "spin_left_1圈"
+    action_duration: 7.85  # 自旋1圈：2π/0.8≈7.85秒
+
+# 优先级权重（6:4）
+weights:
+  person_level: 0.6  # 人数等级权重
+  distance: 0.4      # 距离权重
+
+# 人数等级划分
+person_levels:
+  C: {"max": 7, "score": 1}
+  B: {"min": 8, "max": 15, "score": 2}
+  A: {"min": 15, "score": 3}
+
+# 小车速度配置
+car_speed:
+  linear: 0.2    # 线速度（米/秒）
+  angular: 0.8   # 角速度（弧度/秒）

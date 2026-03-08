@@ -1,4 +1,5 @@
 from setuptools import find_packages, setup
+from glob import glob  # 这行必须加，否则识别不了launch目录
 
 package_name = 'test_control_pkg'
 
@@ -26,6 +27,7 @@ setup(
         'console_scripts': [
             'test_control = test_control_pkg.test_control:main',
             'encoder_rx_node = test_control_pkg.encoder_rx_node:main',
+            'car_controller = test_control_pkg.car_controller:main', 
         ],
     },
 )

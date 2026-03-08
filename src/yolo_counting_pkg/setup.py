@@ -13,6 +13,7 @@ setup(
         ('share/ament_index/resource_index/packages',
             ['resource/' + package_name]),
         ('share/' + package_name, ['package.xml']),
+        ('share/' + package_name + '/launch', glob('launch/*')),
         # 安装模型/数据/结果目录
         (os.path.join('share', package_name, 'models'), glob('models/*')),
         (os.path.join('share', package_name, 'data/vedio'), glob('data/vedio/*')),
@@ -32,6 +33,8 @@ setup(
     entry_points={
         'console_scripts': [
             'yolo_result_publisher = yolo_counting_pkg.yolo_ros_publish:main',
+            'yolo_detector = yolo_counting_pkg.yolo_detector:main',
+            'priority_calc = yolo_counting_pkg.priority_calc:main',
         ],
     },
 )
