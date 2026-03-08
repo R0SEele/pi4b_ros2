@@ -245,10 +245,10 @@ def process_video_optimized(video_path, ort_session, input_name, output_name):
     # 生成结果文件
     txt_path = os.path.join(video_result_dir, f"{video_basename}_result.txt")
     with open(txt_path, "w", encoding="utf-8") as f:
-        f.write(f"视频总帧数：{total_video_frames}\n")
-        f.write(f"实际检测帧数：{detected_frames}\n")
-        f.write(f"总检测人数：{total_heads}\n")
-        f.write(f"平均每检测帧人数：{avg_per_frame:.2f}\n")    
+        f.write(f"Frame Count：{total_video_frames}\n")
+        f.write(f"Detected Frames：{detected_frames}\n")
+        f.write(f"Total Detected People：{total_heads}\n")
+        f.write(f"Average per Detected Frame：{avg_per_frame:.2f}\n")    
     # 终端输出
     print(f"\n✅ 视频「{video_basename}」处理完成：")
     print(f"   检测帧数：{detected_frames} | 总人数：{total_heads} | 平均：{avg_per_frame:.2f}")
