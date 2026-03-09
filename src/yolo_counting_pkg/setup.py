@@ -3,6 +3,10 @@ from setuptools import find_packages, setup
 import os  # 必须导入os模块
 from glob import glob  # 必须导入glob模块
 
+
+def file_glob(pattern):
+    return [p for p in glob(pattern) if os.path.isfile(p)]
+
 package_name = 'yolo_counting_pkg'
 
 setup(
@@ -15,9 +19,9 @@ setup(
         ('share/' + package_name, ['package.xml']),
         ('share/' + package_name + '/launch', glob('launch/*')),
         # 安装模型/数据/结果目录
-        (os.path.join('share', package_name, 'models'), glob('models/*')),
-        (os.path.join('share', package_name, 'data/vedio'), glob('data/vedio/*')),
-        (os.path.join('share', package_name, 'results'), glob('results/*')),
+        (os.path.join('share', package_name, 'models'), file_glob('models/*')),
+        (os.path.join('share', package_name, 'data/vedio'), file_glob('data/vedio/*')),
+        (os.path.join('share', package_name, 'results'), file_glob('results/*')),
     ],
     install_requires=['setuptools'],
     zip_safe=True,
