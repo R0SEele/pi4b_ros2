@@ -1,0 +1,50 @@
+[0.000000] (-) TimerEvent: {}
+[0.001511] (test_control_pkg) JobQueued: {'identifier': 'test_control_pkg', 'dependencies': OrderedDict()}
+[0.002686] (yolo_counting_pkg) JobQueued: {'identifier': 'yolo_counting_pkg', 'dependencies': OrderedDict()}
+[0.003480] (test_control_pkg) JobStarted: {'identifier': 'test_control_pkg'}
+[0.043007] (yolo_counting_pkg) JobStarted: {'identifier': 'yolo_counting_pkg'}
+[0.099274] (-) TimerEvent: {}
+[0.200687] (-) TimerEvent: {}
+[0.301591] (-) TimerEvent: {}
+[0.402304] (-) TimerEvent: {}
+[0.503127] (-) TimerEvent: {}
+[0.604257] (-) TimerEvent: {}
+[0.704955] (-) TimerEvent: {}
+[0.805651] (-) TimerEvent: {}
+[0.906349] (-) TimerEvent: {}
+[1.007389] (-) TimerEvent: {}
+[1.108656] (-) TimerEvent: {}
+[1.209366] (-) TimerEvent: {}
+[1.310053] (-) TimerEvent: {}
+[1.410747] (-) TimerEvent: {}
+[1.511492] (-) TimerEvent: {}
+[1.612365] (-) TimerEvent: {}
+[1.713089] (-) TimerEvent: {}
+[1.813758] (-) TimerEvent: {}
+[1.914440] (-) TimerEvent: {}
+[2.015296] (-) TimerEvent: {}
+[2.116472] (-) TimerEvent: {}
+[2.217418] (-) TimerEvent: {}
+[2.318178] (-) TimerEvent: {}
+[2.418965] (-) TimerEvent: {}
+[2.519889] (-) TimerEvent: {}
+[2.620685] (-) TimerEvent: {}
+[2.721609] (-) TimerEvent: {}
+[2.822389] (-) TimerEvent: {}
+[2.923131] (-) TimerEvent: {}
+[3.023969] (-) TimerEvent: {}
+[3.124705] (-) TimerEvent: {}
+[3.225443] (-) TimerEvent: {}
+[3.326183] (-) TimerEvent: {}
+[3.426918] (-) TimerEvent: {}
+[3.527681] (-) TimerEvent: {}
+[3.628452] (-) TimerEvent: {}
+[3.729158] (-) TimerEvent: {}
+[3.829901] (-) TimerEvent: {}
+[3.930691] (-) TimerEvent: {}
+[4.031946] (-) TimerEvent: {}
+[4.112640] (test_control_pkg) StderrLine: {'line': b'Traceback (most recent call last):\n  File "/usr/lib/python3/dist-packages/colcon_parallel_executor/executor/parallel.py", line 75, in execute\n    loop.run_until_complete(future)\n  File "/usr/lib/python3.10/asyncio/base_events.py", line 636, in run_until_complete\n    self.run_forever()\n  File "/usr/lib/python3.10/asyncio/base_events.py", line 603, in run_forever\n    self._run_once()\n  File "/usr/lib/python3.10/asyncio/base_events.py", line 1871, in _run_once\n    event_list = self._selector.select(timeout)\n  File "/usr/lib/python3.10/selectors.py", line 469, in select\n    fd_event_list = self._selector.poll(timeout, max_ev)\nKeyboardInterrupt\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File "/usr/lib/python3/dist-packages/colcon_core/executor/__init__.py", line 91, in __call__\n    rc = await self.task(*args, **kwargs)\n  File "/usr/lib/python3/dist-packages/colcon_core/task/__init__.py", line 93, in __call__\n    return await task_method(*args, **kwargs)\n  File "/usr/lib/python3/dist-packages/colcon_ros/task/ament_python/build.py", line 102, in build\n    return await extension.build(additional_hooks=additional_hooks)\n  File "/usr/lib/python3/dist-packages/colcon_core/task/python/build.py", line 96, in build\n    available_commands = await self._get_available_commands(\n  File "/usr/lib/python3/dist-packages/colcon_core/task/python/build.py", line 194, in _get_available_commands\n    output = await check_output(\n  File "/usr/lib/python3/dist-packages/colcon_core/subprocess.py", line 129, in check_output\n    assert not rc, f\'Expected {args} to pass: {stderr_data}\'\nAssertionError: Expected [\'/usr/bin/python3\', \'-W\', \'ignore:setup.py install is deprecated\', \'-W\', \'ignore:easy_install command is deprecated\', \'setup.py\', \'--help-commands\'] to pass: \n'}
+[4.117537] (test_control_pkg) JobEnded: {'identifier': 'test_control_pkg', 'rc': 'SIGINT'}
+[4.120126] (yolo_counting_pkg) StderrLine: {'line': b'Traceback (most recent call last):\n  File "/usr/lib/python3/dist-packages/colcon_parallel_executor/executor/parallel.py", line 75, in execute\n    loop.run_until_complete(future)\n  File "/usr/lib/python3.10/asyncio/base_events.py", line 636, in run_until_complete\n    self.run_forever()\n  File "/usr/lib/python3.10/asyncio/base_events.py", line 603, in run_forever\n    self._run_once()\n  File "/usr/lib/python3.10/asyncio/base_events.py", line 1871, in _run_once\n    event_list = self._selector.select(timeout)\n  File "/usr/lib/python3.10/selectors.py", line 469, in select\n    fd_event_list = self._selector.poll(timeout, max_ev)\nKeyboardInterrupt\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File "/usr/lib/python3/dist-packages/colcon_core/executor/__init__.py", line 91, in __call__\n    rc = await self.task(*args, **kwargs)\n  File "/usr/lib/python3/dist-packages/colcon_core/task/__init__.py", line 93, in __call__\n    return await task_method(*args, **kwargs)\n  File "/usr/lib/python3/dist-packages/colcon_ros/task/ament_python/build.py", line 102, in build\n    return await extension.build(additional_hooks=additional_hooks)\n  File "/usr/lib/python3/dist-packages/colcon_core/task/python/build.py", line 96, in build\n    available_commands = await self._get_available_commands(\n  File "/usr/lib/python3/dist-packages/colcon_core/task/python/build.py", line 194, in _get_available_commands\n    output = await check_output(\n  File "/usr/lib/python3/dist-packages/colcon_core/subprocess.py", line 129, in check_output\n    assert not rc, f\'Expected {args} to pass: {stderr_data}\'\nAssertionError: Expected [\'/usr/bin/python3\', \'-W\', \'ignore:setup.py install is deprecated\', \'-W\', \'ignore:easy_install command is deprecated\', \'setup.py\', \'--help-commands\'] to pass: \n'}
+[4.122918] (yolo_counting_pkg) JobEnded: {'identifier': 'yolo_counting_pkg', 'rc': 'SIGINT'}
+[4.126968] (-) EventReactorShutdown: {}
