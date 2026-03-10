@@ -25,8 +25,6 @@ setup(
     },
     entry_points={
         'console_scripts': [
-            'test_control = test_control_pkg.test_control:main',
-            'encoder_rx_node = test_control_pkg.encoder_rx_node:main',
             'car_controller = test_control_pkg.car_controller:main', 
         ],
     },

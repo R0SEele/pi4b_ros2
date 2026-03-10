@@ -36,7 +36,6 @@ setup(
     },
     entry_points={
         'console_scripts': [
-            'yolo_result_publisher = yolo_counting_pkg.yolo_ros_publish:main',
             'yolo_detector = yolo_counting_pkg.yolo_detector:main',
             'priority_calc = yolo_counting_pkg.priority_calc:main',
         ],
