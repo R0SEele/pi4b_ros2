@@ -93,6 +93,8 @@ class CarControllerNode(Node):
         self.declare_parameter('serial_port', '/dev/ttyACM0')
         self.declare_parameter('serial_baud', 115200)
         self.declare_parameter('priority_file', '/home/rose/pi4b_ros2/car_ws/src/yolo_counting_pkg/results/scenic_spot_priority.txt')
+        self.declare_parameter('wait_for_priority_file', True)
+        self.declare_parameter('auto_exit_when_done', True)
         self.declare_parameter('send_odom_feedback', False)
         self.declare_parameter('enable_encoder_odom', True)
         self.declare_parameter('print_hz', 5.0)
@@ -115,6 +117,8 @@ class CarControllerNode(Node):
         self.port = self.get_parameter('serial_port').get_parameter_value().string_value
         self.baud = self.get_parameter('serial_baud').get_parameter_value().integer_value
         self.priority_file = self.get_parameter('priority_file').get_parameter_value().string_value
+        self.wait_for_priority = bool(self.get_parameter('wait_for_priority_file').value)
+        self.auto_exit_when_done = bool(self.get_parameter('auto_exit_when_done').value)
         self.send_odom_feedback_enabled = bool(self.get_parameter('send_odom_feedback').value)
         self.enable_encoder_odom = bool(self.get_parameter('enable_encoder_odom').value)
 
@@ -197,11 +201,12 @@ class CarControllerNode(Node):
         if self.send_odom_feedback_enabled and self.enable_encoder_odom:
             self.feedback_timer = self.create_timer(0.05, self.send_odom_feedback)
         
-        # 强制等待优先级文件生成
-        self.wait_for_priority_file()
-        
-        # 加载动作队列
-        self.load_action_queue()
+        if self.wait_for_priority:
+            # 在任务执行模式下，强制等待优先级文件生成
+            self.wait_for_priority_file()
+            self.load_action_queue()
+        else:
+            self.get_logger().warn("已关闭优先级文件等待，节点以里程计/手动控制模式运行")
         
         self.get_logger().info("小车控制节点启动成功")
         self.get_logger().info(f"已加载{len(self.action_queue)}个景点动作，开始依次执行")
@@ -439,7 +444,7 @@ class CarControllerNode(Node):
             else:
                 self.stop()
 
-        if (not self.executing_action) and (len(self.action_queue) == 0) and (not self.finished):
+        if self.auto_exit_when_done and (not self.executing_action) and (len(self.action_queue) == 0) and (not self.finished):
             self.finished = True
             self.get_logger().info("所有动作执行完成，准备退出控制节点。")
             self.stop()
@@ -462,7 +467,8 @@ def main(args=None):
         pass
     finally:
         node.destroy_node()
-        rclpy.shutdown()
+        if rclpy.ok():
+            rclpy.shutdown()
 
 if __name__ == '__main__':
     main()
