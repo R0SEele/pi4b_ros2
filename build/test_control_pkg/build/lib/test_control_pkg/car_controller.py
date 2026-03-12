@@ -191,7 +191,7 @@ class CarControllerNode(Node):
         if self.enable_encoder_odom:
             self.pub_delta = self.create_publisher(Int32MultiArray, '/encoder_delta', 10)
             self.pub_meta = self.create_publisher(UInt32MultiArray, '/encoder_meta', 10)
-            self.pub_odom = self.create_publisher(Odometry, '/odom', 20)
+            self.pub_odom = self.create_publisher(Odometry, '/wheel_odom', 20)  # 修改话题/odom为/wheel_odom
             self.poll_timer = self.create_timer(0.002, self.poll)
             self.print_timer = self.create_timer(1.0 / print_hz, self.print_odom)
         
@@ -349,6 +349,28 @@ class CarControllerNode(Node):
         odom.twist.twist.linear.x = self.vx_body
         odom.twist.twist.linear.y = self.vy_body
         odom.twist.twist.angular.z = self.omega
+
+        # Fill reasonable non-zero covariance to keep EKF numerically stable.
+        odom.pose.covariance = [0.0] * 36
+        odom.twist.covariance = [0.0] * 36
+
+        # pose: x, y, yaw
+        odom.pose.covariance[0] = 2.5e-3
+        odom.pose.covariance[7] = 2.5e-3
+        odom.pose.covariance[35] = 4.0e-4
+        # large uncertainty for unused z/roll/pitch in 2D
+        odom.pose.covariance[14] = 1.0e6
+        odom.pose.covariance[21] = 1.0e6
+        odom.pose.covariance[28] = 1.0e6
+
+        # twist: vx, vy, yaw_rate
+        odom.twist.covariance[0] = 2.5e-3
+        odom.twist.covariance[7] = 2.5e-3
+        odom.twist.covariance[35] = 2.5e-3
+        odom.twist.covariance[14] = 1.0e6
+        odom.twist.covariance[21] = 1.0e6
+        odom.twist.covariance[28] = 1.0e6
+
         self.pub_odom.publish(odom)
 
     def wait_for_priority_file(self):
