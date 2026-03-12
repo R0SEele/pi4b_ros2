@@ -31,11 +31,11 @@ ekf_filter_node:
     odom0_relative: false          # 不使用相对位姿
 
     odom1: /laser_odom             # 激光雷达里程计话题
-    odom1_config: [false, false, false,
-             false, false, false,
-             false, false, false,
-             false, false, false,
-             false, false, false]  # 先禁用laser输入，单源稳定后再开启
+    odom1_config: [true, true, false,
+         false, false, true,
+         false, false, false,
+         false, false, false,
+         false, false, false]  # 融合激光位姿x/y/yaw，速度仍由轮式里程计主导
     odom1_queue_size: 10
     odom1_nodelay: true
     odom1_differential: false      # 激光里程计提供绝对位姿（如Cartographer输出）

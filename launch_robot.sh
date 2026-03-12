@@ -12,6 +12,7 @@ CTRL_PORT=${CTRL_PORT:-/dev/ttyACM0}
 LIDAR_NET_IF=${LIDAR_NET_IF:-eth0}
 LIDAR_HOST_IP=${LIDAR_HOST_IP:-192.168.1.10}
 LIDAR_DEVICE_IP=${LIDAR_DEVICE_IP:-192.168.1.200}
+STRICT_LIDAR_CHECK=${STRICT_LIDAR_CHECK:-1}
 # ===============================================================================
 
 # 检查ROS2工作空间路径是否存在
@@ -153,7 +154,15 @@ if [ "$CLEAN_BEFORE_LAUNCH" = "1" ]; then
     cleanup_stale_process_and_shm
 fi
 
-check_lidar_network
+if ! check_lidar_network; then
+    if [ "$STRICT_LIDAR_CHECK" = "1" ]; then
+        echo "雷达网口检查失败，停止启动。"
+        echo "如需跳过网口检查（仅调试底盘/里程计），可使用：STRICT_LIDAR_CHECK=0 ./launch_robot.sh"
+        exit 1
+    else
+        echo "警告：已跳过雷达网口严格检查（STRICT_LIDAR_CHECK=0）。"
+    fi
+fi
 
 if [ "$HAS_GUI" -eq 1 ]; then
     echo "检测到图形环境，使用 $TERMINAL 分窗口启动。"
