@@ -1,42 +1,62 @@
-# robot_localization EKF配置文件
 ekf_filter_node:
-  ros__parameters:
-    # 1. 核心坐标系配置
-    frequency: 30.0                # EKF更新频率（Hz）
-    sensor_timeout: 0.1            # 传感器数据超时时间（秒），超时则忽略该数据源
-    two_d_mode: true               # 2D模式（仅融合x/y/yaw，忽略z/roll/pitch）
-    publish_tf: true               # 发布odom→base_link的TF变换（核心！）
-    publish_acceleration: false    # 不发布加速度数据
-    print_diagnostics: true        # 打开诊断，便于定位异常
+    ros__parameters:
+        # 基础运行参数
+        frequency: 50.0          # EKF运行频率（匹配轮式里程计频率）
+        two_d_mode: true         # 2D平面模式（小车常用）
+        publish_tf: true         # 发布odom→base_footprint的TF
+        # 如果任意一个传感器产生的时间戳数据比最新的滤波器更新早（更明确地说，如果您有滞后的传感器数据源），则将此参数设置为true，将在接收到滞后的数据后启用滤波器恢复到滞后测量之前的最后状态，
+        # 然后处理所有测量直到当前时间。这对于来自需要大量CPU使用量以生成姿态估计值的节点（例如，激光扫描匹配器）进行的测量特别有用，因为它们经常落后于当前时间
+        smooth_lagged_data: true
+        history_length: 5.0
+        use_control: true    
+        control_config: [true, false, false, false, false, true]
 
-    # 输出坐标系（EKF融合后的里程计坐标系）
-    odom_frame: odom               # EKF输出的里程计坐标系
-    base_link_frame: base_footprint     # 机器人基坐标系
-    world_frame: odom              # 世界坐标系（2D模式下与odom一致）
+        # 坐标系配置
+        map_frame: map             
+        odom_frame: odom            
+        base_link_frame: base_footprint 
+        world_frame: odom          # 若激光里程计是map系，可改为map
 
-    # 2. 输入数据源配置（wheel_odom和laser_odom）
-    # 格式（15维）：
-    # [x, y, z, roll, pitch, yaw,
-    #  vx, vy, vz, vroll, vpitch, vyaw,
-    #  ax, ay, az]
-    odom0: /wheel_odom             # 轮式里程计话题
-    odom0_config: [true, true, false,
-             false, false, true,
-             true, true, false,
-             false, false, true,
-             false, false, false]
-    odom0_queue_size: 10           # 数据队列大小
-    odom0_nodelay: true            # 不延迟处理数据
-    odom0_differential: false      # 不使用差分模式（轮式里程计直接提供绝对位姿）
-    odom0_relative: false          # 不使用相对位姿
 
-    odom1: /laser_odom             # 激光雷达里程计话题
-    odom1_config: [true, true, false,
-         false, false, true,
-         false, false, false,
-         false, false, false,
-         false, false, false]  # 融合激光位姿x/y/yaw，速度仍由轮式里程计主导
-    odom1_queue_size: 10
-    odom1_nodelay: true
-    odom1_differential: false      # 激光里程计提供绝对位姿（如Cartographer输出）
-    odom1_relative: false
+        # 1. 轮式里程计配置（odom0）：作为预测输入
+        odom0: odom/wheel  # 轮式里程计话题（需替换为实际话题名）
+        odom0_config: [true, true, false,   # x/y位置（启用），z（禁用）
+                       false, false, true,  # roll/pitch（禁用），yaw（启用）
+                       true, true, false,   # vx/vy线速度（启用），vz（禁用）
+                       false, false, true,  # 偏航角速度（启用）
+                       false, false, false] # 加速度（禁用）
+        odom0_differential: true  # 若输入是绝对位姿，设为false；差分则true
+        odom0_relative: false      # 绝对位姿输入
+        # [sensor]_threshold
+        # 具体参数：odomN_pose_rejection_threshold、odomN_twist_rejection_threshold、poseN_rejection_threshold、twistN_rejection_threshold、imuN_pose_rejection_threshold、imuN_angular_velocity_rejection_threshold、imuN_linear_acceleration_rejection_threshold
+        # 如果您的数据存在异常值，请使用这些阈值设置（表示为马氏距离）来控制允许传感器测量值距当前车辆状态的距离。如果未指定，则每个默认值均为numeric_limits::max()。
+        odom0_pose_rejection_threshold: 5.0
+        odom0_twist_rejection_threshold: 0.5    
+        # 2. 激光里程计配置（odom1）：作为校正输入
+        odom1: odom/laser  # 激光里程计话题（需替换为实际话题名，如cartographer/odom）
+        odom1_config: [true, true, false,   # x/y位置（启用），用于校正
+                       false, false, true,  # yaw姿态（启用），用于校正
+                       false, false, false, # 线速度（禁用，优先轮式）
+                       false, false, false, # 角速度（禁用）
+                       false, false, false] # 加速度（禁用）
+        odom1_differential: true  # 激光里程计通常输出绝对位姿
+        odom1_relative: false
+        odom1_queue_size: 10        # 缓存激光里程计数据（适配低频率）
+        odom1_pose_rejection_threshold: 10.0
+        odom1_twist_rejection_threshold: 1    
+    
+        
+        # 3. 噪声配置（关键！需根据实际传感器调参）
+        process_noise_covariance: [1e-3, 0,    0,    0,    0,    0,
+                                   0,    1e-3, 0,    0,    0,    0,
+                                   0,    0,    1e6,  0,    0,    0,
+                                   0,    0,    0,    1e6,  0,    0,
+                                   0,    0,    0,    0,    1e6,  0,
+                                   0,    0,    0,    0,    0,    1e-3]
+        # 激光里程计观测噪声（越小表示越信任激光里程计）
+        odom1_nodelay: true
+        odom1_xy_stddev: 0.01      # x/y位置噪声（米）
+        odom1_yaw_stddev: 0.005    # yaw角度噪声（弧度）
+        # 轮式里程计观测噪声（稍大，因为易漂移）
+        odom0_xy_stddev: 0.05
+        odom0_yaw_stddev: 0.02

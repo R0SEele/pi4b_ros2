@@ -16,7 +16,8 @@ def generate_launch_description():
     # 获取文件内容生成新的参数
     robot_description = launch_ros.parameter_descriptions.ParameterValue(
         launch.substitutions.Command(
-            ['xacro ', launch.substitutions.LaunchConfiguration('model')]),
+            ['xacro ', launch.s
+            ubstitutions.LaunchConfiguration('model')]),
         value_type=str)
     # 状态发布节点
     robot_state_publisher_node = launch_ros.actions.Node(
@@ -39,5 +40,5 @@ def generate_launch_description():
         action_declare_arg_mode_path,
         joint_state_publisher_node,
         robot_state_publisher_node,
-        rviz_node
+      # rviz_node
     ])

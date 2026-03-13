@@ -12,6 +12,9 @@ import math
 import time
 import os
 import sys
+import select
+import termios
+import tty
 
 
 SOF0 = 0xAA
@@ -98,6 +101,8 @@ class CarControllerNode(Node):
         self.declare_parameter('send_odom_feedback', False)
         self.declare_parameter('enable_encoder_odom', True)
         self.declare_parameter('print_hz', 5.0)
+        self.declare_parameter('enable_keyboard_control', False)
+        self.declare_parameter('keyboard_linear_speed', 0.1)
 
         self.declare_parameter('wheel_radius', 0.0375)
         self.declare_parameter('track_width', 0.1806)
@@ -121,6 +126,10 @@ class CarControllerNode(Node):
         self.auto_exit_when_done = bool(self.get_parameter('auto_exit_when_done').value)
         self.send_odom_feedback_enabled = bool(self.get_parameter('send_odom_feedback').value)
         self.enable_encoder_odom = bool(self.get_parameter('enable_encoder_odom').value)
+        self.enable_keyboard_control = bool(self.get_parameter('enable_keyboard_control').value)
+        self.keyboard_linear_speed = float(self.get_parameter('keyboard_linear_speed').value)
+        if self.keyboard_linear_speed <= 0.0:
+            self.keyboard_linear_speed = 0.1
 
         self.wheel_radius = float(self.get_parameter('wheel_radius').value)
         self.track_width = float(self.get_parameter('track_width').value)
@@ -179,6 +188,9 @@ class CarControllerNode(Node):
         self.total_actions = 0
         self.executed_actions = 0
         self.finished = False
+        self.keyboard_fd = None
+        self.keyboard_old_termios = None
+        self.keyboard_ready = False
         
         # 订阅话题
         self.sub_auto = self.create_subscription(Twist, '/cmd_vel', self.cb_auto, 10)
@@ -203,10 +215,16 @@ class CarControllerNode(Node):
         
         if self.wait_for_priority:
             # 在任务执行模式下，强制等待优先级文件生成
+            if self.enable_keyboard_control:
+                self.get_logger().warn("当前为任务执行模式，已禁用键盘手动控制")
+                self.enable_keyboard_control = False
             self.wait_for_priority_file()
             self.load_action_queue()
         else:
             self.get_logger().warn("已关闭优先级文件等待，节点以里程计/手动控制模式运行")
+
+        if self.enable_keyboard_control:
+            self.init_keyboard_input()
         
         self.get_logger().info("小车控制节点启动成功")
         self.get_logger().info(f"已加载{len(self.action_queue)}个景点动作，开始依次执行")
@@ -218,6 +236,88 @@ class CarControllerNode(Node):
             self.get_logger().info(f"已在控制节点内启用编码器里程计解析: {self.port}@{self.baud}")
         else:
             self.get_logger().warn("未启用编码器里程计解析，将不发布/打印里程计")
+        if self.enable_keyboard_control:
+            self.get_logger().info(
+                f"已启用键盘控制: W前进 S后退 A左移 D右移, X或空格停止, 线速度={self.keyboard_linear_speed:.3f}m/s"
+            )
+
+    def init_keyboard_input(self):
+        if not sys.stdin.isatty():
+            self.get_logger().warn("标准输入不是TTY，无法启用键盘控制")
+            self.enable_keyboard_control = False
+            return
+        try:
+            self.keyboard_fd = sys.stdin.fileno()
+            self.keyboard_old_termios = termios.tcgetattr(self.keyboard_fd)
+            tty.setcbreak(self.keyboard_fd)
+            self.keyboard_ready = True
+        except Exception as e:
+            self.get_logger().warn(f"键盘初始化失败，已禁用键盘控制: {e}")
+            self.enable_keyboard_control = False
+            self.keyboard_ready = False
+
+    def restore_keyboard_input(self):
+        if self.keyboard_ready and self.keyboard_fd is not None and self.keyboard_old_termios is not None:
+            try:
+                termios.tcsetattr(self.keyboard_fd, termios.TCSADRAIN, self.keyboard_old_termios)
+            except Exception:
+                pass
+        self.keyboard_ready = False
+
+    def read_key_nonblocking(self):
+        if not self.keyboard_ready:
+            return None
+        try:
+            readable, _, _ = select.select([sys.stdin], [], [], 0.0)
+            if not readable:
+                return None
+            ch = sys.stdin.read(1)
+            if ch == '\x1b':
+                # 尝试清掉方向键等转义序列的剩余字节
+                readable2, _, _ = select.select([sys.stdin], [], [], 0.0)
+                while readable2:
+                    _ = sys.stdin.read(1)
+                    readable2, _, _ = select.select([sys.stdin], [], [], 0.0)
+                return None
+            return ch
+        except Exception:
+            return None
+
+    def handle_keyboard_control(self, now: float):
+        key = self.read_key_nonblocking()
+        if key is not None:
+            k = key.lower()
+            speed = self.keyboard_linear_speed
+            if k == 'w':
+                if self.current_vx == speed and self.current_vy == 0.0 and self.current_wz == 0.0:
+                    self.stop()
+                else:
+                    self.current_vx, self.current_vy, self.current_wz = speed, 0.0, 0.0
+                    self.ser.write(pack_cmd_frame(self.current_vx, self.current_vy, self.current_wz))
+            elif k == 's':
+                if self.current_vx == -speed and self.current_vy == 0.0 and self.current_wz == 0.0:
+                    self.stop()
+                else:
+                    self.current_vx, self.current_vy, self.current_wz = -speed, 0.0, 0.0
+                    self.ser.write(pack_cmd_frame(self.current_vx, self.current_vy, self.current_wz))
+            elif k == 'a':
+                if self.current_vx == 0.0 and self.current_vy == speed and self.current_wz == 0.0:
+                    self.stop()
+                else:
+                    self.current_vx, self.current_vy, self.current_wz = 0.0, speed, 0.0
+                    self.ser.write(pack_cmd_frame(self.current_vx, self.current_vy, self.current_wz))
+            elif k == 'd':
+                if self.current_vx == 0.0 and self.current_vy == -speed and self.current_wz == 0.0:
+                    self.stop()
+                else:
+                    self.current_vx, self.current_vy, self.current_wz = 0.0, -speed, 0.0
+                    self.ser.write(pack_cmd_frame(self.current_vx, self.current_vy, self.current_wz))
+            elif k in ('x', ' '):
+                self.stop()
+
+        # 某些底盘带指令超时保护，手动模式下持续重发当前速度可避免自动刹停。
+        if self.current_vx != 0.0 or self.current_vy != 0.0 or self.current_wz != 0.0:
+            self.ser.write(pack_cmd_frame(self.current_vx, self.current_vy, self.current_wz))
 
     def print_odom(self):
         if not self.host_odom_ok:
@@ -408,6 +508,8 @@ class CarControllerNode(Node):
 
     # 自动模式回调
     def cb_auto(self, msg: Twist):
+        if self.enable_keyboard_control:
+            return
         if not self.executing_action:
             self.current_vx = msg.linear.x
             self.current_vy = msg.linear.y
@@ -451,6 +553,9 @@ class CarControllerNode(Node):
     # 主循环
     def loop(self):
         now = time.monotonic()
+
+        if self.enable_keyboard_control and (not self.executing_action) and (len(self.action_queue) == 0):
+            self.handle_keyboard_control(now)
         
         # 执行队列里的动作
         if not self.executing_action and len(self.action_queue) > 0:
@@ -466,7 +571,7 @@ class CarControllerNode(Node):
             else:
                 self.stop()
 
-        if self.auto_exit_when_done and (not self.executing_action) and (len(self.action_queue) == 0) and (not self.finished):
+        if self.auto_exit_when_done and (not self.enable_keyboard_control) and (not self.executing_action) and (len(self.action_queue) == 0) and (not self.finished):
             self.finished = True
             self.get_logger().info("所有动作执行完成，准备退出控制节点。")
             self.stop()
@@ -477,6 +582,7 @@ class CarControllerNode(Node):
         if self.ser and self.ser.is_open:
             self.stop()
             self.ser.close()
+        self.restore_keyboard_input()
         super().destroy_node()
 
 # 主函数
