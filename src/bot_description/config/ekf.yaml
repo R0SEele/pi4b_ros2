@@ -8,8 +8,9 @@ ekf_filter_node:
         # 然后处理所有测量直到当前时间。这对于来自需要大量CPU使用量以生成姿态估计值的节点（例如，激光扫描匹配器）进行的测量特别有用，因为它们经常落后于当前时间
         smooth_lagged_data: true
         history_length: 5.0
-        use_control: true    
+        use_control: false
         control_config: [true, false, false, false, false, true]
+        print_diagnostics: true        # 打开诊断，便于定位异常
 
         # 坐标系配置
         map_frame: map             
@@ -19,13 +20,13 @@ ekf_filter_node:
 
 
         # 1. 轮式里程计配置（odom0）：作为预测输入
-        odom0: odom/wheel  # 轮式里程计话题（需替换为实际话题名）
+        odom0: wheel_odom  # 轮式里程计话题（需替换为实际话题名）
         odom0_config: [true, true, false,   # x/y位置（启用），z（禁用）
                        false, false, true,  # roll/pitch（禁用），yaw（启用）
                        true, true, false,   # vx/vy线速度（启用），vz（禁用）
                        false, false, true,  # 偏航角速度（启用）
                        false, false, false] # 加速度（禁用）
-        odom0_differential: true  # 若输入是绝对位姿，设为false；差分则true
+        odom0_differential: false  # 轮式里程计已提供pose+twist，使用绝对模式更稳
         odom0_relative: false      # 绝对位姿输入
         # [sensor]_threshold
         # 具体参数：odomN_pose_rejection_threshold、odomN_twist_rejection_threshold、poseN_rejection_threshold、twistN_rejection_threshold、imuN_pose_rejection_threshold、imuN_angular_velocity_rejection_threshold、imuN_linear_acceleration_rejection_threshold
@@ -33,26 +34,21 @@ ekf_filter_node:
         odom0_pose_rejection_threshold: 5.0
         odom0_twist_rejection_threshold: 0.5    
         # 2. 激光里程计配置（odom1）：作为校正输入
-        odom1: odom/laser  # 激光里程计话题（需替换为实际话题名，如cartographer/odom）
+        odom1: laser_odom  # 激光里程计话题（需替换为实际话题名，如cartographer/odom）
         odom1_config: [true, true, false,   # x/y位置（启用），用于校正
                        false, false, true,  # yaw姿态（启用），用于校正
                        false, false, false, # 线速度（禁用，优先轮式）
                        false, false, false, # 角速度（禁用）
                        false, false, false] # 加速度（禁用）
-        odom1_differential: true  # 激光里程计通常输出绝对位姿
+        odom1_differential: false  # 激光里程计通常输出绝对位姿
         odom1_relative: false
         odom1_queue_size: 10        # 缓存激光里程计数据（适配低频率）
         odom1_pose_rejection_threshold: 10.0
-        odom1_twist_rejection_threshold: 1    
+        odom1_twist_rejection_threshold: 1.0  
     
         
         # 3. 噪声配置（关键！需根据实际传感器调参）
-        process_noise_covariance: [1e-3, 0,    0,    0,    0,    0,
-                                   0,    1e-3, 0,    0,    0,    0,
-                                   0,    0,    1e6,  0,    0,    0,
-                                   0,    0,    0,    1e6,  0,    0,
-                                   0,    0,    0,    0,    1e6,  0,
-                                   0,    0,    0,    0,    0,    1e-3]
+        # 使用robot_localization默认process_noise_covariance，避免错误维度配置导致数值发散。
         # 激光里程计观测噪声（越小表示越信任激光里程计）
         odom1_nodelay: true
         odom1_xy_stddev: 0.01      # x/y位置噪声（米）
