@@ -1,0 +1,62 @@
+# robot_localization EKF配置文件
+ekf_filter_node:
+  ros__parameters:
+    # 1. 核心坐标系配置
+    frequency: 30.0                # EKF更新频率（Hz）
+    sensor_timeout: 0.1            # 传感器数据超时时间（秒），超时则忽略该数据源
+    two_d_mode: true               # 2D模式（仅融合x/y/yaw，忽略z/roll/pitch）
+    publish_tf: true               # 发布odom→base_link的TF变换（核心！）
+    smooth_lagged_data: false
+    history_length: 0.0
+    use_control: true    
+    control_config: [true, true, false, false, false, true]
+    publish_acceleration: false    # 不发布加速度数据
+    print_diagnostics: true        # 打开诊断，便于定位异常
+
+    # 输出坐标系（EKF融合后的里程计坐标系）
+    odom_frame: odom               # EKF输出的里程计坐标系
+    base_link_frame: base_footprint     # 机器人基坐标系
+    world_frame: odom              # 世界坐标系（2D模式下与odom一致）
+
+    # 2. 输入数据源配置（wheel_odom和laser_odom）
+    # 格式（15维）：
+    # [x, y, z, roll, pitch, yaw,
+    #  vx, vy, vz, vroll, vpitch, vyaw,
+    #  ax, ay, az]
+    odom0: /wheel_odom             # 轮式里程计话题
+    odom0_config: [true, true, false,
+             false, false, true,
+             true, true, false,
+             false, false, true,
+             false, false, false]
+    odom0_queue_size: 10           # 数据队列大小
+    odom0_nodelay: true            # 不延迟处理数据
+    odom0_differential: true     # 使用差分模式
+    odom0_relative: false          # 不使用相对位姿
+
+    odom1: /laser_odom             # 激光雷达里程计话题
+    odom1_config: [true, true, false,
+         false, false, true,
+         true, true, false,
+         false, false, true,
+         false, false, false]  # 融合激光位姿x/y/yaw，速度仍由轮式里程计主导
+    odom1_queue_size: 10
+    odom1_nodelay: true
+    odom1_differential: false      
+    odom1_relative: false
+
+    process_noise_covariance: [1e-3, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+                           0.0, 1e-3, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+                           0.0, 0.0, 1e-3, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+                           0.0, 0.0, 0.0, 3.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+                           0.0, 0.0, 0.0, 0.0, 3.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+                           0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,  # yaw从0.1→0.2
+                           0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.1, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,  # vx从0.05→0.1
+                           0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.6, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,  # vy从0.3→0.6
+                           0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 3.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+                           0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 3.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+                           0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 3.0, 0.0, 0.0, 0.0, 0.0,
+                           0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.1, 0.0, 0.0, 0.0,  # vyaw从0.05→0.1
+                           0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 3.0, 0.0, 0.0,
+                           0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 3.0, 0.0,
+                           0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 3.0]

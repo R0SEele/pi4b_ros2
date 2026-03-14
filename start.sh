@@ -195,8 +195,8 @@ CAR_CONTROLLER_CMD="ros2 run test_control_pkg car_controller --ros-args -p seria
     launch_ros2_command_headless "ros2 launch lslidar_driver lsn10_net_launch.py" "激光雷达驱动" "$LOG_DIR/01_lidar.log"
     sleep 2
     echo "HEADLESS模式下跳过RViz显示节点（无DISPLAY会崩溃）。"
-    echo "如需可视化，请在图形桌面终端单独运行："
-    echo "  ros2 launch bot_description display_robot.launch.py"
+    echo "如需可视化，请在图形桌面终端单独运行："ch bot_description display_robot.launch.py
+    echo "  ros2 laun"
     sleep 1
     launch_ros2_command_headless "ros2 run ros2_laser_scan_matcher laser_scan_matcher" "激光扫描匹配" "$LOG_DIR/03_scan_matcher.log"
     sleep 1

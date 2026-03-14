@@ -1,0 +1,187 @@
+[2026-03-14 18:56:41] 开始一键启动导航功能...
+[2026-03-14 18:56:41] 启动机器人模型: ros2 launch bot_description display_robot.launch.py
+[INFO] [launch]: All log files can be found below /home/rose/.ros/log/2026-03-14-18-56-43-782017-rose-desktop-37927
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [joint_state_publisher-1]: process started with pid [38071]
+[INFO] [robot_state_publisher-2]: process started with pid [38073]
+[2026-03-14 18:56:44] 启动雷达驱动: ros2 launch lslidar_driver lsn10_net_launch.py
+[robot_state_publisher-2] [INFO] [1773485805.524401840] [robot_state_publisher]: got segment base_footprint
+[robot_state_publisher-2] [INFO] [1773485805.525372034] [robot_state_publisher]: got segment base_link
+[robot_state_publisher-2] [INFO] [1773485805.525504496] [robot_state_publisher]: got segment camera_depth_link
+[robot_state_publisher-2] [INFO] [1773485805.525550273] [robot_state_publisher]: got segment camera_link
+[robot_state_publisher-2] [INFO] [1773485805.525578958] [robot_state_publisher]: got segment front_left_wheel_link
+[robot_state_publisher-2] [INFO] [1773485805.525606865] [robot_state_publisher]: got segment front_right_wheel_link
+[robot_state_publisher-2] [INFO] [1773485805.525634995] [robot_state_publisher]: got segment imu_link
+[robot_state_publisher-2] [INFO] [1773485805.525663013] [robot_state_publisher]: got segment laser
+[robot_state_publisher-2] [INFO] [1773485805.525691494] [robot_state_publisher]: got segment rear_left_wheel_link
+[robot_state_publisher-2] [INFO] [1773485805.525717957] [robot_state_publisher]: got segment rear_right_wheel_link
+[2026-03-14 18:56:47] 启动激光匹配: ros2 run ros2_laser_scan_matcher laser_scan_matcher
+[joint_state_publisher-1] [INFO] [1773485809.537792040] [joint_state_publisher]: Waiting for robot_description to be published on the robot_description topic...
+[INFO] [launch]: All log files can be found below /home/rose/.ros/log/2026-03-14-18-56-49-580525-rose-desktop-38078
+[INFO] [launch]: Default logging verbosity is set to INFO
+[2026-03-14 18:56:50] 启动定位节点 (第一次): ros2 launch bot_localization localization_launch.py
+[INFO] [lslidar_driver_node-1]: process started with pid [38316]
+[lslidar_driver_node-1] [0m[INFO] [1773485812.590579360] [lslidar_driver_node]: Lidar is N10[0m
+[lslidar_driver_node-1] [0m[INFO] [1773485812.679305065] [lslidar_driver_node]: Opening UDP socket: port 2368[0m
+[lslidar_driver_node-1] [0m[INFO] [1773485812.679844615] [lslidar_driver_node]: expected frequency: 288.000 (Hz)[0m
+[lslidar_driver_node-1] [0m[INFO] [1773485812.682315592] [lslidar_driver_node]: [driver][input] accepting packets from IP address: 192.168.1.200  port: 2368[0m
+[lslidar_driver_node-1] [0m[INFO] [1773485812.682500220] [lslidar_driver_node]: [driver][socket] Opening UDP socket: port 2368[0m
+[lslidar_driver_node-1] [0m[INFO] [1773485812.682677329] [lslidar_driver_node]: Initialised lslidar without error[0m
+[lslidar_driver_node-1] [0m[INFO] [1773485812.682765717] [lslidar_driver_node]: Successfully initialize driver...[0m
+[INFO] [1773485812.707216372] [laser_scan_matcher]: Creating laser_scan_matcher
+[2026-03-14 18:56:53] 启动定位节点 (第二次): ros2 launch bot_localization localization_launch.py
+[2026-03-14 18:56:56] 启动导航2: ros2 launch bot_navigation2 navigation2.launch.py
+[2026-03-14 18:56:56] 所有导航相关节点已启动！
+[2026-03-14 18:56:56] 进程ID: 模型(37927), 雷达(38078), 匹配(38193), 定位1(38294), 定位2(38419), 导航(38540)
+[2026-03-14 18:56:56] 日志文件: logs/navigation_20260314_185641.log
+[2026-03-14 18:56:56] 提示: 按 Ctrl+C 终止所有节点（需手动清理后台进程）
+[INFO] [launch]: All log files can be found below /home/rose/.ros/log/2026-03-14-18-56-57-142820-rose-desktop-38294
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [launch.user]: 使用EKF配置文件: /home/rose/pi4b_ros2/car_ws/install/bot_localization/share/bot_localization/config/ekf.yaml
+[INFO] [ekf_node-1]: process started with pid [38629]
+[INFO] [launch]: All log files can be found below /home/rose/.ros/log/2026-03-14-18-56-58-450804-rose-desktop-38419
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [launch.user]: 使用EKF配置文件: /home/rose/pi4b_ros2/car_ws/install/bot_localization/share/bot_localization/config/ekf.yaml
+[INFO] [ekf_node-1]: process started with pid [38759]
+:err: Strange FOV: 6.350028 rad = 363.829806 deg 
+[WARN] [1773485824.762934905] [laser_scan_matcher]: Error in scan matching
+[INFO] [launch]: All log files can be found below /home/rose/.ros/log/2026-03-14-18-57-04-996927-rose-desktop-38540
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [component_container_isolated-1]: process started with pid [39331]
+[INFO] [rviz2-2]: process started with pid [39333]
+[rviz2-2] qt.qpa.xcb: could not connect to display 
+[rviz2-2] qt.qpa.plugin: Could not load the Qt platform plugin "xcb" in "" even though it was found.
+[rviz2-2] This application failed to start because no Qt platform plugin could be initialized. Reinstalling the application may fix this problem.
+[rviz2-2] 
+[rviz2-2] Available platform plugins are: eglfs, linuxfb, minimal, minimalegl, offscreen, vnc, xcb.
+[rviz2-2] 
+[ERROR] [rviz2-2]: process has died [pid 39333, exit code -6, cmd '/opt/ros/humble/lib/rviz2/rviz2 -d /opt/ros/humble/share/nav2_bringup/rviz/nav2_default_view.rviz --ros-args -r __node:=rviz2 --params-file /tmp/launch_params_aq3089g7'].
+[INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/map_server' in container '/nav2_container'
+[component_container_isolated-1] [INFO] [1773485844.183815474] [nav2_container]: Load Library: /opt/ros/humble/lib/libamcl_core.so
+[component_container_isolated-1] [INFO] [1773485844.312972741] [nav2_container]: Found class: rclcpp_components::NodeFactoryTemplate<nav2_amcl::AmclNode>
+[component_container_isolated-1] [INFO] [1773485844.329645916] [nav2_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<nav2_amcl::AmclNode>
+[component_container_isolated-1] [INFO] [1773485844.782709593] [amcl]: 
+[component_container_isolated-1] 	amcl lifecycle node launched. 
+[component_container_isolated-1] 	Waiting on external lifecycle transitions to activate
+[component_container_isolated-1] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[component_container_isolated-1] [INFO] [1773485844.787029940] [amcl]: Creating
+[INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/amcl' in container '/nav2_container'
+[component_container_isolated-1] [INFO] [1773485844.954760155] [nav2_container]: Load Library: /opt/ros/humble/lib/libnav2_lifecycle_manager_core.so
+[component_container_isolated-1] [INFO] [1773485844.962726968] [nav2_container]: Found class: rclcpp_components::NodeFactoryTemplate<nav2_lifecycle_manager::LifecycleManager>
+[component_container_isolated-1] [INFO] [1773485844.962891170] [nav2_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<nav2_lifecycle_manager::LifecycleManager>
+[component_container_isolated-1] [INFO] [1773485845.436259783] [lifecycle_manager_localization]: Creating
+[INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/lifecycle_manager_localization' in container '/nav2_container'
+[component_container_isolated-1] [INFO] [1773485845.643193346] [lifecycle_manager_localization]: [34m[1mCreating and initializing lifecycle service clients[0m[0m
+[component_container_isolated-1] [INFO] [1773485845.842151003] [lifecycle_manager_localization]: [34m[1mStarting managed nodes bringup...[0m[0m
+[component_container_isolated-1] [INFO] [1773485845.842373112] [lifecycle_manager_localization]: [34m[1mConfiguring map_server[0m[0m
+[component_container_isolated-1] [ERROR] [1773485847.510130204] [lifecycle_manager_localization]: Failed to change state for node: map_server
+[component_container_isolated-1] [ERROR] [1773485847.510438571] [lifecycle_manager_localization]: Failed to bring up all requested nodes. Aborting bringup.
+[INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/controller_server' in container '/nav2_container'
+[component_container_isolated-1] [INFO] [1773485849.257932943] [nav2_container]: Load Library: /opt/ros/humble/lib/libsmoother_server_core.so
+[component_container_isolated-1] [INFO] [1773485849.277256184] [nav2_container]: Found class: rclcpp_components::NodeFactoryTemplate<nav2_smoother::SmootherServer>
+[component_container_isolated-1] [INFO] [1773485849.277464423] [nav2_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<nav2_smoother::SmootherServer>
+[component_container_isolated-1] [INFO] [1773485849.700615240] [smoother_server]: 
+[component_container_isolated-1] 	smoother_server lifecycle node launched. 
+[component_container_isolated-1] 	Waiting on external lifecycle transitions to activate
+[component_container_isolated-1] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[component_container_isolated-1] [INFO] [1773485849.757724899] [smoother_server]: Creating smoother server
+[INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/smoother_server' in container '/nav2_container'
+[component_container_isolated-1] [INFO] [1773485849.802366251] [nav2_container]: Load Library: /opt/ros/humble/lib/libplanner_server_core.so
+[component_container_isolated-1] [INFO] [1773485849.811061687] [nav2_container]: Found class: rclcpp_components::NodeFactoryTemplate<nav2_planner::PlannerServer>
+[component_container_isolated-1] [INFO] [1773485849.813672884] [nav2_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<nav2_planner::PlannerServer>
+[component_container_isolated-1] [INFO] [1773485850.471150671] [planner_server]: 
+[component_container_isolated-1] 	planner_server lifecycle node launched. 
+[component_container_isolated-1] 	Waiting on external lifecycle transitions to activate
+[component_container_isolated-1] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[component_container_isolated-1] [INFO] [1773485850.505500825] [planner_server]: Creating
+[component_container_isolated-1] [INFO] [1773485851.003477189] [global_costmap.global_costmap]: 
+[component_container_isolated-1] 	global_costmap lifecycle node launched. 
+[component_container_isolated-1] 	Waiting on external lifecycle transitions to activate
+[component_container_isolated-1] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[component_container_isolated-1] [INFO] [1773485851.008144496] [global_costmap.global_costmap]: Creating Costmap
+[INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/planner_server' in container '/nav2_container'
+[component_container_isolated-1] [INFO] [1773485851.086276085] [nav2_container]: Load Library: /opt/ros/humble/lib/libbehavior_server_core.so
+[component_container_isolated-1] [INFO] [1773485851.106687390] [nav2_container]: Found class: rclcpp_components::NodeFactoryTemplate<behavior_server::BehaviorServer>
+[component_container_isolated-1] [INFO] [1773485851.120803922] [nav2_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<behavior_server::BehaviorServer>
+[component_container_isolated-1] [INFO] [1773485852.182588486] [behavior_server]: 
+[component_container_isolated-1] 	behavior_server lifecycle node launched. 
+[component_container_isolated-1] 	Waiting on external lifecycle transitions to activate
+[component_container_isolated-1] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/behavior_server' in container '/nav2_container'
+[component_container_isolated-1] [INFO] [1773485852.342139558] [nav2_container]: Load Library: /opt/ros/humble/lib/libbt_navigator_core.so
+[component_container_isolated-1] [INFO] [1773485852.360904490] [nav2_container]: Found class: rclcpp_components::NodeFactoryTemplate<nav2_bt_navigator::BtNavigator>
+[component_container_isolated-1] [INFO] [1773485852.361059563] [nav2_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<nav2_bt_navigator::BtNavigator>
+[component_container_isolated-1] [INFO] [1773485853.741703442] [bt_navigator]: 
+[component_container_isolated-1] 	bt_navigator lifecycle node launched. 
+[component_container_isolated-1] 	Waiting on external lifecycle transitions to activate
+[component_container_isolated-1] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[component_container_isolated-1] [INFO] [1773485853.743546036] [bt_navigator]: Creating
+[INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/bt_navigator' in container '/nav2_container'
+[component_container_isolated-1] [INFO] [1773485853.833543437] [nav2_container]: Load Library: /opt/ros/humble/lib/libwaypoint_follower_core.so
+[component_container_isolated-1] [INFO] [1773485853.863491837] [nav2_container]: Found class: rclcpp_components::NodeFactoryTemplate<nav2_waypoint_follower::WaypointFollower>
+[component_container_isolated-1] [INFO] [1773485853.866404513] [nav2_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<nav2_waypoint_follower::WaypointFollower>
+[component_container_isolated-1] [INFO] [1773485854.786001343] [waypoint_follower]: 
+[component_container_isolated-1] 	waypoint_follower lifecycle node launched. 
+[component_container_isolated-1] 	Waiting on external lifecycle transitions to activate
+[component_container_isolated-1] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[component_container_isolated-1] [INFO] [1773485854.799301012] [waypoint_follower]: Creating
+[INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/waypoint_follower' in container '/nav2_container'
+[component_container_isolated-1] [INFO] [1773485854.913660756] [nav2_container]: Load Library: /opt/ros/humble/lib/libvelocity_smoother_core.so
+[component_container_isolated-1] [INFO] [1773485854.916192343] [nav2_container]: Found class: rclcpp_components::NodeFactoryTemplate<nav2_velocity_smoother::VelocitySmoother>
+[component_container_isolated-1] [INFO] [1773485854.916403823] [nav2_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<nav2_velocity_smoother::VelocitySmoother>
+[component_container_isolated-1] [INFO] [1773485855.821779530] [velocity_smoother]: 
+[component_container_isolated-1] 	velocity_smoother lifecycle node launched. 
+[component_container_isolated-1] 	Waiting on external lifecycle transitions to activate
+[component_container_isolated-1] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/velocity_smoother' in container '/nav2_container'
+[component_container_isolated-1] [INFO] [1773485855.867323874] [nav2_container]: Found class: rclcpp_components::NodeFactoryTemplate<nav2_lifecycle_manager::LifecycleManager>
+[component_container_isolated-1] [INFO] [1773485855.870881599] [nav2_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<nav2_lifecycle_manager::LifecycleManager>
+[component_container_isolated-1] [INFO] [1773485856.555240580] [lifecycle_manager_navigation]: Creating
+[INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/lifecycle_manager_navigation' in container '/nav2_container'
+[component_container_isolated-1] [INFO] [1773485856.671581157] [lifecycle_manager_navigation]: [34m[1mCreating and initializing lifecycle service clients[0m[0m
+[component_container_isolated-1] [INFO] [1773485857.708853240] [lifecycle_manager_navigation]: [34m[1mStarting managed nodes bringup...[0m[0m
+[component_container_isolated-1] [INFO] [1773485857.709085627] [lifecycle_manager_navigation]: [34m[1mConfiguring controller_server[0m[0m
+[component_container_isolated-1] [INFO] [1773485867.578204935] [lifecycle_manager_navigation]: [34m[1mConfiguring smoother_server[0m[0m
+[component_container_isolated-1] [INFO] [1773485867.580219305] [smoother_server]: Configuring smoother server
+[component_container_isolated-1] [INFO] [1773485867.667539382] [lifecycle_manager_navigation]: [34m[1mConfiguring planner_server[0m[0m
+[component_container_isolated-1] [INFO] [1773485867.668968702] [planner_server]: Configuring
+[component_container_isolated-1] [INFO] [1773485867.670040710] [global_costmap.global_costmap]: Configuring
+[component_container_isolated-1] [INFO] [1773485868.219615872] [lifecycle_manager_navigation]: [34m[1mConfiguring behavior_server[0m[0m
+[component_container_isolated-1] [INFO] [1773485868.221108673] [behavior_server]: Configuring
+[component_container_isolated-1] [INFO] [1773485868.426748310] [smoother_server]: Created smoother : simple_smoother of type nav2_smoother::SimpleSmoother
+[component_container_isolated-1] [INFO] [1773485868.790186390] [global_costmap.global_costmap]: Using plugin "static_layer"
+[component_container_isolated-1] [INFO] [1773485868.835581996] [smoother_server]: Smoother Server has simple_smoother  smoothers available.
+[component_container_isolated-1] [INFO] [1773485868.887162986] [global_costmap.global_costmap]: Subscribing to the map topic (/map) with transient local durability
+[component_container_isolated-1] [INFO] [1773485869.012456721] [global_costmap.global_costmap]: Initialized plugin "static_layer"
+[component_container_isolated-1] [INFO] [1773485869.015579228] [global_costmap.global_costmap]: Using plugin "obstacle_layer"
+[component_container_isolated-1] [INFO] [1773485869.106800416] [global_costmap.global_costmap]: Subscribed to Topics: scan
+[component_container_isolated-1] [INFO] [1773485869.208336488] [behavior_server]: Creating behavior plugin spin of type nav2_behaviors/Spin
+[component_container_isolated-1] [INFO] [1773485869.252075702] [behavior_server]: Configuring spin
+[component_container_isolated-1] [INFO] [1773485869.828272408] [global_costmap.global_costmap]: Initialized plugin "obstacle_layer"
+[component_container_isolated-1] [INFO] [1773485869.828478776] [global_costmap.global_costmap]: Using plugin "inflation_layer"
+[component_container_isolated-1] [INFO] [1773485869.943195019] [global_costmap.global_costmap]: Initialized plugin "inflation_layer"
+[component_container_isolated-1] [INFO] [1773485870.028935259] [behavior_server]: Creating behavior plugin backup of type nav2_behaviors/BackUp
+[component_container_isolated-1] [INFO] [1773485870.053633913] [behavior_server]: Configuring backup
+[component_container_isolated-1] [INFO] [1773485870.776466856] [lifecycle_manager_navigation]: [34m[1mConfiguring bt_navigator[0m[0m
+[component_container_isolated-1] [INFO] [1773485870.778853277] [bt_navigator]: Configuring
+[component_container_isolated-1] [INFO] [1773485870.947881170] [behavior_server]: Creating behavior plugin drive_on_heading of type nav2_behaviors/DriveOnHeading
+[component_container_isolated-1] [INFO] [1773485870.975853867] [behavior_server]: Configuring drive_on_heading
+[component_container_isolated-1] [INFO] [1773485870.989505663] [planner_server]: Created global planner plugin GridBased of type nav2_navfn_planner/NavfnPlanner
+[component_container_isolated-1] [INFO] [1773485870.989729902] [planner_server]: Configuring plugin GridBased of type NavfnPlanner
+[component_container_isolated-1] [INFO] [1773485871.026662014] [planner_server]: Planner Server has GridBased  planners available.
+[component_container_isolated-1] [INFO] [1773485871.824496281] [behavior_server]: Creating behavior plugin assisted_teleop of type nav2_behaviors/AssistedTeleop
+[component_container_isolated-1] [INFO] [1773485871.844436499] [behavior_server]: Configuring assisted_teleop
+[component_container_isolated-1] [INFO] [1773485873.164605969] [behavior_server]: Creating behavior plugin wait of type nav2_behaviors/Wait
+[component_container_isolated-1] [INFO] [1773485873.205613135] [behavior_server]: Configuring wait
+[component_container_isolated-1] [INFO] [1773485873.742026111] [lifecycle_manager_navigation]: [34m[1mConfiguring waypoint_follower[0m[0m
+[component_container_isolated-1] [INFO] [1773485873.744980083] [waypoint_follower]: Configuring
+[component_container_isolated-1] [INFO] [1773485875.173766858] [waypoint_follower]: Created waypoint_task_executor : wait_at_waypoint of type nav2_waypoint_follower::WaitAtWaypoint
+[component_container_isolated-1] [INFO] [1773485875.274318569] [lifecycle_manager_navigation]: [34m[1mConfiguring velocity_smoother[0m[0m
+[component_container_isolated-1] [INFO] [1773485875.279001581] [velocity_smoother]: Configuring velocity smoother
+[component_container_isolated-1] [INFO] [1773485875.572422700] [lifecycle_manager_navigation]: [34m[1mActivating controller_server[0m[0m
+:err: Strange FOV: 6.315910 rad = 361.875006 deg 
+[WARN] [1773485885.342017661] [laser_scan_matcher]: Error in scan matching
+:err: Strange FOV: 6.361725 rad = 364.500012 deg 
+[WARN] [1773485924.267695785] [laser_scan_matcher]: Error in scan matching
+:err: Strange FOV: 6.315741 rad = 361.865280 deg 
+[WARN] [1773485936.464788541] [laser_scan_matcher]: Error in scan matching
