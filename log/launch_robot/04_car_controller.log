@@ -1,183 +1,836 @@
-[2026-03-13_18:02:59] 启动: ros2 run test_control_pkg car_controller --ros-args -p serial_port:=/dev/ttyACM0 -p enable_encoder_odom:=true -p wait_for_priority_file:=false -p auto_exit_when_done:=false -p send_odom_feedback:=false
-[INFO] [1773396182.206832307] [car_controller_node]: 串口已连接：/dev/ttyACM0 @ 115200
-[WARN] [1773396182.246534192] [car_controller_node]: 已关闭优先级文件等待，节点以里程计/手动控制模式运行
-[INFO] [1773396182.253167376] [car_controller_node]: 小车控制节点启动成功
-[INFO] [1773396182.255727759] [car_controller_node]: 已加载0个景点动作，开始依次执行
-[INFO] [1773396182.258390269] [car_controller_node]: 未启用里程计回传，仅在树莓派侧使用/打印里程计
-[INFO] [1773396182.260870412] [car_controller_node]: 已在控制节点内启用编码器里程计解析: /dev/ttyACM0@115200
-[INFO] [1773396182.446566591] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
-[INFO] [1773396182.647165666] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
-[INFO] [1773396182.851330236] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
-[INFO] [1773396183.047601995] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
-[INFO] [1773396183.247214809] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
-[INFO] [1773396183.448881884] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
-[INFO] [1773396183.661960599] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
-[INFO] [1773396183.855212613] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
-[INFO] [1773396184.091136128] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
-[INFO] [1773396184.250178312] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
-[INFO] [1773396184.449650683] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
-[INFO] [1773396184.652696087] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
-[INFO] [1773396184.847887086] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
-[INFO] [1773396185.048162425] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
-[INFO] [1773396185.249279620] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
-[INFO] [1773396185.448823620] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
-[INFO] [1773396185.648646615] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
-[INFO] [1773396185.858907989] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
-[INFO] [1773396186.097266610] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
-[WARN] [1773396186.202639312] [car_controller_node]: seq lost: 62819 -> 62827
-[INFO] [1773396186.248547943] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
-[WARN] [1773396186.343581430] [car_controller_node]: seq lost: 62828 -> 62834
-[WARN] [1773396186.409760016] [car_controller_node]: seq lost: 62834 -> 62837
-[INFO] [1773396186.552722490] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
-[INFO] [1773396186.728563279] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
-[INFO] [1773396186.918288148] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
-[INFO] [1773396187.116871311] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
-[INFO] [1773396187.262031155] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
-[INFO] [1773396187.448265527] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
-[INFO] [1773396187.646791729] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
-[INFO] [1773396187.847792018] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
-[INFO] [1773396188.046656584] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
-[INFO] [1773396188.246977589] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
-[INFO] [1773396188.446827157] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
-[INFO] [1773396188.647075032] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
-[INFO] [1773396188.847107412] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
-[INFO] [1773396189.047606136] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
-[INFO] [1773396189.248281856] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
-[INFO] [1773396189.446764891] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
-[INFO] [1773396189.646712642] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
-[INFO] [1773396189.847218792] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
-[INFO] [1773396190.047153432] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
-[INFO] [1773396190.247561472] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
-[INFO] [1773396190.447904068] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
-[INFO] [1773396190.646841725] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
-[INFO] [1773396190.847356263] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
-[INFO] [1773396191.046454787] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
-[INFO] [1773396191.247872217] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
-[INFO] [1773396191.447115424] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
-[INFO] [1773396191.647162840] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
-[INFO] [1773396191.847172275] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
-[INFO] [1773396192.048069491] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
-[INFO] [1773396192.247117776] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
-[INFO] [1773396192.447309263] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
-[INFO] [1773396192.648697341] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
-[INFO] [1773396192.849681093] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
-[INFO] [1773396193.048146924] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
-[INFO] [1773396193.248505353] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
-[INFO] [1773396193.448177904] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
-[INFO] [1773396193.647460092] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
-[INFO] [1773396193.848652766] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
-[INFO] [1773396194.047319482] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
-[INFO] [1773396194.249555749] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
-[INFO] [1773396194.464120975] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
-[INFO] [1773396194.647499061] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
-[INFO] [1773396194.852310692] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
-[INFO] [1773396195.048058106] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
-[INFO] [1773396195.253193157] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
-[INFO] [1773396195.448751555] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
-[WARN] [1773396195.527261840] [car_controller_node]: seq lost: 63290 -> 63293
-[INFO] [1773396195.648734805] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
-[WARN] [1773396195.666784722] [car_controller_node]: seq lost: 63294 -> 63300
-[INFO] [1773396195.848590723] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
-[WARN] [1773396195.862663337] [car_controller_node]: seq lost: 63300 -> 63310
-[WARN] [1773396195.961955029] [car_controller_node]: seq lost: 63311 -> 63315
-[WARN] [1773396196.022964183] [car_controller_node]: seq lost: 63315 -> 63318
-[INFO] [1773396196.075838364] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
-[WARN] [1773396196.142116058] [car_controller_node]: seq lost: 63318 -> 63324
-[WARN] [1773396196.205749723] [car_controller_node]: seq lost: 63324 -> 63327
-[INFO] [1773396196.249818756] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
-[WARN] [1773396196.342796314] [car_controller_node]: seq lost: 63329 -> 63334
-[WARN] [1773396196.421602464] [car_controller_node]: seq lost: 63334 -> 63338
-[INFO] [1773396196.452941508] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
-[WARN] [1773396196.643439510] [car_controller_node]: seq lost: 63338 -> 63349
-[INFO] [1773396196.652769149] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
-[INFO] [1773396196.862245219] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
-[WARN] [1773396196.946466981] [car_controller_node]: seq lost: 63349 -> 63364
-[INFO] [1773396197.079012259] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
-[WARN] [1773396197.121960589] [car_controller_node]: seq lost: 63365 -> 63373
-[WARN] [1773396197.185273741] [car_controller_node]: seq lost: 63373 -> 63376
-[INFO] [1773396197.249049811] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
-[WARN] [1773396197.362135492] [car_controller_node]: seq lost: 63376 -> 63385
-[WARN] [1773396197.421986184] [car_controller_node]: seq lost: 63386 -> 63388
-[INFO] [1773396197.459175129] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
-[WARN] [1773396197.526733543] [car_controller_node]: seq lost: 63389 -> 63393
-[WARN] [1773396197.603470042] [car_controller_node]: seq lost: 63394 -> 63397
-[INFO] [1773396197.650723539] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
-[INFO] [1773396197.862505200] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
-[INFO] [1773396198.049072602] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
-[WARN] [1773396198.125666826] [car_controller_node]: seq lost: 63397 -> 63423
-[WARN] [1773396198.223261083] [car_controller_node]: seq lost: 63423 -> 63428
-[INFO] [1773396198.249006556] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
-[WARN] [1773396198.263922266] [car_controller_node]: seq lost: 63428 -> 63430
-[INFO] [1773396198.448501924] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
-[WARN] [1773396198.466482750] [car_controller_node]: seq lost: 63433 -> 63440
-[INFO] [1773396198.649607450] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
-[WARN] [1773396198.663085926] [car_controller_node]: seq lost: 63440 -> 63450
-[WARN] [1773396198.723310982] [car_controller_node]: seq lost: 63451 -> 63453
-[WARN] [1773396198.842405987] [car_controller_node]: seq lost: 63456 -> 63459
-[INFO] [1773396198.850552628] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
-[WARN] [1773396198.884135115] [car_controller_node]: seq lost: 63459 -> 63461
-[WARN] [1773396198.922445579] [car_controller_node]: seq lost: 63461 -> 63463
-[WARN] [1773396198.961918615] [car_controller_node]: seq lost: 63463 -> 63465
-[WARN] [1773396199.021937249] [car_controller_node]: seq lost: 63466 -> 63468
-[INFO] [1773396199.048301377] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
-[WARN] [1773396199.082295877] [car_controller_node]: seq lost: 63468 -> 63471
-[WARN] [1773396199.161982492] [car_controller_node]: seq lost: 63472 -> 63475
-[INFO] [1773396199.253118489] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
-[WARN] [1773396199.262642031] [car_controller_node]: seq lost: 63476 -> 63480
-[INFO] [1773396199.453476805] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
-[WARN] [1773396199.463197493] [car_controller_node]: seq lost: 63480 -> 63490
-[WARN] [1773396199.602370288] [car_controller_node]: seq lost: 63495 -> 63497
-[INFO] [1773396199.647886648] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
-[WARN] [1773396199.782662407] [car_controller_node]: seq lost: 63497 -> 63506
-[INFO] [1773396199.863845831] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
-[WARN] [1773396199.922022792] [car_controller_node]: seq lost: 63506 -> 63513
-[WARN] [1773396200.002370878] [car_controller_node]: seq lost: 63513 -> 63517
-[WARN] [1773396200.043414221] [car_controller_node]: seq lost: 63517 -> 63519
-[INFO] [1773396200.053046132] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
-[WARN] [1773396200.161876144] [car_controller_node]: seq lost: 63519 -> 63525
-[INFO] [1773396200.248572938] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
-[WARN] [1773396200.285972083] [car_controller_node]: seq lost: 63526 -> 63531
-[WARN] [1773396200.322122120] [car_controller_node]: seq lost: 63531 -> 63533
-[WARN] [1773396200.403778851] [car_controller_node]: seq lost: 63533 -> 63537
-[INFO] [1773396200.449834054] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
-[WARN] [1773396200.541918904] [car_controller_node]: seq lost: 63537 -> 63544
-[WARN] [1773396200.602688988] [car_controller_node]: seq lost: 63545 -> 63547
-[INFO] [1773396200.663090318] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
-[WARN] [1773396200.783291860] [car_controller_node]: seq lost: 63547 -> 63556
-[WARN] [1773396200.823083484] [car_controller_node]: seq lost: 63556 -> 63558
-[INFO] [1773396200.847006561] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
-[WARN] [1773396200.881634864] [car_controller_node]: seq lost: 63559 -> 63561
-[WARN] [1773396200.981615230] [car_controller_node]: seq lost: 63561 -> 63566
-[INFO] [1773396201.047812277] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
-[WARN] [1773396201.083699819] [car_controller_node]: seq lost: 63566 -> 63571
-[INFO] [1773396201.248516199] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
-[WARN] [1773396201.282514457] [car_controller_node]: seq lost: 63573 -> 63581
-[WARN] [1773396201.423112487] [car_controller_node]: seq lost: 63582 -> 63588
-[INFO] [1773396201.448862719] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
-[WARN] [1773396201.462712318] [car_controller_node]: seq lost: 63588 -> 63590
-[INFO] [1773396201.541856795] [car_controller_node]: 小车已停止
+[2026-03-14_14:56:18] 启动: ros2 run test_control_pkg car_controller --ros-args -p serial_port:=/dev/ttyACM0 -p enable_encoder_odom:=true -p wait_for_priority_file:=false -p auto_exit_when_done:=false -p send_odom_feedback:=false
+[INFO] [1773471380.827086784] [car_controller_node]: 串口已连接：/dev/ttyACM0 @ 115200
+[WARN] [1773471380.859651802] [car_controller_node]: 标准输入不是TTY，无法启用键盘控制
+[INFO] [1773471380.863012962] [car_controller_node]: 小车控制节点启动成功
+[INFO] [1773471380.866198608] [car_controller_node]: 当前为独立运行模式：仅保留ROS2通信、键盘控制与里程计发布
+[INFO] [1773471380.869471271] [car_controller_node]: 未启用里程计回传，仅在树莓派侧使用/打印里程计
+[INFO] [1773471380.872815857] [car_controller_node]: 已在控制节点内启用编码器里程计解析: /dev/ttyACM0@115200
+[INFO] [1773471381.062041780] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471381.261632846] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471381.461944821] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471381.662007413] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471381.862230297] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471382.103253968] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471382.307794197] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471382.481645159] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471382.668059321] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471382.869243278] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471383.065380969] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471383.267650459] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471383.463773023] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471383.663782919] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471383.865510145] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471384.129907675] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471384.268519297] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471384.467799456] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471384.663163559] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471384.864371171] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471385.080759442] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471385.264697987] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471385.463478235] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471385.698145702] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471385.862624378] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471386.064565885] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471386.262374585] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471386.462177904] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471386.662178312] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471386.862034260] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471387.062199423] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471387.262685008] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471387.462757176] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471387.662064881] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471387.861873778] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471388.062207145] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471388.262278243] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471388.462230770] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471388.662800560] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471388.862232432] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471389.062266087] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471389.262099324] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471389.462054336] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471389.662265693] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471389.863072944] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471390.062675539] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471390.262656257] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471390.462475553] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471390.662417216] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471390.862472803] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471391.063223263] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471391.262706775] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471391.463830210] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471391.664345049] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471391.862800251] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471392.063014950] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471392.262823586] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471392.462658278] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471392.662802888] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471392.862584951] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471393.065032934] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471393.264396084] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471393.463424132] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471393.663011648] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471393.862540868] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471394.063469761] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471394.264721463] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471394.463314931] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471394.663351310] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471394.862746556] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471395.062779844] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471395.263060146] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471395.462524061] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471395.662431243] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471395.863326938] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471396.063048199] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471396.262694298] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471396.462803404] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471396.663092321] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471396.862601868] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471397.063357553] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471397.262687033] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471397.463879895] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471397.664507678] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471397.862932790] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471398.062435526] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471398.262792337] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471398.462906654] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471398.661839703] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471398.862000037] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471399.062683953] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471399.262234601] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471399.464954675] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471399.662431428] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471399.861597437] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471400.062672550] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471400.262558694] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471400.463705753] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471400.662559699] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471400.861604566] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471401.062436782] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471401.262364373] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471401.461664571] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471401.661733510] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471401.862024352] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471402.061416752] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471402.261706060] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471402.461864982] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471402.661931629] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471402.862054256] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471403.074077511] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471403.266499304] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471403.463099646] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471403.663090946] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471403.863377332] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471404.067854971] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471404.262269998] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471404.467304646] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471404.661632731] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471404.864966881] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471405.062394746] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471405.261389354] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471405.462599335] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471405.666964965] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471405.862369065] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471406.061814441] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471406.262474902] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471406.461542734] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471406.662325118] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471406.861845828] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471407.061650439] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471407.262442975] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471407.462039501] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471407.661713859] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471407.862574819] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471408.061141889] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471408.261708229] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471408.461383776] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471408.661290983] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471408.862392552] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471409.062117339] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471409.261587357] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471409.472305000] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471409.662358090] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471409.862482351] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471410.066441543] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471410.261457983] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471410.462349878] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471410.661220135] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471410.862639110] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471411.061105711] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471411.261425771] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471411.462481592] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471411.663248271] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471411.863538757] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471412.061510633] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471412.262356332] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471412.461875155] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471412.661845134] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471412.861444325] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471413.062336505] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471413.260815097] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471413.461312511] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471413.661637781] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471413.866940787] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471414.067393611] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471414.264654882] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471414.464901713] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471414.661147675] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471414.862025343] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471415.063127025] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471415.261633845] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471415.461685665] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471415.663597794] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471415.862624712] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471416.063615956] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471416.263959736] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471416.462641147] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471416.662246111] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471416.862897106] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471417.065471464] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471417.262162203] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471417.461747115] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471417.661370841] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471417.861648700] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471418.063552892] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471418.261416070] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471418.460979171] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471418.662043292] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471418.861372195] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471419.060945130] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471419.262024440] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471419.461494861] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471419.660843026] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471419.861494364] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471420.061343777] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471420.261771087] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471420.461965902] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471420.661813337] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471420.861186615] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471421.061002570] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471421.261424198] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471421.461644682] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471421.662029052] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471421.861111989] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471422.064380903] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471422.262455496] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471422.462454063] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471422.661769313] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471422.866012874] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471423.062365675] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471423.267637604] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471423.465921492] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471423.661393834] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471423.860879657] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471424.061332255] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471424.260848636] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471424.462535059] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471424.661412455] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471424.861910665] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471425.061021519] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471425.261772579] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471425.461408257] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471425.660976603] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471425.861996582] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471426.061460987] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471426.261686487] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471426.461673735] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471426.661155697] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471426.860855080] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471427.061238597] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471427.261252180] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471427.460809366] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471427.661537951] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471427.861329669] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471428.060988576] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471428.261696331] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471428.461772583] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471428.661918407] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471428.861013977] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471429.060826847] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471429.261244538] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471429.465569361] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471429.661254532] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471429.862223526] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471430.062578867] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471430.261537521] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471430.460751040] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471430.661486987] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471430.861435896] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471431.061319770] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471431.261794485] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471431.461498273] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471431.661576442] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471431.861695332] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471432.061563747] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471432.260513963] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471432.465672203] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471432.661071908] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471432.861349039] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471433.062100825] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471433.261987394] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471433.461636690] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471433.661585127] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471433.861022020] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471434.062326964] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471434.261980060] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471434.461276552] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471434.666371763] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471434.862136096] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471435.061496792] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471435.266447621] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471435.463385189] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471435.676000990] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471435.873478620] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471436.063883691] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471436.261179680] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471436.461311660] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471436.661484231] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471436.861298348] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471437.064601978] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471437.263489619] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471437.461691906] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471437.663341613] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471437.860972635] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471438.063149294] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471438.261545357] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471438.461721286] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471438.661496484] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471438.861054632] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471439.063694043] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471439.261991926] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471439.464771151] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471439.665769305] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471439.863065082] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471440.061559535] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471440.261411720] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471440.461885723] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471440.669003129] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471440.863459900] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471441.066066003] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471441.264943083] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471441.467305157] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471441.663100345] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471441.867557704] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471442.065899501] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471442.267340044] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471442.467285695] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471442.675888704] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471442.876852314] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471443.066180190] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471443.260951463] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471443.461712709] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471443.661340593] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471443.862504016] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471444.061090258] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471444.261054341] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471444.461346583] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471444.661559920] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471444.861599723] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471445.061465050] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471445.261008775] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471445.461325946] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471445.661624062] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471445.861432929] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471446.061387979] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471446.261159554] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471446.461342287] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471446.661153306] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471446.861090840] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471447.061358942] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471447.261195611] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471447.461035429] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471447.661244627] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471447.860987057] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471448.061385511] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471448.260909006] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471448.462596729] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471448.661466071] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471448.860727868] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471449.061134621] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471449.261125238] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471449.460913174] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471449.663382363] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471449.861899569] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471450.061445808] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471450.263146018] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471450.461642598] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471450.661348279] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471450.861938719] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471451.061597180] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471451.261519823] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471451.463252092] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471451.663576225] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471451.862978936] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471452.061689329] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471452.261321000] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471452.461701339] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471452.662548057] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471452.862045546] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471453.061025696] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471453.261453759] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471453.461986172] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471453.662302016] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471453.861796675] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471454.061617457] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471454.262058856] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471454.461433539] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471454.665666575] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471454.863408592] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471455.063287857] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471455.264377449] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471455.462923950] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471455.662463336] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471455.865390386] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471456.061556276] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471456.264597345] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471456.476533583] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471456.669803225] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471456.867856574] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471457.069182294] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471457.263192163] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471457.461893908] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471457.662120618] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471457.866225611] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471458.065331180] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471458.265921033] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471458.463698080] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471458.663665558] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471458.864219023] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471459.062304322] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471459.261356491] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471459.462259266] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471459.661583651] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471459.862287134] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471460.062099120] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471460.261155661] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471460.461566969] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471460.662290973] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471460.861300720] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471461.068409674] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471461.262435999] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471461.462105252] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471461.663866607] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471461.862322054] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471462.061183679] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471462.262244459] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471462.465729833] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471462.665551290] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471462.862788694] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471463.061614433] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471463.261048957] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471463.460922712] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471463.661326436] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471463.861326985] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471464.061017300] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471464.261032777] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471464.461594019] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471464.661065360] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471464.861680509] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471465.061135499] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471465.261747003] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471465.461149460] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471465.660896871] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471465.860403326] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471466.061555874] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471466.262005439] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471466.461785668] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471466.661152925] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471466.861175538] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471467.062056835] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471467.261488945] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471467.478883967] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471467.662130385] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471467.862920539] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471468.062047527] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471468.260329222] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471468.463402661] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471468.661146830] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471468.865663144] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471469.062369412] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471469.260931511] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471469.461026093] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471469.661783995] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471469.860513867] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471470.061793647] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471470.261096361] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471470.461526106] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471470.661116833] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471470.862322634] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471471.061216026] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471471.261535332] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471471.463880722] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471471.661731491] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471471.860398019] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471472.060656383] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471472.260542535] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471472.461278390] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471472.660561870] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471472.861378427] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471473.061422373] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471473.261446173] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471473.460189372] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471473.670724733] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471473.865138714] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471474.060987868] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471474.260710270] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471474.462897228] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471474.660818578] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471474.861812100] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471475.062118472] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471475.264093142] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471475.466011387] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471475.661867601] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471475.860193333] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471476.060362989] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471476.261125855] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471476.460513086] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471476.660581838] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471476.860626350] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471477.060709344] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471477.260532290] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471477.460347458] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471477.659995797] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471477.860852776] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471478.059938461] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471478.260698926] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471478.461028123] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471478.660780740] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471478.860508951] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471479.060156552] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471479.261313345] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471479.460429924] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471479.660314263] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471479.860328748] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471480.064390976] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471480.270661750] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471480.459843331] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471480.660712929] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471480.860556013] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471481.061408946] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471481.267379989] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471481.461809326] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471481.660258370] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471481.860353266] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471482.060217391] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471482.261153049] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471482.460310987] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471482.660106097] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471482.860381473] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471483.059935589] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471483.260877750] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471483.460646455] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471483.660648063] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471483.860948183] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471484.061006568] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471484.260541263] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471484.460363655] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471484.660660111] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471484.860374876] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471485.060750850] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471485.260933182] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471485.459966113] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471485.660747672] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471485.860531902] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471486.060860768] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471486.261078139] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471486.466727260] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471486.661269942] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471486.861151506] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471487.060218681] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471487.260100080] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471487.460711964] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471487.661436975] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471487.860030551] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471488.060694990] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471488.260999587] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471488.460532738] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471488.660537657] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471488.860530798] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471489.060440071] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471489.260558546] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471489.460866553] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471489.661140339] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471489.861147501] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471490.061115961] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471490.260787318] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471490.460569766] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471490.661179325] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471490.859683968] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471491.061279895] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471491.260777259] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471491.460778871] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471491.662080251] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471491.860787374] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471492.060662934] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471492.260304002] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471492.461141710] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471492.670949219] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471492.860590360] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471493.061976501] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471493.260226935] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471493.462975993] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471493.660655588] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471493.860571079] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471494.067840778] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471494.260707964] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471494.460598606] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471494.660020702] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471494.860284373] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471495.060265032] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471495.260884254] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471495.460029822] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471495.660447826] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471495.860522985] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471496.060864806] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471496.260781361] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471496.460118335] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471496.660742652] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471496.860502802] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471497.060461227] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471497.260692907] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471497.460737017] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471497.660017663] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471497.861157378] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471498.060882533] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471498.260642819] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471498.461275160] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471498.660564196] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471498.861539993] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471499.068748115] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471499.260259271] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471499.460014467] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471499.661348924] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471499.862024841] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471500.060587546] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471500.262019097] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471500.459833635] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471500.660570516] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471500.860671633] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471501.061168354] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471501.260993647] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471501.460529612] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471501.660828691] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471501.861059308] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471502.060397909] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471502.260738119] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471502.461049404] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471502.660337656] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471502.860631201] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471503.061222203] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471503.260626696] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471503.460495252] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471503.660780726] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471503.861389229] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471504.060861111] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471504.261082236] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471504.460891649] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471504.661585691] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471504.860905244] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471505.060024209] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471505.261835914] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471505.460620278] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471505.660477711] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471505.859846248] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471506.060172264] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471506.260002070] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471506.461701151] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471506.660968896] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471506.861628185] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471507.060312369] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471507.260039033] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471507.461821929] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471507.660233584] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471507.860923431] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471508.060239437] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471508.259724350] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471508.460093965] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471508.660641336] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471508.860338447] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471509.060624473] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471509.260982665] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471509.459979295] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471509.660676832] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471509.860407686] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471510.060635567] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471510.260854858] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471510.460377590] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471510.660172205] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471510.861002316] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471511.060033874] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471511.261710802] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471511.466699473] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471511.661683196] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471511.862012228] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471512.060713630] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471512.266191663] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471512.474298991] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471512.672496387] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471512.887813483] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471513.067082367] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471513.263762522] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471513.470384033] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471513.666390665] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471513.862962951] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471514.061552101] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471514.269707970] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471514.464316172] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471514.663758436] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471514.907533121] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471515.074953195] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471515.274465811] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471515.466864545] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471515.661526286] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471515.861329673] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471516.062060875] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471516.261074968] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471516.461379162] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471516.661707967] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471516.860592878] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471517.060943961] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471517.261063866] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471517.460763409] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471517.661422358] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471517.860688781] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471518.060613228] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471518.261545711] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471518.460794526] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471518.661202520] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471518.860616961] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471519.060839849] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471519.260299996] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471519.460283613] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471519.661498129] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471519.860848667] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471520.060927542] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471520.260577095] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471520.460602343] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471520.660184379] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471520.860798522] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471521.061196967] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471521.260771857] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471521.461259561] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471521.660481311] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471521.860495063] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471522.060645201] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471522.260315758] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471522.461196716] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471522.660445375] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471522.860201450] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471523.060487958] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471523.260588028] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471523.460784836] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471523.660415120] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471523.860454802] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471524.060672536] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471524.260263823] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471524.461334541] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471524.660100013] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471524.865156256] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471525.060226994] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471525.260290532] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471525.461335050] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471525.660023285] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471525.867576236] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471526.060588558] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471526.261061313] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471526.460299354] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471526.662503719] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471526.864205892] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471527.063079201] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471527.269677122] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471527.480745984] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471527.660593317] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471527.860324665] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471528.060538096] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471528.260382147] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471528.460908573] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471528.660910047] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471528.861049148] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471529.060471283] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471529.260684385] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471529.459931119] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471529.660554897] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471529.860696593] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471530.060351597] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471530.260735087] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471530.460626439] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471530.661167647] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471530.860553825] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471531.060866410] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471531.260690544] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471531.460845449] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471531.660597733] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471531.860519531] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471532.060663770] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471532.260581276] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471532.460473503] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471532.660489377] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471532.859865449] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471533.059973710] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471533.260403559] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471533.460263883] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471533.660033634] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471533.860369133] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471534.060621764] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471534.260232392] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471534.460684539] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471534.660433201] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471534.860087754] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471535.060179965] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471535.260980848] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471535.460248264] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471535.660273460] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471535.860238806] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471536.060096561] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471536.260349255] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471536.460525098] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471536.660396671] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471536.860167578] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471537.060154427] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471537.265075171] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471537.461261825] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471537.660909775] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471537.861387170] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471538.060405134] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471538.261352337] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471538.460318860] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471538.661095010] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471538.861465670] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471539.060900609] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471539.262380840] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471539.460465588] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471539.660161116] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471539.861154765] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471540.061518835] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471540.260330144] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471540.472116490] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471540.671523027] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471540.866326070] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471541.066360594] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471541.379065427] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471541.485719993] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471541.660466950] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471541.972916936] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471542.103218903] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471542.275890093] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471542.477606622] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471542.667261707] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471542.883642423] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471543.062522609] [car_controller_node]: odom x=0.000 m, y=0.000 m, th=0.000 rad, vx=0.000 m/s, vy=0.000 m/s, w=0.000 rad/s
+[INFO] [1773471543.157954177] [car_controller_node]: 小车已停止
+Failed to publish log message to rosout: publisher's context is invalid, at ./src/rcl/publisher.c:389
 Traceback (most recent call last):
   File "/home/rose/pi4b_ros2/car_ws/install/test_control_pkg/lib/test_control_pkg/car_controller", line 33, in <module>
     sys.exit(load_entry_point('test_control_pkg==0.0.0', 'console_scripts', 'car_controller')())
-  File "/home/rose/pi4b_ros2/car_ws/install/test_control_pkg/lib/python3.10/site-packages/test_control_pkg/car_controller.py", line 593, in main
+  File "/home/rose/pi4b_ros2/car_ws/install/test_control_pkg/lib/python3.10/site-packages/test_control_pkg/car_controller.py", line 516, in main
     rclpy.spin(node)
   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/__init__.py", line 229, in spin
     executor.spin_once()
   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 776, in spin_once
     self._spin_once_impl(timeout_sec)
-  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 773, in _spin_once_impl
-    raise handler.exception()
-  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/task.py", line 254, in __call__
-    self._handler.send(None)
-  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 463, in handler
-    await call_coroutine(entity, arg)
-  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 371, in _execute_timer
-    await await_or_execute(tmr.callback)
-  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 107, in await_or_execute
-    return callback(*args)
-  File "/home/rose/pi4b_ros2/car_ws/install/test_control_pkg/lib/python3.10/site-packages/test_control_pkg/car_controller.py", line 335, in poll
-    b0 = self.ser.read(1)
-  File "/home/rose/.local/lib/python3.10/site-packages/serial/serialposix.py", line 595, in read
-    raise SerialException(
-serial.serialutil.SerialException: device reports readiness to read but returned no data (device disconnected or multiple access on port?)
-[ros2run]: Process exited with failure 1
+  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 765, in _spin_once_impl
+    handler, entity, node = self.wait_for_ready_callbacks(timeout_sec=timeout_sec)
+  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 748, in wait_for_ready_callbacks
+    return next(self._cb_iter)
+  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 621, in _wait_for_ready_callbacks
+    wait_set = _rclpy.WaitSet(
+rclpy._rclpy_pybind11.RCLError: failed to initialize wait set: the given context is not valid, either rcl_init() was not called or rcl_shutdown() was called., at ./src/rcl/wait.c:130

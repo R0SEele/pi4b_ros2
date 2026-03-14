@@ -9,6 +9,7 @@ TERMINAL="gnome-terminal"
 LOG_DIR="$ROS2_WS_PATH/log/launch_robot"
 CLEAN_BEFORE_LAUNCH=${CLEAN_BEFORE_LAUNCH:-1}
 CTRL_PORT=${CTRL_PORT:-/dev/ttyACM0}
+CAR_CONTROLLER_INTERACTIVE=${CAR_CONTROLLER_INTERACTIVE:-1}
 LIDAR_NET_IF=${LIDAR_NET_IF:-eth0}
 LIDAR_HOST_IP=${LIDAR_HOST_IP:-192.168.1.10}
 LIDAR_DEVICE_IP=${LIDAR_DEVICE_IP:-192.168.1.200}
@@ -65,6 +66,18 @@ launch_ros2_command_headless() {
 
     local pid=$!
     echo "[HEADLESS] $title 已启动, PID=$pid, 日志=$log_file"
+}
+
+launch_ros2_command_foreground() {
+    local cmd=$1
+    local title=$2
+
+    echo "[FOREGROUND] $title 将在当前终端运行，保留键盘输入。"
+    export FASTDDS_BUILTIN_TRANSPORTS=UDPv4
+    source /opt/ros/humble/setup.bash
+    source "$ROS2_WS_PATH/install/setup.bash"
+    echo "正在启动：$cmd"
+    exec $cmd
 }
 
 cleanup_stale_process_and_shm() {
@@ -164,6 +177,8 @@ if ! check_lidar_network; then
     fi
 fi
 
+CAR_CONTROLLER_CMD="ros2 run test_control_pkg car_controller --ros-args -p serial_port:=$CTRL_PORT -p enable_encoder_odom:=true -p enable_keyboard_control:=true -p send_odom_feedback:=false"
+
 # if [ "$HAS_GUI" -eq 1 ]; then
 #     echo "检测到图形环境，使用 $TERMINAL 分窗口启动。"
 #     launch_ros2_command_gui "ros2 launch lslidar_driver lsn10_net_launch.py" "激光雷达驱动"
@@ -172,7 +187,7 @@ fi
 #     sleep 1
 #     launch_ros2_command_gui "ros2 run ros2_laser_scan_matcher laser_scan_matcher" "激光扫描匹配"
 #     sleep 1
-#     launch_ros2_command_gui "ros2 run test_control_pkg car_controller --ros-args -p serial_port:=$CTRL_PORT -p enable_encoder_odom:=true -p wait_for_priority_file:=false -p auto_exit_when_done:=false -p send_odom_feedback:=false" "轮式里程计发布"
+#     launch_ros2_command_gui "$CAR_CONTROLLER_CMD" "轮式里程计发布"
 #     sleep 1
 #     launch_ros2_command_gui "ros2 launch bot_description backpack_2d.launch.py" "2D背包导航"
 # else
@@ -185,13 +200,19 @@ fi
     sleep 1
     launch_ros2_command_headless "ros2 run ros2_laser_scan_matcher laser_scan_matcher" "激光扫描匹配" "$LOG_DIR/03_scan_matcher.log"
     sleep 1
-    launch_ros2_command_headless "ros2 run test_control_pkg car_controller --ros-args -p serial_port:=$CTRL_PORT -p enable_encoder_odom:=true -p wait_for_priority_file:=false -p auto_exit_when_done:=false -p send_odom_feedback:=false" "轮式里程计发布" "$LOG_DIR/04_car_controller.log"
-    sleep 1
     launch_ros2_command_headless "ros2 launch bot_description backpack_2d.launch.py" "2D背包导航" "$LOG_DIR/05_backpack_2d.log"
     echo "可用以下命令查看日志："
     echo "  tail -f $LOG_DIR/01_lidar.log"
-    echo "  tail -f $LOG_DIR/04_car_controller.log"
     echo "  tail -f $LOG_DIR/05_backpack_2d.log"
+    if [ "$CAR_CONTROLLER_INTERACTIVE" = "1" ]; then
+        echo "car_controller 需要键盘输入，改为当前终端前台启动。"
+        echo "退出 car_controller 后，当前终端才会返回 shell。"
+        sleep 1
+        launch_ros2_command_foreground "$CAR_CONTROLLER_CMD" "轮式里程计发布"
+    else
+        launch_ros2_command_headless "$CAR_CONTROLLER_CMD" "轮式里程计发布" "$LOG_DIR/04_car_controller.log"
+        echo "  tail -f $LOG_DIR/04_car_controller.log"
+    fi
 # fi
 
 echo "所有命令已提交启动！"

@@ -10,7 +10,6 @@ import serial
 import struct
 import math
 import time
-import os
 import sys
 import select
 import termios
@@ -95,14 +94,12 @@ class CarControllerNode(Node):
         # 参数声明
         self.declare_parameter('serial_port', '/dev/ttyACM0')
         self.declare_parameter('serial_baud', 115200)
-        self.declare_parameter('priority_file', '/home/rose/pi4b_ros2/car_ws/src/yolo_counting_pkg/results/scenic_spot_priority.txt')
-        self.declare_parameter('wait_for_priority_file', True)
-        self.declare_parameter('auto_exit_when_done', True)
         self.declare_parameter('send_odom_feedback', False)
         self.declare_parameter('enable_encoder_odom', True)
         self.declare_parameter('print_hz', 5.0)
-        self.declare_parameter('enable_keyboard_control', False)
-        self.declare_parameter('keyboard_linear_speed', 0.1)
+        self.declare_parameter('enable_keyboard_control', True)
+        self.declare_parameter('keyboard_linear_speed', 0.15)
+        self.declare_parameter('keyboard_angular_speed', 0.8)
 
         self.declare_parameter('wheel_radius', 0.0375)
         self.declare_parameter('track_width', 0.1806)
@@ -121,15 +118,15 @@ class CarControllerNode(Node):
         # 获取参数
         self.port = self.get_parameter('serial_port').get_parameter_value().string_value
         self.baud = self.get_parameter('serial_baud').get_parameter_value().integer_value
-        self.priority_file = self.get_parameter('priority_file').get_parameter_value().string_value
-        self.wait_for_priority = bool(self.get_parameter('wait_for_priority_file').value)
-        self.auto_exit_when_done = bool(self.get_parameter('auto_exit_when_done').value)
         self.send_odom_feedback_enabled = bool(self.get_parameter('send_odom_feedback').value)
         self.enable_encoder_odom = bool(self.get_parameter('enable_encoder_odom').value)
         self.enable_keyboard_control = bool(self.get_parameter('enable_keyboard_control').value)
         self.keyboard_linear_speed = float(self.get_parameter('keyboard_linear_speed').value)
         if self.keyboard_linear_speed <= 0.0:
             self.keyboard_linear_speed = 0.1
+        self.keyboard_angular_speed = float(self.get_parameter('keyboard_angular_speed').value)
+        if self.keyboard_angular_speed <= 0.0:
+            self.keyboard_angular_speed = 0.8
 
         self.wheel_radius = float(self.get_parameter('wheel_radius').value)
         self.track_width = float(self.get_parameter('track_width').value)
@@ -179,15 +176,9 @@ class CarControllerNode(Node):
         self.omega = 0.0
         self.last_seq = None
         self.last_t_ms = None
-        self.executing_action = False
-        self.action_end_time = 0.0
         self.current_vx = 0.0
         self.current_vy = 0.0
         self.current_wz = 0.0
-        self.action_queue = []  # 动作队列
-        self.total_actions = 0
-        self.executed_actions = 0
-        self.finished = False
         self.keyboard_fd = None
         self.keyboard_old_termios = None
         self.keyboard_ready = False
@@ -212,22 +203,12 @@ class CarControllerNode(Node):
         self.feedback_timer = None
         if self.send_odom_feedback_enabled and self.enable_encoder_odom:
             self.feedback_timer = self.create_timer(0.05, self.send_odom_feedback)
-        
-        if self.wait_for_priority:
-            # 在任务执行模式下，强制等待优先级文件生成
-            if self.enable_keyboard_control:
-                self.get_logger().warn("当前为任务执行模式，已禁用键盘手动控制")
-                self.enable_keyboard_control = False
-            self.wait_for_priority_file()
-            self.load_action_queue()
-        else:
-            self.get_logger().warn("已关闭优先级文件等待，节点以里程计/手动控制模式运行")
 
         if self.enable_keyboard_control:
             self.init_keyboard_input()
         
         self.get_logger().info("小车控制节点启动成功")
-        self.get_logger().info(f"已加载{len(self.action_queue)}个景点动作，开始依次执行")
+        self.get_logger().info("当前为独立运行模式：仅保留ROS2通信、键盘控制与里程计发布")
         if self.send_odom_feedback_enabled:
             self.get_logger().info("已启用里程计回传到底盘")
         else:
@@ -238,7 +219,8 @@ class CarControllerNode(Node):
             self.get_logger().warn("未启用编码器里程计解析，将不发布/打印里程计")
         if self.enable_keyboard_control:
             self.get_logger().info(
-                f"已启用键盘控制: W前进 S后退 A左移 D右移, X或空格停止, 线速度={self.keyboard_linear_speed:.3f}m/s"
+                f"已启用键盘控制: W前进 S后退 A左移 D右移 Q左旋 E右旋, X或空格停止, "
+                f"线速度={self.keyboard_linear_speed:.3f}m/s, 角速度={self.keyboard_angular_speed:.3f}rad/s"
             )
 
     def init_keyboard_input(self):
@@ -287,30 +269,43 @@ class CarControllerNode(Node):
         key = self.read_key_nonblocking()
         if key is not None:
             k = key.lower()
-            speed = self.keyboard_linear_speed
+            linear_speed = self.keyboard_linear_speed
+            angular_speed = self.keyboard_angular_speed
             if k == 'w':
-                if self.current_vx == speed and self.current_vy == 0.0 and self.current_wz == 0.0:
+                if self.current_vx == linear_speed and self.current_vy == 0.0 and self.current_wz == 0.0:
                     self.stop()
                 else:
-                    self.current_vx, self.current_vy, self.current_wz = speed, 0.0, 0.0
+                    self.current_vx, self.current_vy, self.current_wz = linear_speed, 0.0, 0.0
                     self.ser.write(pack_cmd_frame(self.current_vx, self.current_vy, self.current_wz))
             elif k == 's':
-                if self.current_vx == -speed and self.current_vy == 0.0 and self.current_wz == 0.0:
+                if self.current_vx == -linear_speed and self.current_vy == 0.0 and self.current_wz == 0.0:
                     self.stop()
                 else:
-                    self.current_vx, self.current_vy, self.current_wz = -speed, 0.0, 0.0
+                    self.current_vx, self.current_vy, self.current_wz = -linear_speed, 0.0, 0.0
                     self.ser.write(pack_cmd_frame(self.current_vx, self.current_vy, self.current_wz))
             elif k == 'a':
-                if self.current_vx == 0.0 and self.current_vy == speed and self.current_wz == 0.0:
+                if self.current_vx == 0.0 and self.current_vy == linear_speed and self.current_wz == 0.0:
                     self.stop()
                 else:
-                    self.current_vx, self.current_vy, self.current_wz = 0.0, speed, 0.0
+                    self.current_vx, self.current_vy, self.current_wz = 0.0, linear_speed, 0.0
                     self.ser.write(pack_cmd_frame(self.current_vx, self.current_vy, self.current_wz))
             elif k == 'd':
-                if self.current_vx == 0.0 and self.current_vy == -speed and self.current_wz == 0.0:
+                if self.current_vx == 0.0 and self.current_vy == -linear_speed and self.current_wz == 0.0:
                     self.stop()
                 else:
-                    self.current_vx, self.current_vy, self.current_wz = 0.0, -speed, 0.0
+                    self.current_vx, self.current_vy, self.current_wz = 0.0, -linear_speed, 0.0
+                    self.ser.write(pack_cmd_frame(self.current_vx, self.current_vy, self.current_wz))
+            elif k == 'q':
+                if self.current_vx == 0.0 and self.current_vy == 0.0 and self.current_wz == angular_speed:
+                    self.stop()
+                else:
+                    self.current_vx, self.current_vy, self.current_wz = 0.0, 0.0, angular_speed
+                    self.ser.write(pack_cmd_frame(self.current_vx, self.current_vy, self.current_wz))
+            elif k == 'e':
+                if self.current_vx == 0.0 and self.current_vy == 0.0 and self.current_wz == -angular_speed:
+                    self.stop()
+                else:
+                    self.current_vx, self.current_vy, self.current_wz = 0.0, 0.0, -angular_speed
                     self.ser.write(pack_cmd_frame(self.current_vx, self.current_vy, self.current_wz))
             elif k in ('x', ' '):
                 self.stop()
@@ -473,48 +468,14 @@ class CarControllerNode(Node):
 
         self.pub_odom.publish(odom)
 
-    def wait_for_priority_file(self):
-        """等待优先级文件生成，最多等5分钟"""
-        timeout = 300
-        start_time = time.time()
-        while not os.path.exists(self.priority_file):
-            if time.time() - start_time > timeout:
-                self.get_logger().error(f"等待优先级文件超时（{timeout}秒）！")
-                sys.exit(1)
-            time.sleep(2)  # 每2秒检查一次
-
-    def load_action_queue(self):
-        """加载优先级文件到动作队列"""
-        if not os.path.exists(self.priority_file):
-            self.get_logger().error("优先级文件不存在！")
-            return
-        
-        with open(self.priority_file, 'r', encoding='utf-8') as f:
-            lines = f.readlines()
-            for line in lines:
-                line = line.strip()
-                if line:
-                    spot_id, priority, action, duration = line.split(',')
-                    self.action_queue.append({
-                        'spot_id': spot_id,
-                        'action': action,
-                        'duration': float(duration)
-                    })
-
-        self.total_actions = len(self.action_queue)
-        
-        # 删除文件避免重复加载
-        os.remove(self.priority_file)
-
     # 自动模式回调
     def cb_auto(self, msg: Twist):
         if self.enable_keyboard_control:
             return
-        if not self.executing_action:
-            self.current_vx = msg.linear.x
-            self.current_vy = msg.linear.y
-            self.current_wz = msg.angular.z
-            self.ser.write(pack_cmd_frame(self.current_vx, self.current_vy, self.current_wz))
+        self.current_vx = msg.linear.x
+        self.current_vy = msg.linear.y
+        self.current_wz = msg.angular.z
+        self.ser.write(pack_cmd_frame(self.current_vx, self.current_vy, self.current_wz))
 
     # 发送里程计反馈
     def send_odom_feedback(self):
@@ -522,30 +483,8 @@ class CarControllerNode(Node):
         frame = pack_host_odom_frame(self.host_x, self.host_y, self.host_theta, flags)
         self.ser.write(frame)
 
-    # 启动动作
-    def start_action(self, action: str, duration: float):
-        self.get_logger().info(f"执行动作：{action}（持续{duration}秒）")
-        self.executing_action = True
-        self.action_end_time = time.monotonic() + duration
-        
-        # 动作映射
-        if action == "forward_1m":
-            self.current_vx, self.current_vy, self.current_wz = self.speed_linear, 0.0, 0.0
-        elif action == "backward_1m":
-            self.current_vx, self.current_vy, self.current_wz = -self.speed_linear, 0.0, 0.0
-        elif action == "left_1m":
-            self.current_vx, self.current_vy, self.current_wz = 0.0, self.speed_linear, 0.0
-        elif action == "right_1m":
-            self.current_vx, self.current_vy, self.current_wz = 0.0, -self.speed_linear, 0.0
-        elif action == "spin_left_1圈":
-            self.current_vx, self.current_vy, self.current_wz = 0.0, 0.0, self.speed_angular
-        else:
-            self.get_logger().warn(f"未知动作: {action}，将执行停止。")
-            self.current_vx, self.current_vy, self.current_wz = 0.0, 0.0, 0.0
-
     # 停止动作
     def stop(self):
-        self.executing_action = False
         self.current_vx = self.current_vy = self.current_wz = 0.0
         self.ser.write(pack_cmd_frame(0.0, 0.0, 0.0))
         self.get_logger().info("小车已停止")
@@ -554,28 +493,12 @@ class CarControllerNode(Node):
     def loop(self):
         now = time.monotonic()
 
-        if self.enable_keyboard_control and (not self.executing_action) and (len(self.action_queue) == 0):
+        if self.enable_keyboard_control:
             self.handle_keyboard_control(now)
-        
-        # 执行队列里的动作
-        if not self.executing_action and len(self.action_queue) > 0:
-            next_action = self.action_queue.pop(0)
-            self.start_action(next_action['action'], next_action['duration'])
-            self.executed_actions += 1
-            self.get_logger().info(f"执行第{self.executed_actions}/{self.total_actions}个动作（景点{next_action['spot_id']}）")
-        
-        # 执行当前动作
-        if self.executing_action:
-            if now <= self.action_end_time:
-                self.ser.write(pack_cmd_frame(self.current_vx, self.current_vy, self.current_wz))
-            else:
-                self.stop()
 
-        if self.auto_exit_when_done and (not self.enable_keyboard_control) and (not self.executing_action) and (len(self.action_queue) == 0) and (not self.finished):
-            self.finished = True
-            self.get_logger().info("所有动作执行完成，准备退出控制节点。")
-            self.stop()
-            rclpy.shutdown()
+        # 某些底盘有速度指令看门狗，非键盘模式也持续重发当前速度。
+        if (not self.enable_keyboard_control) and (self.current_vx != 0.0 or self.current_vy != 0.0 or self.current_wz != 0.0):
+            self.ser.write(pack_cmd_frame(self.current_vx, self.current_vy, self.current_wz))
 
     # 销毁节点
     def destroy_node(self):
