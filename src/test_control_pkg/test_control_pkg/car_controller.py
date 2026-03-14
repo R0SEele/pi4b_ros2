@@ -98,8 +98,8 @@ class CarControllerNode(Node):
         self.declare_parameter('enable_encoder_odom', True)
         self.declare_parameter('print_hz', 5.0)
         self.declare_parameter('enable_keyboard_control', True)
-        self.declare_parameter('keyboard_linear_speed', 0.15)
-        self.declare_parameter('keyboard_angular_speed', 0.8)
+        self.declare_parameter('keyboard_linear_speed', 0.2)
+        self.declare_parameter('keyboard_angular_speed', 0.5)
 
         self.declare_parameter('wheel_radius', 0.0375)
         self.declare_parameter('track_width', 0.1806)
