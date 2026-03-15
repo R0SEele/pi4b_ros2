@@ -1,0 +1,678 @@
+[1.621s] [34mcolcon[0m [1;30mDEBUG[0m [32mCommand line arguments: ['/usr/bin/colcon', 'build'][0m
+[1.622s] [34mcolcon[0m [1;30mDEBUG[0m [32mParsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=False, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=4, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, verb_parser=<colcon_defaults.argument_parser.defaults.DefaultArgumentsDecorator object at 0xffff9bb43b50>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0xffff9bc916f0>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0xffff9bc916f0>>)[0m
+[2.009s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(colcon_meta) check parameters
+[2.010s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(recursive) check parameters
+[2.010s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(ignore) check parameters
+[2.010s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(path) check parameters
+[2.010s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(colcon_meta) discover
+[2.011s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(recursive) discover
+[2.011s] [34mcolcon.colcon_core.package_discovery[0m [1;30mINFO[0m Crawling recursively for packages in '/home/rose/pi4b_ros2/car_ws'
+[2.012s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extensions ['ignore', 'ignore_ament_install']
+[2.012s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extension 'ignore'
+[2.013s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extension 'ignore_ament_install'
+[2.013s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extensions ['colcon_pkg']
+[2.014s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extension 'colcon_pkg'
+[2.014s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extensions ['colcon_meta']
+[2.014s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extension 'colcon_meta'
+[2.014s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extensions ['ros']
+[2.015s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extension 'ros'
+[2.215s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extensions ['cmake', 'python']
+[2.215s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extension 'cmake'
+[2.215s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extension 'python'
+[2.216s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extensions ['python_setup_py']
+[2.216s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extension 'python_setup_py'
+[2.217s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(build) by extensions ['ignore', 'ignore_ament_install']
+[2.218s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(build) by extension 'ignore'
+[2.218s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(build) ignored
+[2.219s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(install) by extensions ['ignore', 'ignore_ament_install']
+[2.220s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(install) by extension 'ignore'
+[2.220s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(install) ignored
+[2.223s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(log) by extensions ['ignore', 'ignore_ament_install']
+[2.223s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(log) by extension 'ignore'
+[2.224s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(log) ignored
+[2.224s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(logs) by extensions ['ignore', 'ignore_ament_install']
+[2.225s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(logs) by extension 'ignore'
+[2.226s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(logs) by extension 'ignore_ament_install'
+[2.226s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(logs) by extensions ['colcon_pkg']
+[2.227s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(logs) by extension 'colcon_pkg'
+[2.227s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(logs) by extensions ['colcon_meta']
+[2.228s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(logs) by extension 'colcon_meta'
+[2.228s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(logs) by extensions ['ros']
+[2.229s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(logs) by extension 'ros'
+[2.229s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(logs) by extensions ['cmake', 'python']
+[2.230s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(logs) by extension 'cmake'
+[2.230s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(logs) by extension 'python'
+[2.230s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(logs) by extensions ['python_setup_py']
+[2.230s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(logs) by extension 'python_setup_py'
+[2.231s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src) by extensions ['ignore', 'ignore_ament_install']
+[2.231s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src) by extension 'ignore'
+[2.232s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src) by extension 'ignore_ament_install'
+[2.232s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src) by extensions ['colcon_pkg']
+[2.232s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src) by extension 'colcon_pkg'
+[2.233s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src) by extensions ['colcon_meta']
+[2.233s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src) by extension 'colcon_meta'
+[2.233s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src) by extensions ['ros']
+[2.233s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src) by extension 'ros'
+[2.234s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src) by extensions ['cmake', 'python']
+[2.234s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src) by extension 'cmake'
+[2.234s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src) by extension 'python'
+[2.234s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src) by extensions ['python_setup_py']
+[2.235s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src) by extension 'python_setup_py'
+[2.236s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/LSLIDAR_X_ROS2-20240228) by extensions ['ignore', 'ignore_ament_install']
+[2.236s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/LSLIDAR_X_ROS2-20240228) by extension 'ignore'
+[2.237s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/LSLIDAR_X_ROS2-20240228) by extension 'ignore_ament_install'
+[2.237s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/LSLIDAR_X_ROS2-20240228) by extensions ['colcon_pkg']
+[2.238s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/LSLIDAR_X_ROS2-20240228) by extension 'colcon_pkg'
+[2.239s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/LSLIDAR_X_ROS2-20240228) by extensions ['colcon_meta']
+[2.239s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/LSLIDAR_X_ROS2-20240228) by extension 'colcon_meta'
+[2.240s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/LSLIDAR_X_ROS2-20240228) by extensions ['ros']
+[2.240s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/LSLIDAR_X_ROS2-20240228) by extension 'ros'
+[2.241s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/LSLIDAR_X_ROS2-20240228) by extensions ['cmake', 'python']
+[2.241s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/LSLIDAR_X_ROS2-20240228) by extension 'cmake'
+[2.242s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/LSLIDAR_X_ROS2-20240228) by extension 'python'
+[2.242s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/LSLIDAR_X_ROS2-20240228) by extensions ['python_setup_py']
+[2.243s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/LSLIDAR_X_ROS2-20240228) by extension 'python_setup_py'
+[2.244s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/LSLIDAR_X_ROS2-20240228/src) by extensions ['ignore', 'ignore_ament_install']
+[2.244s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/LSLIDAR_X_ROS2-20240228/src) by extension 'ignore'
+[2.245s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/LSLIDAR_X_ROS2-20240228/src) by extension 'ignore_ament_install'
+[2.246s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/LSLIDAR_X_ROS2-20240228/src) by extensions ['colcon_pkg']
+[2.246s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/LSLIDAR_X_ROS2-20240228/src) by extension 'colcon_pkg'
+[2.246s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/LSLIDAR_X_ROS2-20240228/src) by extensions ['colcon_meta']
+[2.247s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/LSLIDAR_X_ROS2-20240228/src) by extension 'colcon_meta'
+[2.247s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/LSLIDAR_X_ROS2-20240228/src) by extensions ['ros']
+[2.248s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/LSLIDAR_X_ROS2-20240228/src) by extension 'ros'
+[2.249s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/LSLIDAR_X_ROS2-20240228/src) by extensions ['cmake', 'python']
+[2.250s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/LSLIDAR_X_ROS2-20240228/src) by extension 'cmake'
+[2.250s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/LSLIDAR_X_ROS2-20240228/src) by extension 'python'
+[2.251s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/LSLIDAR_X_ROS2-20240228/src) by extensions ['python_setup_py']
+[2.251s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/LSLIDAR_X_ROS2-20240228/src) by extension 'python_setup_py'
+[2.252s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/LSLIDAR_X_ROS2-20240228/src/lslidar_driver) by extensions ['ignore', 'ignore_ament_install']
+[2.253s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/LSLIDAR_X_ROS2-20240228/src/lslidar_driver) by extension 'ignore'
+[2.253s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/LSLIDAR_X_ROS2-20240228/src/lslidar_driver) by extension 'ignore_ament_install'
+[2.254s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/LSLIDAR_X_ROS2-20240228/src/lslidar_driver) by extensions ['colcon_pkg']
+[2.254s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/LSLIDAR_X_ROS2-20240228/src/lslidar_driver) by extension 'colcon_pkg'
+[2.254s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/LSLIDAR_X_ROS2-20240228/src/lslidar_driver) by extensions ['colcon_meta']
+[2.255s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/LSLIDAR_X_ROS2-20240228/src/lslidar_driver) by extension 'colcon_meta'
+[2.255s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/LSLIDAR_X_ROS2-20240228/src/lslidar_driver) by extensions ['ros']
+[2.255s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/LSLIDAR_X_ROS2-20240228/src/lslidar_driver) by extension 'ros'
+[2.273s] [34mcolcon.colcon_core.package_identification[0m [1;30mDEBUG[0m [32mPackage 'src/LSLIDAR_X_ROS2-20240228/src/lslidar_driver' with type 'ros.ament_cmake' and name 'lslidar_driver'[0m
+[2.274s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/LSLIDAR_X_ROS2-20240228/src/lslidar_msgs) by extensions ['ignore', 'ignore_ament_install']
+[2.275s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/LSLIDAR_X_ROS2-20240228/src/lslidar_msgs) by extension 'ignore'
+[2.275s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/LSLIDAR_X_ROS2-20240228/src/lslidar_msgs) by extension 'ignore_ament_install'
+[2.276s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/LSLIDAR_X_ROS2-20240228/src/lslidar_msgs) by extensions ['colcon_pkg']
+[2.276s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/LSLIDAR_X_ROS2-20240228/src/lslidar_msgs) by extension 'colcon_pkg'
+[2.277s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/LSLIDAR_X_ROS2-20240228/src/lslidar_msgs) by extensions ['colcon_meta']
+[2.277s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/LSLIDAR_X_ROS2-20240228/src/lslidar_msgs) by extension 'colcon_meta'
+[2.278s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/LSLIDAR_X_ROS2-20240228/src/lslidar_msgs) by extensions ['ros']
+[2.278s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/LSLIDAR_X_ROS2-20240228/src/lslidar_msgs) by extension 'ros'
+[2.283s] [34mcolcon.colcon_core.package_identification[0m [1;30mDEBUG[0m [32mPackage 'src/LSLIDAR_X_ROS2-20240228/src/lslidar_msgs' with type 'ros.ament_cmake' and name 'lslidar_msgs'[0m
+[2.284s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/bot_description) by extensions ['ignore', 'ignore_ament_install']
+[2.284s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/bot_description) by extension 'ignore'
+[2.284s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/bot_description) by extension 'ignore_ament_install'
+[2.285s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/bot_description) by extensions ['colcon_pkg']
+[2.285s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/bot_description) by extension 'colcon_pkg'
+[2.285s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/bot_description) by extensions ['colcon_meta']
+[2.285s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/bot_description) by extension 'colcon_meta'
+[2.286s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/bot_description) by extensions ['ros']
+[2.286s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/bot_description) by extension 'ros'
+[2.290s] [34mcolcon.colcon_core.package_identification[0m [1;30mDEBUG[0m [32mPackage 'src/bot_description' with type 'ros.ament_cmake' and name 'bot_description'[0m
+[2.291s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/bot_localization) by extensions ['ignore', 'ignore_ament_install']
+[2.292s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/bot_localization) by extension 'ignore'
+[2.293s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/bot_localization) by extension 'ignore_ament_install'
+[2.293s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/bot_localization) by extensions ['colcon_pkg']
+[2.294s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/bot_localization) by extension 'colcon_pkg'
+[2.294s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/bot_localization) by extensions ['colcon_meta']
+[2.294s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/bot_localization) by extension 'colcon_meta'
+[2.295s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/bot_localization) by extensions ['ros']
+[2.295s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/bot_localization) by extension 'ros'
+[2.300s] [34mcolcon.colcon_core.package_identification[0m [1;30mDEBUG[0m [32mPackage 'src/bot_localization' with type 'ros.ament_cmake' and name 'bot_localization'[0m
+[2.301s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/bot_navigation2) by extensions ['ignore', 'ignore_ament_install']
+[2.301s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/bot_navigation2) by extension 'ignore'
+[2.302s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/bot_navigation2) by extension 'ignore_ament_install'
+[2.302s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/bot_navigation2) by extensions ['colcon_pkg']
+[2.303s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/bot_navigation2) by extension 'colcon_pkg'
+[2.303s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/bot_navigation2) by extensions ['colcon_meta']
+[2.304s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/bot_navigation2) by extension 'colcon_meta'
+[2.304s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/bot_navigation2) by extensions ['ros']
+[2.304s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/bot_navigation2) by extension 'ros'
+[2.308s] [34mcolcon.colcon_core.package_identification[0m [1;30mDEBUG[0m [32mPackage 'src/bot_navigation2' with type 'ros.ament_cmake' and name 'bot_navigation2'[0m
+[2.309s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/csm) by extensions ['ignore', 'ignore_ament_install']
+[2.309s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/csm) by extension 'ignore'
+[2.310s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/csm) by extension 'ignore_ament_install'
+[2.310s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/csm) by extensions ['colcon_pkg']
+[2.310s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/csm) by extension 'colcon_pkg'
+[2.310s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/csm) by extensions ['colcon_meta']
+[2.310s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/csm) by extension 'colcon_meta'
+[2.311s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/csm) by extensions ['ros']
+[2.311s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/csm) by extension 'ros'
+[2.315s] [34mcolcon.colcon_core.package_identification[0m [1;30mDEBUG[0m [32mPackage 'src/csm' with type 'ros.ament_cmake' and name 'csm'[0m
+[2.316s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/ros2_laser_scan_matcher) by extensions ['ignore', 'ignore_ament_install']
+[2.316s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/ros2_laser_scan_matcher) by extension 'ignore'
+[2.316s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/ros2_laser_scan_matcher) by extension 'ignore_ament_install'
+[2.317s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/ros2_laser_scan_matcher) by extensions ['colcon_pkg']
+[2.317s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/ros2_laser_scan_matcher) by extension 'colcon_pkg'
+[2.317s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/ros2_laser_scan_matcher) by extensions ['colcon_meta']
+[2.317s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/ros2_laser_scan_matcher) by extension 'colcon_meta'
+[2.318s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/ros2_laser_scan_matcher) by extensions ['ros']
+[2.318s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/ros2_laser_scan_matcher) by extension 'ros'
+[2.322s] [34mcolcon.colcon_core.package_identification[0m [1;30mDEBUG[0m [32mPackage 'src/ros2_laser_scan_matcher' with type 'ros.ament_cmake' and name 'ros2_laser_scan_matcher'[0m
+[2.323s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/test_control_pkg) by extensions ['ignore', 'ignore_ament_install']
+[2.323s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/test_control_pkg) by extension 'ignore'
+[2.324s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/test_control_pkg) by extension 'ignore_ament_install'
+[2.324s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/test_control_pkg) by extensions ['colcon_pkg']
+[2.324s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/test_control_pkg) by extension 'colcon_pkg'
+[2.324s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/test_control_pkg) by extensions ['colcon_meta']
+[2.325s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/test_control_pkg) by extension 'colcon_meta'
+[2.325s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/test_control_pkg) by extensions ['ros']
+[2.325s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/test_control_pkg) by extension 'ros'
+[2.330s] [34mcolcon.colcon_core.package_identification[0m [1;30mDEBUG[0m [32mPackage 'src/test_control_pkg' with type 'ros.ament_python' and name 'test_control_pkg'[0m
+[2.331s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/yolo_counting_pkg) by extensions ['ignore', 'ignore_ament_install']
+[2.331s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/yolo_counting_pkg) by extension 'ignore'
+[2.332s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/yolo_counting_pkg) by extension 'ignore_ament_install'
+[2.332s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/yolo_counting_pkg) by extensions ['colcon_pkg']
+[2.332s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/yolo_counting_pkg) by extension 'colcon_pkg'
+[2.333s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/yolo_counting_pkg) by extensions ['colcon_meta']
+[2.333s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/yolo_counting_pkg) by extension 'colcon_meta'
+[2.333s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/yolo_counting_pkg) by extensions ['ros']
+[2.333s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/yolo_counting_pkg) by extension 'ros'
+[2.338s] [34mcolcon.colcon_core.package_identification[0m [1;30mDEBUG[0m [32mPackage 'src/yolo_counting_pkg' with type 'ros.ament_python' and name 'yolo_counting_pkg'[0m
+[2.339s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(recursive) using defaults
+[2.339s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(ignore) discover
+[2.339s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(ignore) using defaults
+[2.339s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(path) discover
+[2.340s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(path) using defaults
+[2.456s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(prefix_path) check parameters
+[2.456s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(prefix_path) discover
+[2.479s] [34mcolcon.colcon_installed_package_information.package_discovery[0m [1;30mDEBUG[0m [32mFound 10 installed packages in /home/rose/pi4b_ros2/car_ws/install[0m
+[2.491s] [34mcolcon.colcon_installed_package_information.package_discovery[0m [1;30mDEBUG[0m [32mFound 324 installed packages in /opt/ros/humble[0m
+[2.499s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(prefix_path) using defaults
+[2.751s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'bot_description' build argument 'cmake_args' from command line to 'None'
+[2.752s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'bot_description' build argument 'cmake_target' from command line to 'None'
+[2.752s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'bot_description' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[2.752s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'bot_description' build argument 'cmake_clean_cache' from command line to 'False'
+[2.752s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'bot_description' build argument 'cmake_clean_first' from command line to 'False'
+[2.752s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'bot_description' build argument 'cmake_force_configure' from command line to 'False'
+[2.752s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'bot_description' build argument 'ament_cmake_args' from command line to 'None'
+[2.752s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'bot_description' build argument 'catkin_cmake_args' from command line to 'None'
+[2.753s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'bot_description' build argument 'catkin_skip_building_tests' from command line to 'False'
+[2.753s] [34mcolcon.colcon_core.verb[0m [1;30mDEBUG[0m [32mBuilding package 'bot_description' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/rose/pi4b_ros2/car_ws/build/bot_description', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/rose/pi4b_ros2/car_ws/install/bot_description', 'merge_install': False, 'path': '/home/rose/pi4b_ros2/car_ws/src/bot_description', 'symlink_install': False, 'test_result_base': None}[0m
+[2.754s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'bot_localization' build argument 'cmake_args' from command line to 'None'
+[2.755s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'bot_localization' build argument 'cmake_target' from command line to 'None'
+[2.755s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'bot_localization' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[2.755s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'bot_localization' build argument 'cmake_clean_cache' from command line to 'False'
+[2.755s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'bot_localization' build argument 'cmake_clean_first' from command line to 'False'
+[2.755s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'bot_localization' build argument 'cmake_force_configure' from command line to 'False'
+[2.755s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'bot_localization' build argument 'ament_cmake_args' from command line to 'None'
+[2.755s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'bot_localization' build argument 'catkin_cmake_args' from command line to 'None'
+[2.756s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'bot_localization' build argument 'catkin_skip_building_tests' from command line to 'False'
+[2.756s] [34mcolcon.colcon_core.verb[0m [1;30mDEBUG[0m [32mBuilding package 'bot_localization' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/rose/pi4b_ros2/car_ws/build/bot_localization', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/rose/pi4b_ros2/car_ws/install/bot_localization', 'merge_install': False, 'path': '/home/rose/pi4b_ros2/car_ws/src/bot_localization', 'symlink_install': False, 'test_result_base': None}[0m
+[2.757s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'bot_navigation2' build argument 'cmake_args' from command line to 'None'
+[2.757s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'bot_navigation2' build argument 'cmake_target' from command line to 'None'
+[2.758s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'bot_navigation2' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[2.758s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'bot_navigation2' build argument 'cmake_clean_cache' from command line to 'False'
+[2.758s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'bot_navigation2' build argument 'cmake_clean_first' from command line to 'False'
+[2.758s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'bot_navigation2' build argument 'cmake_force_configure' from command line to 'False'
+[2.758s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'bot_navigation2' build argument 'ament_cmake_args' from command line to 'None'
+[2.758s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'bot_navigation2' build argument 'catkin_cmake_args' from command line to 'None'
+[2.758s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'bot_navigation2' build argument 'catkin_skip_building_tests' from command line to 'False'
+[2.758s] [34mcolcon.colcon_core.verb[0m [1;30mDEBUG[0m [32mBuilding package 'bot_navigation2' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/rose/pi4b_ros2/car_ws/build/bot_navigation2', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/rose/pi4b_ros2/car_ws/install/bot_navigation2', 'merge_install': False, 'path': '/home/rose/pi4b_ros2/car_ws/src/bot_navigation2', 'symlink_install': False, 'test_result_base': None}[0m
+[2.760s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'csm' build argument 'cmake_args' from command line to 'None'
+[2.760s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'csm' build argument 'cmake_target' from command line to 'None'
+[2.760s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'csm' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[2.760s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'csm' build argument 'cmake_clean_cache' from command line to 'False'
+[2.761s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'csm' build argument 'cmake_clean_first' from command line to 'False'
+[2.761s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'csm' build argument 'cmake_force_configure' from command line to 'False'
+[2.761s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'csm' build argument 'ament_cmake_args' from command line to 'None'
+[2.761s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'csm' build argument 'catkin_cmake_args' from command line to 'None'
+[2.761s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'csm' build argument 'catkin_skip_building_tests' from command line to 'False'
+[2.761s] [34mcolcon.colcon_core.verb[0m [1;30mDEBUG[0m [32mBuilding package 'csm' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/rose/pi4b_ros2/car_ws/build/csm', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/rose/pi4b_ros2/car_ws/install/csm', 'merge_install': False, 'path': '/home/rose/pi4b_ros2/car_ws/src/csm', 'symlink_install': False, 'test_result_base': None}[0m
+[2.763s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'lslidar_msgs' build argument 'cmake_args' from command line to 'None'
+[2.763s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'lslidar_msgs' build argument 'cmake_target' from command line to 'None'
+[2.763s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'lslidar_msgs' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[2.763s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'lslidar_msgs' build argument 'cmake_clean_cache' from command line to 'False'
+[2.763s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'lslidar_msgs' build argument 'cmake_clean_first' from command line to 'False'
+[2.764s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'lslidar_msgs' build argument 'cmake_force_configure' from command line to 'False'
+[2.764s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'lslidar_msgs' build argument 'ament_cmake_args' from command line to 'None'
+[2.764s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'lslidar_msgs' build argument 'catkin_cmake_args' from command line to 'None'
+[2.764s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'lslidar_msgs' build argument 'catkin_skip_building_tests' from command line to 'False'
+[2.764s] [34mcolcon.colcon_core.verb[0m [1;30mDEBUG[0m [32mBuilding package 'lslidar_msgs' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/rose/pi4b_ros2/car_ws/build/lslidar_msgs', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/rose/pi4b_ros2/car_ws/install/lslidar_msgs', 'merge_install': False, 'path': '/home/rose/pi4b_ros2/car_ws/src/LSLIDAR_X_ROS2-20240228/src/lslidar_msgs', 'symlink_install': False, 'test_result_base': None}[0m
+[2.766s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'test_control_pkg' build argument 'cmake_args' from command line to 'None'
+[2.766s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'test_control_pkg' build argument 'cmake_target' from command line to 'None'
+[2.766s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'test_control_pkg' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[2.766s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'test_control_pkg' build argument 'cmake_clean_cache' from command line to 'False'
+[2.766s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'test_control_pkg' build argument 'cmake_clean_first' from command line to 'False'
+[2.766s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'test_control_pkg' build argument 'cmake_force_configure' from command line to 'False'
+[2.767s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'test_control_pkg' build argument 'ament_cmake_args' from command line to 'None'
+[2.767s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'test_control_pkg' build argument 'catkin_cmake_args' from command line to 'None'
+[2.767s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'test_control_pkg' build argument 'catkin_skip_building_tests' from command line to 'False'
+[2.767s] [34mcolcon.colcon_core.verb[0m [1;30mDEBUG[0m [32mBuilding package 'test_control_pkg' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/rose/pi4b_ros2/car_ws/build/test_control_pkg', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/rose/pi4b_ros2/car_ws/install/test_control_pkg', 'merge_install': False, 'path': '/home/rose/pi4b_ros2/car_ws/src/test_control_pkg', 'symlink_install': False, 'test_result_base': None}[0m
+[2.768s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'yolo_counting_pkg' build argument 'cmake_args' from command line to 'None'
+[2.769s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'yolo_counting_pkg' build argument 'cmake_target' from command line to 'None'
+[2.769s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'yolo_counting_pkg' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[2.769s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'yolo_counting_pkg' build argument 'cmake_clean_cache' from command line to 'False'
+[2.769s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'yolo_counting_pkg' build argument 'cmake_clean_first' from command line to 'False'
+[2.769s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'yolo_counting_pkg' build argument 'cmake_force_configure' from command line to 'False'
+[2.769s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'yolo_counting_pkg' build argument 'ament_cmake_args' from command line to 'None'
+[2.769s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'yolo_counting_pkg' build argument 'catkin_cmake_args' from command line to 'None'
+[2.769s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'yolo_counting_pkg' build argument 'catkin_skip_building_tests' from command line to 'False'
+[2.770s] [34mcolcon.colcon_core.verb[0m [1;30mDEBUG[0m [32mBuilding package 'yolo_counting_pkg' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/rose/pi4b_ros2/car_ws/build/yolo_counting_pkg', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/rose/pi4b_ros2/car_ws/install/yolo_counting_pkg', 'merge_install': False, 'path': '/home/rose/pi4b_ros2/car_ws/src/yolo_counting_pkg', 'symlink_install': False, 'test_result_base': None}[0m
+[2.771s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'lslidar_driver' build argument 'cmake_args' from command line to 'None'
+[2.771s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'lslidar_driver' build argument 'cmake_target' from command line to 'None'
+[2.772s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'lslidar_driver' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[2.772s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'lslidar_driver' build argument 'cmake_clean_cache' from command line to 'False'
+[2.772s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'lslidar_driver' build argument 'cmake_clean_first' from command line to 'False'
+[2.772s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'lslidar_driver' build argument 'cmake_force_configure' from command line to 'False'
+[2.772s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'lslidar_driver' build argument 'ament_cmake_args' from command line to 'None'
+[2.772s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'lslidar_driver' build argument 'catkin_cmake_args' from command line to 'None'
+[2.772s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'lslidar_driver' build argument 'catkin_skip_building_tests' from command line to 'False'
+[2.772s] [34mcolcon.colcon_core.verb[0m [1;30mDEBUG[0m [32mBuilding package 'lslidar_driver' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/rose/pi4b_ros2/car_ws/build/lslidar_driver', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/rose/pi4b_ros2/car_ws/install/lslidar_driver', 'merge_install': False, 'path': '/home/rose/pi4b_ros2/car_ws/src/LSLIDAR_X_ROS2-20240228/src/lslidar_driver', 'symlink_install': False, 'test_result_base': None}[0m
+[2.774s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'ros2_laser_scan_matcher' build argument 'cmake_args' from command line to 'None'
+[2.774s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'ros2_laser_scan_matcher' build argument 'cmake_target' from command line to 'None'
+[2.774s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'ros2_laser_scan_matcher' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[2.774s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'ros2_laser_scan_matcher' build argument 'cmake_clean_cache' from command line to 'False'
+[2.774s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'ros2_laser_scan_matcher' build argument 'cmake_clean_first' from command line to 'False'
+[2.775s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'ros2_laser_scan_matcher' build argument 'cmake_force_configure' from command line to 'False'
+[2.775s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'ros2_laser_scan_matcher' build argument 'ament_cmake_args' from command line to 'None'
+[2.775s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'ros2_laser_scan_matcher' build argument 'catkin_cmake_args' from command line to 'None'
+[2.775s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'ros2_laser_scan_matcher' build argument 'catkin_skip_building_tests' from command line to 'False'
+[2.775s] [34mcolcon.colcon_core.verb[0m [1;30mDEBUG[0m [32mBuilding package 'ros2_laser_scan_matcher' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/rose/pi4b_ros2/car_ws/build/ros2_laser_scan_matcher', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/rose/pi4b_ros2/car_ws/install/ros2_laser_scan_matcher', 'merge_install': False, 'path': '/home/rose/pi4b_ros2/car_ws/src/ros2_laser_scan_matcher', 'symlink_install': False, 'test_result_base': None}[0m
+[2.776s] [34mcolcon.colcon_core.executor[0m [1;30mINFO[0m Executing jobs using 'parallel' executor
+[2.780s] [34mcolcon.colcon_parallel_executor.executor.parallel[0m [1;30mDEBUG[0m [32mrun_until_complete[0m
+[2.781s] [34mcolcon.colcon_ros.task.ament_cmake.build[0m [1;30mINFO[0m Building ROS package in '/home/rose/pi4b_ros2/car_ws/src/csm' with build type 'ament_cmake'
+[2.782s] [34mcolcon.colcon_cmake.task.cmake.build[0m [1;30mINFO[0m Building CMake package in '/home/rose/pi4b_ros2/car_ws/src/csm'
+[2.808s] [34mcolcon.colcon_core.plugin_system[0m [1;30mINFO[0m Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[2.809s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[2.809s] [34mcolcon.colcon_core.shell[0m [1;30mDEBUG[0m [32mSkip shell extension 'dsv' for command environment[0m
+[2.838s] [34mcolcon.colcon_ros.task.ament_cmake.build[0m [1;30mINFO[0m Building ROS package in '/home/rose/pi4b_ros2/car_ws/src/LSLIDAR_X_ROS2-20240228/src/lslidar_msgs' with build type 'ament_cmake'
+[2.838s] [34mcolcon.colcon_cmake.task.cmake.build[0m [1;30mINFO[0m Building CMake package in '/home/rose/pi4b_ros2/car_ws/src/LSLIDAR_X_ROS2-20240228/src/lslidar_msgs'
+[2.840s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[2.841s] [34mcolcon.colcon_core.shell[0m [1;30mDEBUG[0m [32mSkip shell extension 'dsv' for command environment[0m
+[2.867s] [34mcolcon.colcon_ros.task.ament_cmake.build[0m [1;30mINFO[0m Building ROS package in '/home/rose/pi4b_ros2/car_ws/src/bot_description' with build type 'ament_cmake'
+[2.868s] [34mcolcon.colcon_cmake.task.cmake.build[0m [1;30mINFO[0m Building CMake package in '/home/rose/pi4b_ros2/car_ws/src/bot_description'
+[2.870s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[2.870s] [34mcolcon.colcon_core.shell[0m [1;30mDEBUG[0m [32mSkip shell extension 'dsv' for command environment[0m
+[2.897s] [34mcolcon.colcon_ros.task.ament_cmake.build[0m [1;30mINFO[0m Building ROS package in '/home/rose/pi4b_ros2/car_ws/src/bot_localization' with build type 'ament_cmake'
+[2.897s] [34mcolcon.colcon_cmake.task.cmake.build[0m [1;30mINFO[0m Building CMake package in '/home/rose/pi4b_ros2/car_ws/src/bot_localization'
+[2.898s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[2.899s] [34mcolcon.colcon_core.shell[0m [1;30mDEBUG[0m [32mSkip shell extension 'dsv' for command environment[0m
+[2.947s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoking command in '/home/rose/pi4b_ros2/car_ws/build/csm': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/rose/pi4b_ros2/car_ws/install/yolo_counting_pkg:/home/rose/pi4b_ros2/car_ws/install/test_control_pkg:/opt/ros/humble /usr/bin/cmake --build /home/rose/pi4b_ros2/car_ws/build/csm -- -j4 -l4[0m
+[2.983s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoking command in '/home/rose/pi4b_ros2/car_ws/build/lslidar_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/rose/pi4b_ros2/car_ws/install/yolo_counting_pkg:/home/rose/pi4b_ros2/car_ws/install/test_control_pkg:/opt/ros/humble /usr/bin/cmake --build /home/rose/pi4b_ros2/car_ws/build/lslidar_msgs -- -j4 -l4[0m
+[2.997s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoking command in '/home/rose/pi4b_ros2/car_ws/build/bot_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/rose/pi4b_ros2/car_ws/install/yolo_counting_pkg:/home/rose/pi4b_ros2/car_ws/install/test_control_pkg:/opt/ros/humble /usr/bin/cmake --build /home/rose/pi4b_ros2/car_ws/build/bot_description -- -j4 -l4[0m
+[3.042s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoking command in '/home/rose/pi4b_ros2/car_ws/build/bot_localization': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/rose/pi4b_ros2/car_ws/install/yolo_counting_pkg:/home/rose/pi4b_ros2/car_ws/install/test_control_pkg:/opt/ros/humble /usr/bin/cmake --build /home/rose/pi4b_ros2/car_ws/build/bot_localization -- -j4 -l4[0m
+[3.321s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoked command in '/home/rose/pi4b_ros2/car_ws/build/bot_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/rose/pi4b_ros2/car_ws/install/yolo_counting_pkg:/home/rose/pi4b_ros2/car_ws/install/test_control_pkg:/opt/ros/humble /usr/bin/cmake --build /home/rose/pi4b_ros2/car_ws/build/bot_description -- -j4 -l4[0m
+[3.398s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoking command in '/home/rose/pi4b_ros2/car_ws/build/bot_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/rose/pi4b_ros2/car_ws/install/yolo_counting_pkg:/home/rose/pi4b_ros2/car_ws/install/test_control_pkg:/opt/ros/humble /usr/bin/cmake --install /home/rose/pi4b_ros2/car_ws/build/bot_description[0m
+[3.428s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoked command in '/home/rose/pi4b_ros2/car_ws/build/bot_localization' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/rose/pi4b_ros2/car_ws/install/yolo_counting_pkg:/home/rose/pi4b_ros2/car_ws/install/test_control_pkg:/opt/ros/humble /usr/bin/cmake --build /home/rose/pi4b_ros2/car_ws/build/bot_localization -- -j4 -l4[0m
+[3.485s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoking command in '/home/rose/pi4b_ros2/car_ws/build/bot_localization': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/rose/pi4b_ros2/car_ws/install/yolo_counting_pkg:/home/rose/pi4b_ros2/car_ws/install/test_control_pkg:/opt/ros/humble /usr/bin/cmake --install /home/rose/pi4b_ros2/car_ws/build/bot_localization[0m
+[3.539s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_environment_scripts_only(bot_description)
+[3.690s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoked command in '/home/rose/pi4b_ros2/car_ws/build/bot_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/rose/pi4b_ros2/car_ws/install/yolo_counting_pkg:/home/rose/pi4b_ros2/car_ws/install/test_control_pkg:/opt/ros/humble /usr/bin/cmake --install /home/rose/pi4b_ros2/car_ws/build/bot_description[0m
+[3.707s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/rose/pi4b_ros2/car_ws/install/bot_description' for CMake module files
+[3.716s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/rose/pi4b_ros2/car_ws/install/bot_description' for CMake config files
+[3.754s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('bot_description', 'cmake_prefix_path')
+[3.757s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/rose/pi4b_ros2/car_ws/install/bot_description/share/bot_description/hook/cmake_prefix_path.ps1'
+[3.775s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/home/rose/pi4b_ros2/car_ws/install/bot_description/share/bot_description/hook/cmake_prefix_path.dsv'
+[3.783s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/rose/pi4b_ros2/car_ws/install/bot_description/share/bot_description/hook/cmake_prefix_path.sh'
+[3.794s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/rose/pi4b_ros2/car_ws/install/bot_description/bin'
+[3.795s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/rose/pi4b_ros2/car_ws/install/bot_description/lib/pkgconfig/bot_description.pc'
+[3.796s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/rose/pi4b_ros2/car_ws/install/bot_description/lib/python3.10/site-packages'
+[3.799s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/rose/pi4b_ros2/car_ws/install/bot_description/bin'
+[3.801s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/rose/pi4b_ros2/car_ws/install/bot_description/share/bot_description/package.ps1'
+[3.832s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package descriptor '/home/rose/pi4b_ros2/car_ws/install/bot_description/share/bot_description/package.dsv'
+[3.842s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/rose/pi4b_ros2/car_ws/install/bot_description/share/bot_description/package.sh'
+[3.850s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/rose/pi4b_ros2/car_ws/install/bot_description/share/bot_description/package.bash'
+[3.868s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/rose/pi4b_ros2/car_ws/install/bot_description/share/bot_description/package.zsh'
+[3.876s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_file_with_runtime_dependencies(/home/rose/pi4b_ros2/car_ws/install/bot_description/share/colcon-core/packages/bot_description)
+[3.886s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_environment_scripts_only(bot_description)
+[3.888s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/rose/pi4b_ros2/car_ws/install/bot_description' for CMake module files
+[3.900s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/rose/pi4b_ros2/car_ws/install/bot_description' for CMake config files
+[3.906s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('bot_description', 'cmake_prefix_path')
+[3.908s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/rose/pi4b_ros2/car_ws/install/bot_description/share/bot_description/hook/cmake_prefix_path.ps1'
+[3.922s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/home/rose/pi4b_ros2/car_ws/install/bot_description/share/bot_description/hook/cmake_prefix_path.dsv'
+[3.932s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/rose/pi4b_ros2/car_ws/install/bot_description/share/bot_description/hook/cmake_prefix_path.sh'
+[3.951s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/rose/pi4b_ros2/car_ws/install/bot_description/bin'
+[3.952s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/rose/pi4b_ros2/car_ws/install/bot_description/lib/pkgconfig/bot_description.pc'
+[3.954s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/rose/pi4b_ros2/car_ws/install/bot_description/lib/python3.10/site-packages'
+[3.956s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/rose/pi4b_ros2/car_ws/install/bot_description/bin'
+[3.958s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/rose/pi4b_ros2/car_ws/install/bot_description/share/bot_description/package.ps1'
+[3.974s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package descriptor '/home/rose/pi4b_ros2/car_ws/install/bot_description/share/bot_description/package.dsv'
+[3.984s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/rose/pi4b_ros2/car_ws/install/bot_description/share/bot_description/package.sh'
+[4.004s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/rose/pi4b_ros2/car_ws/install/bot_description/share/bot_description/package.bash'
+[4.008s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/rose/pi4b_ros2/car_ws/install/bot_description/share/bot_description/package.zsh'
+[4.011s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_file_with_runtime_dependencies(/home/rose/pi4b_ros2/car_ws/install/bot_description/share/colcon-core/packages/bot_description)
+[4.028s] [34mcolcon.colcon_ros.task.ament_cmake.build[0m [1;30mINFO[0m Building ROS package in '/home/rose/pi4b_ros2/car_ws/src/bot_navigation2' with build type 'ament_cmake'
+[4.031s] [34mcolcon.colcon_cmake.task.cmake.build[0m [1;30mINFO[0m Building CMake package in '/home/rose/pi4b_ros2/car_ws/src/bot_navigation2'
+[4.032s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[4.033s] [34mcolcon.colcon_core.shell[0m [1;30mDEBUG[0m [32mSkip shell extension 'dsv' for command environment[0m
+[4.122s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_environment_scripts_only(bot_localization)
+[4.124s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/rose/pi4b_ros2/car_ws/install/bot_localization' for CMake module files
+[4.127s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoked command in '/home/rose/pi4b_ros2/car_ws/build/bot_localization' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/rose/pi4b_ros2/car_ws/install/yolo_counting_pkg:/home/rose/pi4b_ros2/car_ws/install/test_control_pkg:/opt/ros/humble /usr/bin/cmake --install /home/rose/pi4b_ros2/car_ws/build/bot_localization[0m
+[4.141s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/rose/pi4b_ros2/car_ws/install/bot_localization' for CMake config files
+[4.147s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('bot_localization', 'cmake_prefix_path')
+[4.149s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/rose/pi4b_ros2/car_ws/install/bot_localization/share/bot_localization/hook/cmake_prefix_path.ps1'
+[4.156s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/home/rose/pi4b_ros2/car_ws/install/bot_localization/share/bot_localization/hook/cmake_prefix_path.dsv'
+[4.161s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/rose/pi4b_ros2/car_ws/install/bot_localization/share/bot_localization/hook/cmake_prefix_path.sh'
+[4.165s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/rose/pi4b_ros2/car_ws/install/bot_localization/bin'
+[4.166s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/rose/pi4b_ros2/car_ws/install/bot_localization/lib/pkgconfig/bot_localization.pc'
+[4.167s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/rose/pi4b_ros2/car_ws/install/bot_localization/lib/python3.10/site-packages'
+[4.169s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/rose/pi4b_ros2/car_ws/install/bot_localization/bin'
+[4.171s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/rose/pi4b_ros2/car_ws/install/bot_localization/share/bot_localization/package.ps1'
+[4.177s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package descriptor '/home/rose/pi4b_ros2/car_ws/install/bot_localization/share/bot_localization/package.dsv'
+[4.181s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/rose/pi4b_ros2/car_ws/install/bot_localization/share/bot_localization/package.sh'
+[4.185s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/rose/pi4b_ros2/car_ws/install/bot_localization/share/bot_localization/package.bash'
+[4.204s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/rose/pi4b_ros2/car_ws/install/bot_localization/share/bot_localization/package.zsh'
+[4.227s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_file_with_runtime_dependencies(/home/rose/pi4b_ros2/car_ws/install/bot_localization/share/colcon-core/packages/bot_localization)
+[4.255s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_environment_scripts_only(bot_localization)
+[4.256s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/rose/pi4b_ros2/car_ws/install/bot_localization' for CMake module files
+[4.261s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/rose/pi4b_ros2/car_ws/install/bot_localization' for CMake config files
+[4.265s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('bot_localization', 'cmake_prefix_path')
+[4.266s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/rose/pi4b_ros2/car_ws/install/bot_localization/share/bot_localization/hook/cmake_prefix_path.ps1'
+[4.270s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/home/rose/pi4b_ros2/car_ws/install/bot_localization/share/bot_localization/hook/cmake_prefix_path.dsv'
+[4.274s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/rose/pi4b_ros2/car_ws/install/bot_localization/share/bot_localization/hook/cmake_prefix_path.sh'
+[4.280s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/rose/pi4b_ros2/car_ws/install/bot_localization/bin'
+[4.281s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/rose/pi4b_ros2/car_ws/install/bot_localization/lib/pkgconfig/bot_localization.pc'
+[4.283s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/rose/pi4b_ros2/car_ws/install/bot_localization/lib/python3.10/site-packages'
+[4.287s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/rose/pi4b_ros2/car_ws/install/bot_localization/bin'
+[4.289s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/rose/pi4b_ros2/car_ws/install/bot_localization/share/bot_localization/package.ps1'
+[4.300s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package descriptor '/home/rose/pi4b_ros2/car_ws/install/bot_localization/share/bot_localization/package.dsv'
+[4.309s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/rose/pi4b_ros2/car_ws/install/bot_localization/share/bot_localization/package.sh'
+[4.322s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/rose/pi4b_ros2/car_ws/install/bot_localization/share/bot_localization/package.bash'
+[4.333s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/rose/pi4b_ros2/car_ws/install/bot_localization/share/bot_localization/package.zsh'
+[4.348s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_file_with_runtime_dependencies(/home/rose/pi4b_ros2/car_ws/install/bot_localization/share/colcon-core/packages/bot_localization)
+[4.353s] [34mcolcon.colcon_ros.task.ament_python.build[0m [1;30mINFO[0m Building ROS package in '/home/rose/pi4b_ros2/car_ws/src/test_control_pkg' with build type 'ament_python'
+[4.369s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('test_control_pkg', 'ament_prefix_path')
+[4.373s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/rose/pi4b_ros2/car_ws/install/test_control_pkg/share/test_control_pkg/hook/ament_prefix_path.ps1'
+[4.388s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/home/rose/pi4b_ros2/car_ws/install/test_control_pkg/share/test_control_pkg/hook/ament_prefix_path.dsv'
+[4.392s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/rose/pi4b_ros2/car_ws/install/test_control_pkg/share/test_control_pkg/hook/ament_prefix_path.sh'
+[4.402s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[4.403s] [34mcolcon.colcon_core.shell[0m [1;30mDEBUG[0m [32mSkip shell extension 'dsv' for command environment[0m
+[4.480s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoked command in '/home/rose/pi4b_ros2/car_ws/build/csm' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/rose/pi4b_ros2/car_ws/install/yolo_counting_pkg:/home/rose/pi4b_ros2/car_ws/install/test_control_pkg:/opt/ros/humble /usr/bin/cmake --build /home/rose/pi4b_ros2/car_ws/build/csm -- -j4 -l4[0m
+[4.495s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoking command in '/home/rose/pi4b_ros2/car_ws/build/csm': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/rose/pi4b_ros2/car_ws/install/yolo_counting_pkg:/home/rose/pi4b_ros2/car_ws/install/test_control_pkg:/opt/ros/humble /usr/bin/cmake --install /home/rose/pi4b_ros2/car_ws/build/csm[0m
+[4.558s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoking command in '/home/rose/pi4b_ros2/car_ws/build/bot_navigation2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/rose/pi4b_ros2/car_ws/install/yolo_counting_pkg:/home/rose/pi4b_ros2/car_ws/install/test_control_pkg:/opt/ros/humble /usr/bin/cmake --build /home/rose/pi4b_ros2/car_ws/build/bot_navigation2 -- -j4 -l4[0m
+[6.925s] [34mcolcon.colcon_core.task.python.build[0m [1;30mINFO[0m Building Python package in '/home/rose/pi4b_ros2/car_ws/src/test_control_pkg'
+[6.926s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[6.927s] [34mcolcon.colcon_core.shell[0m [1;30mDEBUG[0m [32mSkip shell extension 'dsv' for command environment[0m
+[6.956s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_environment_scripts_only(csm)
+[6.958s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/rose/pi4b_ros2/car_ws/install/csm' for CMake module files
+[6.961s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoked command in '/home/rose/pi4b_ros2/car_ws/build/csm' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/rose/pi4b_ros2/car_ws/install/yolo_counting_pkg:/home/rose/pi4b_ros2/car_ws/install/test_control_pkg:/opt/ros/humble /usr/bin/cmake --install /home/rose/pi4b_ros2/car_ws/build/csm[0m
+[6.964s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/rose/pi4b_ros2/car_ws/install/csm' for CMake config files
+[6.969s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('csm', 'cmake_prefix_path')
+[6.970s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/rose/pi4b_ros2/car_ws/install/csm/share/csm/hook/cmake_prefix_path.ps1'
+[6.974s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/home/rose/pi4b_ros2/car_ws/install/csm/share/csm/hook/cmake_prefix_path.dsv'
+[6.976s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/rose/pi4b_ros2/car_ws/install/csm/share/csm/hook/cmake_prefix_path.sh'
+[6.980s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/rose/pi4b_ros2/car_ws/install/csm/lib'
+[6.981s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('csm', 'ld_library_path_lib')
+[6.982s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/rose/pi4b_ros2/car_ws/install/csm/share/csm/hook/ld_library_path_lib.ps1'
+[6.987s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/home/rose/pi4b_ros2/car_ws/install/csm/share/csm/hook/ld_library_path_lib.dsv'
+[6.990s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/rose/pi4b_ros2/car_ws/install/csm/share/csm/hook/ld_library_path_lib.sh'
+[6.993s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/rose/pi4b_ros2/car_ws/install/csm/bin'
+[6.994s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/rose/pi4b_ros2/car_ws/install/csm/lib/pkgconfig/csm.pc'
+[6.995s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/rose/pi4b_ros2/car_ws/install/csm/lib/python3.10/site-packages'
+[6.998s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/rose/pi4b_ros2/car_ws/install/csm/bin'
+[7.000s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/rose/pi4b_ros2/car_ws/install/csm/share/csm/package.ps1'
+[7.002s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package descriptor '/home/rose/pi4b_ros2/car_ws/install/csm/share/csm/package.dsv'
+[7.006s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/rose/pi4b_ros2/car_ws/install/csm/share/csm/package.sh'
+[7.009s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/rose/pi4b_ros2/car_ws/install/csm/share/csm/package.bash'
+[7.012s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/rose/pi4b_ros2/car_ws/install/csm/share/csm/package.zsh'
+[7.014s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_file_with_runtime_dependencies(/home/rose/pi4b_ros2/car_ws/install/csm/share/colcon-core/packages/csm)
+[7.017s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_environment_scripts_only(csm)
+[7.018s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/rose/pi4b_ros2/car_ws/install/csm' for CMake module files
+[7.021s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/rose/pi4b_ros2/car_ws/install/csm' for CMake config files
+[7.024s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('csm', 'cmake_prefix_path')
+[7.025s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/rose/pi4b_ros2/car_ws/install/csm/share/csm/hook/cmake_prefix_path.ps1'
+[7.028s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/home/rose/pi4b_ros2/car_ws/install/csm/share/csm/hook/cmake_prefix_path.dsv'
+[7.030s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/rose/pi4b_ros2/car_ws/install/csm/share/csm/hook/cmake_prefix_path.sh'
+[7.034s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/rose/pi4b_ros2/car_ws/install/csm/lib'
+[7.035s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('csm', 'ld_library_path_lib')
+[7.036s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/rose/pi4b_ros2/car_ws/install/csm/share/csm/hook/ld_library_path_lib.ps1'
+[7.039s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/home/rose/pi4b_ros2/car_ws/install/csm/share/csm/hook/ld_library_path_lib.dsv'
+[7.041s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/rose/pi4b_ros2/car_ws/install/csm/share/csm/hook/ld_library_path_lib.sh'
+[7.044s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/rose/pi4b_ros2/car_ws/install/csm/bin'
+[7.044s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/rose/pi4b_ros2/car_ws/install/csm/lib/pkgconfig/csm.pc'
+[7.045s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/rose/pi4b_ros2/car_ws/install/csm/lib/python3.10/site-packages'
+[7.047s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/rose/pi4b_ros2/car_ws/install/csm/bin'
+[7.049s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/rose/pi4b_ros2/car_ws/install/csm/share/csm/package.ps1'
+[7.052s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package descriptor '/home/rose/pi4b_ros2/car_ws/install/csm/share/csm/package.dsv'
+[7.055s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/rose/pi4b_ros2/car_ws/install/csm/share/csm/package.sh'
+[7.057s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/rose/pi4b_ros2/car_ws/install/csm/share/csm/package.bash'
+[7.060s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/rose/pi4b_ros2/car_ws/install/csm/share/csm/package.zsh'
+[7.063s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_file_with_runtime_dependencies(/home/rose/pi4b_ros2/car_ws/install/csm/share/colcon-core/packages/csm)
+[7.071s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoked command in '/home/rose/pi4b_ros2/car_ws/build/bot_navigation2' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/rose/pi4b_ros2/car_ws/install/yolo_counting_pkg:/home/rose/pi4b_ros2/car_ws/install/test_control_pkg:/opt/ros/humble /usr/bin/cmake --build /home/rose/pi4b_ros2/car_ws/build/bot_navigation2 -- -j4 -l4[0m
+[7.082s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoking command in '/home/rose/pi4b_ros2/car_ws/build/bot_navigation2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/rose/pi4b_ros2/car_ws/install/yolo_counting_pkg:/home/rose/pi4b_ros2/car_ws/install/test_control_pkg:/opt/ros/humble /usr/bin/cmake --install /home/rose/pi4b_ros2/car_ws/build/bot_navigation2[0m
+[7.086s] [34mcolcon.colcon_ros.task.ament_python.build[0m [1;30mINFO[0m Building ROS package in '/home/rose/pi4b_ros2/car_ws/src/yolo_counting_pkg' with build type 'ament_python'
+[7.087s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('yolo_counting_pkg', 'ament_prefix_path')
+[7.089s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/rose/pi4b_ros2/car_ws/install/yolo_counting_pkg/share/yolo_counting_pkg/hook/ament_prefix_path.ps1'
+[7.093s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/home/rose/pi4b_ros2/car_ws/install/yolo_counting_pkg/share/yolo_counting_pkg/hook/ament_prefix_path.dsv'
+[7.099s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/rose/pi4b_ros2/car_ws/install/yolo_counting_pkg/share/yolo_counting_pkg/hook/ament_prefix_path.sh'
+[7.104s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[7.106s] [34mcolcon.colcon_core.shell[0m [1;30mDEBUG[0m [32mSkip shell extension 'dsv' for command environment[0m
+[7.185s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_environment_scripts_only(bot_navigation2)
+[7.186s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/rose/pi4b_ros2/car_ws/install/bot_navigation2' for CMake module files
+[7.189s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoked command in '/home/rose/pi4b_ros2/car_ws/build/bot_navigation2' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/rose/pi4b_ros2/car_ws/install/yolo_counting_pkg:/home/rose/pi4b_ros2/car_ws/install/test_control_pkg:/opt/ros/humble /usr/bin/cmake --install /home/rose/pi4b_ros2/car_ws/build/bot_navigation2[0m
+[7.193s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/rose/pi4b_ros2/car_ws/install/bot_navigation2' for CMake config files
+[7.198s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('bot_navigation2', 'cmake_prefix_path')
+[7.199s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/rose/pi4b_ros2/car_ws/install/bot_navigation2/share/bot_navigation2/hook/cmake_prefix_path.ps1'
+[7.202s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/home/rose/pi4b_ros2/car_ws/install/bot_navigation2/share/bot_navigation2/hook/cmake_prefix_path.dsv'
+[7.205s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/rose/pi4b_ros2/car_ws/install/bot_navigation2/share/bot_navigation2/hook/cmake_prefix_path.sh'
+[7.209s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/rose/pi4b_ros2/car_ws/install/bot_navigation2/bin'
+[7.210s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/rose/pi4b_ros2/car_ws/install/bot_navigation2/lib/pkgconfig/bot_navigation2.pc'
+[7.211s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/rose/pi4b_ros2/car_ws/install/bot_navigation2/lib/python3.10/site-packages'
+[7.213s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/rose/pi4b_ros2/car_ws/install/bot_navigation2/bin'
+[7.214s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/rose/pi4b_ros2/car_ws/install/bot_navigation2/share/bot_navigation2/package.ps1'
+[7.217s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package descriptor '/home/rose/pi4b_ros2/car_ws/install/bot_navigation2/share/bot_navigation2/package.dsv'
+[7.220s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/rose/pi4b_ros2/car_ws/install/bot_navigation2/share/bot_navigation2/package.sh'
+[7.223s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/rose/pi4b_ros2/car_ws/install/bot_navigation2/share/bot_navigation2/package.bash'
+[7.228s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/rose/pi4b_ros2/car_ws/install/bot_navigation2/share/bot_navigation2/package.zsh'
+[7.231s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_file_with_runtime_dependencies(/home/rose/pi4b_ros2/car_ws/install/bot_navigation2/share/colcon-core/packages/bot_navigation2)
+[7.234s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_environment_scripts_only(bot_navigation2)
+[7.236s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/rose/pi4b_ros2/car_ws/install/bot_navigation2' for CMake module files
+[7.239s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/rose/pi4b_ros2/car_ws/install/bot_navigation2' for CMake config files
+[7.242s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('bot_navigation2', 'cmake_prefix_path')
+[7.244s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/rose/pi4b_ros2/car_ws/install/bot_navigation2/share/bot_navigation2/hook/cmake_prefix_path.ps1'
+[7.246s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/home/rose/pi4b_ros2/car_ws/install/bot_navigation2/share/bot_navigation2/hook/cmake_prefix_path.dsv'
+[7.249s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/rose/pi4b_ros2/car_ws/install/bot_navigation2/share/bot_navigation2/hook/cmake_prefix_path.sh'
+[7.253s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/rose/pi4b_ros2/car_ws/install/bot_navigation2/bin'
+[7.254s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/rose/pi4b_ros2/car_ws/install/bot_navigation2/lib/pkgconfig/bot_navigation2.pc'
+[7.255s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/rose/pi4b_ros2/car_ws/install/bot_navigation2/lib/python3.10/site-packages'
+[7.257s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/rose/pi4b_ros2/car_ws/install/bot_navigation2/bin'
+[7.259s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/rose/pi4b_ros2/car_ws/install/bot_navigation2/share/bot_navigation2/package.ps1'
+[7.262s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package descriptor '/home/rose/pi4b_ros2/car_ws/install/bot_navigation2/share/bot_navigation2/package.dsv'
+[7.265s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/rose/pi4b_ros2/car_ws/install/bot_navigation2/share/bot_navigation2/package.sh'
+[7.268s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/rose/pi4b_ros2/car_ws/install/bot_navigation2/share/bot_navigation2/package.bash'
+[7.273s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/rose/pi4b_ros2/car_ws/install/bot_navigation2/share/bot_navigation2/package.zsh'
+[7.279s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_file_with_runtime_dependencies(/home/rose/pi4b_ros2/car_ws/install/bot_navigation2/share/colcon-core/packages/bot_navigation2)
+[7.283s] [34mcolcon.colcon_ros.task.ament_cmake.build[0m [1;30mINFO[0m Building ROS package in '/home/rose/pi4b_ros2/car_ws/src/ros2_laser_scan_matcher' with build type 'ament_cmake'
+[7.285s] [34mcolcon.colcon_cmake.task.cmake.build[0m [1;30mINFO[0m Building CMake package in '/home/rose/pi4b_ros2/car_ws/src/ros2_laser_scan_matcher'
+[7.286s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[7.287s] [34mcolcon.colcon_core.shell[0m [1;30mDEBUG[0m [32mSkip shell extension 'dsv' for command environment[0m
+[8.748s] [34mcolcon.colcon_core.task.python.build[0m [1;30mINFO[0m Building Python package in '/home/rose/pi4b_ros2/car_ws/src/yolo_counting_pkg'
+[8.749s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[8.750s] [34mcolcon.colcon_core.shell[0m [1;30mDEBUG[0m [32mSkip shell extension 'dsv' for command environment[0m
+[8.782s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoked command in '/home/rose/pi4b_ros2/car_ws/build/lslidar_msgs' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/rose/pi4b_ros2/car_ws/install/yolo_counting_pkg:/home/rose/pi4b_ros2/car_ws/install/test_control_pkg:/opt/ros/humble /usr/bin/cmake --build /home/rose/pi4b_ros2/car_ws/build/lslidar_msgs -- -j4 -l4[0m
+[8.796s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoking command in '/home/rose/pi4b_ros2/car_ws/build/lslidar_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/rose/pi4b_ros2/car_ws/install/yolo_counting_pkg:/home/rose/pi4b_ros2/car_ws/install/test_control_pkg:/opt/ros/humble /usr/bin/cmake --install /home/rose/pi4b_ros2/car_ws/build/lslidar_msgs[0m
+[8.814s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoking command in '/home/rose/pi4b_ros2/car_ws/build/ros2_laser_scan_matcher': CMAKE_PREFIX_PATH=/home/rose/pi4b_ros2/car_ws/install/csm:/home/rose/pi4b_ros2/car_ws/install/ros2_laser_scan_matcher:/home/rose/pi4b_ros2/car_ws/install/lslidar_driver:/home/rose/pi4b_ros2/car_ws/install/lslidar_msgs:/home/rose/pi4b_ros2/car_ws/install/bot_navigation2:/home/rose/pi4b_ros2/car_ws/install/bot_localization:/home/rose/pi4b_ros2/car_ws/install/bot_description:/home/rose/pi4b_ros2/car_ws/install/yolo_counting_pkg:/home/rose/pi4b_ros2/car_ws/install/test_control_pkg:/opt/ros/humble LD_LIBRARY_PATH=/home/rose/pi4b_ros2/car_ws/install/csm/lib:/home/rose/pi4b_ros2/car_ws/install/lslidar_msgs/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake --build /home/rose/pi4b_ros2/car_ws/build/ros2_laser_scan_matcher -- -j4 -l4[0m
+[9.859s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_environment_scripts_only(lslidar_msgs)
+[9.862s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/rose/pi4b_ros2/car_ws/install/lslidar_msgs' for CMake module files
+[9.869s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/rose/pi4b_ros2/car_ws/install/lslidar_msgs' for CMake config files
+[9.875s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoked command in '/home/rose/pi4b_ros2/car_ws/build/lslidar_msgs' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/rose/pi4b_ros2/car_ws/install/yolo_counting_pkg:/home/rose/pi4b_ros2/car_ws/install/test_control_pkg:/opt/ros/humble /usr/bin/cmake --install /home/rose/pi4b_ros2/car_ws/build/lslidar_msgs[0m
+[9.886s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('lslidar_msgs', 'cmake_prefix_path')
+[9.888s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/rose/pi4b_ros2/car_ws/install/lslidar_msgs/share/lslidar_msgs/hook/cmake_prefix_path.ps1'
+[9.896s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/home/rose/pi4b_ros2/car_ws/install/lslidar_msgs/share/lslidar_msgs/hook/cmake_prefix_path.dsv'
+[9.902s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/rose/pi4b_ros2/car_ws/install/lslidar_msgs/share/lslidar_msgs/hook/cmake_prefix_path.sh'
+[9.909s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/rose/pi4b_ros2/car_ws/install/lslidar_msgs/lib'
+[9.911s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('lslidar_msgs', 'ld_library_path_lib')
+[9.913s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/rose/pi4b_ros2/car_ws/install/lslidar_msgs/share/lslidar_msgs/hook/ld_library_path_lib.ps1'
+[9.920s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/home/rose/pi4b_ros2/car_ws/install/lslidar_msgs/share/lslidar_msgs/hook/ld_library_path_lib.dsv'
+[9.926s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/rose/pi4b_ros2/car_ws/install/lslidar_msgs/share/lslidar_msgs/hook/ld_library_path_lib.sh'
+[9.929s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/rose/pi4b_ros2/car_ws/install/lslidar_msgs/bin'
+[9.930s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/rose/pi4b_ros2/car_ws/install/lslidar_msgs/lib/pkgconfig/lslidar_msgs.pc'
+[9.931s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/rose/pi4b_ros2/car_ws/install/lslidar_msgs/lib/python3.10/site-packages'
+[9.933s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/rose/pi4b_ros2/car_ws/install/lslidar_msgs/bin'
+[9.935s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/rose/pi4b_ros2/car_ws/install/lslidar_msgs/share/lslidar_msgs/package.ps1'
+[9.939s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package descriptor '/home/rose/pi4b_ros2/car_ws/install/lslidar_msgs/share/lslidar_msgs/package.dsv'
+[9.942s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/rose/pi4b_ros2/car_ws/install/lslidar_msgs/share/lslidar_msgs/package.sh'
+[9.946s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/rose/pi4b_ros2/car_ws/install/lslidar_msgs/share/lslidar_msgs/package.bash'
+[9.949s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/rose/pi4b_ros2/car_ws/install/lslidar_msgs/share/lslidar_msgs/package.zsh'
+[9.952s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_file_with_runtime_dependencies(/home/rose/pi4b_ros2/car_ws/install/lslidar_msgs/share/colcon-core/packages/lslidar_msgs)
+[9.957s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_environment_scripts_only(lslidar_msgs)
+[9.958s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/rose/pi4b_ros2/car_ws/install/lslidar_msgs' for CMake module files
+[9.963s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/rose/pi4b_ros2/car_ws/install/lslidar_msgs' for CMake config files
+[9.970s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('lslidar_msgs', 'cmake_prefix_path')
+[9.972s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/rose/pi4b_ros2/car_ws/install/lslidar_msgs/share/lslidar_msgs/hook/cmake_prefix_path.ps1'
+[9.975s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/home/rose/pi4b_ros2/car_ws/install/lslidar_msgs/share/lslidar_msgs/hook/cmake_prefix_path.dsv'
+[9.979s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/rose/pi4b_ros2/car_ws/install/lslidar_msgs/share/lslidar_msgs/hook/cmake_prefix_path.sh'
+[9.982s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/rose/pi4b_ros2/car_ws/install/lslidar_msgs/lib'
+[9.983s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('lslidar_msgs', 'ld_library_path_lib')
+[9.985s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/rose/pi4b_ros2/car_ws/install/lslidar_msgs/share/lslidar_msgs/hook/ld_library_path_lib.ps1'
+[9.988s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/home/rose/pi4b_ros2/car_ws/install/lslidar_msgs/share/lslidar_msgs/hook/ld_library_path_lib.dsv'
+[9.991s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/rose/pi4b_ros2/car_ws/install/lslidar_msgs/share/lslidar_msgs/hook/ld_library_path_lib.sh'
+[9.995s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/rose/pi4b_ros2/car_ws/install/lslidar_msgs/bin'
+[9.996s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/rose/pi4b_ros2/car_ws/install/lslidar_msgs/lib/pkgconfig/lslidar_msgs.pc'
+[9.997s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/rose/pi4b_ros2/car_ws/install/lslidar_msgs/lib/python3.10/site-packages'
+[10.000s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/rose/pi4b_ros2/car_ws/install/lslidar_msgs/bin'
+[10.012s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/rose/pi4b_ros2/car_ws/install/lslidar_msgs/share/lslidar_msgs/package.ps1'
+[10.021s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package descriptor '/home/rose/pi4b_ros2/car_ws/install/lslidar_msgs/share/lslidar_msgs/package.dsv'
+[10.027s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/rose/pi4b_ros2/car_ws/install/lslidar_msgs/share/lslidar_msgs/package.sh'
+[10.036s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/rose/pi4b_ros2/car_ws/install/lslidar_msgs/share/lslidar_msgs/package.bash'
+[10.041s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/rose/pi4b_ros2/car_ws/install/lslidar_msgs/share/lslidar_msgs/package.zsh'
+[10.045s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_file_with_runtime_dependencies(/home/rose/pi4b_ros2/car_ws/install/lslidar_msgs/share/colcon-core/packages/lslidar_msgs)
+[10.047s] [34mcolcon.colcon_ros.task.ament_cmake.build[0m [1;30mINFO[0m Building ROS package in '/home/rose/pi4b_ros2/car_ws/src/LSLIDAR_X_ROS2-20240228/src/lslidar_driver' with build type 'ament_cmake'
+[10.048s] [34mcolcon.colcon_cmake.task.cmake.build[0m [1;30mINFO[0m Building CMake package in '/home/rose/pi4b_ros2/car_ws/src/LSLIDAR_X_ROS2-20240228/src/lslidar_driver'
+[10.050s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[10.052s] [34mcolcon.colcon_core.shell[0m [1;30mDEBUG[0m [32mSkip shell extension 'dsv' for command environment[0m
+[10.127s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoked command in '/home/rose/pi4b_ros2/car_ws/build/ros2_laser_scan_matcher' returned '0': CMAKE_PREFIX_PATH=/home/rose/pi4b_ros2/car_ws/install/csm:/home/rose/pi4b_ros2/car_ws/install/ros2_laser_scan_matcher:/home/rose/pi4b_ros2/car_ws/install/lslidar_driver:/home/rose/pi4b_ros2/car_ws/install/lslidar_msgs:/home/rose/pi4b_ros2/car_ws/install/bot_navigation2:/home/rose/pi4b_ros2/car_ws/install/bot_localization:/home/rose/pi4b_ros2/car_ws/install/bot_description:/home/rose/pi4b_ros2/car_ws/install/yolo_counting_pkg:/home/rose/pi4b_ros2/car_ws/install/test_control_pkg:/opt/ros/humble LD_LIBRARY_PATH=/home/rose/pi4b_ros2/car_ws/install/csm/lib:/home/rose/pi4b_ros2/car_ws/install/lslidar_msgs/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake --build /home/rose/pi4b_ros2/car_ws/build/ros2_laser_scan_matcher -- -j4 -l4[0m
+[10.160s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoking command in '/home/rose/pi4b_ros2/car_ws/build/ros2_laser_scan_matcher': CMAKE_PREFIX_PATH=/home/rose/pi4b_ros2/car_ws/install/csm:/home/rose/pi4b_ros2/car_ws/install/ros2_laser_scan_matcher:/home/rose/pi4b_ros2/car_ws/install/lslidar_driver:/home/rose/pi4b_ros2/car_ws/install/lslidar_msgs:/home/rose/pi4b_ros2/car_ws/install/bot_navigation2:/home/rose/pi4b_ros2/car_ws/install/bot_localization:/home/rose/pi4b_ros2/car_ws/install/bot_description:/home/rose/pi4b_ros2/car_ws/install/yolo_counting_pkg:/home/rose/pi4b_ros2/car_ws/install/test_control_pkg:/opt/ros/humble LD_LIBRARY_PATH=/home/rose/pi4b_ros2/car_ws/install/csm/lib:/home/rose/pi4b_ros2/car_ws/install/lslidar_msgs/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake --install /home/rose/pi4b_ros2/car_ws/build/ros2_laser_scan_matcher[0m
+[10.240s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoking command in '/home/rose/pi4b_ros2/car_ws/build/lslidar_driver': CMAKE_PREFIX_PATH=/home/rose/pi4b_ros2/car_ws/install/lslidar_msgs:/home/rose/pi4b_ros2/car_ws/install/ros2_laser_scan_matcher:/home/rose/pi4b_ros2/car_ws/install/lslidar_driver:/home/rose/pi4b_ros2/car_ws/install/csm:/home/rose/pi4b_ros2/car_ws/install/bot_navigation2:/home/rose/pi4b_ros2/car_ws/install/bot_localization:/home/rose/pi4b_ros2/car_ws/install/bot_description:/home/rose/pi4b_ros2/car_ws/install/yolo_counting_pkg:/home/rose/pi4b_ros2/car_ws/install/test_control_pkg:/opt/ros/humble /usr/bin/cmake --build /home/rose/pi4b_ros2/car_ws/build/lslidar_driver -- -j4 -l4[0m
+[10.361s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_environment_scripts_only(ros2_laser_scan_matcher)
+[10.363s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/rose/pi4b_ros2/car_ws/install/ros2_laser_scan_matcher' for CMake module files
+[10.365s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoked command in '/home/rose/pi4b_ros2/car_ws/build/ros2_laser_scan_matcher' returned '0': CMAKE_PREFIX_PATH=/home/rose/pi4b_ros2/car_ws/install/csm:/home/rose/pi4b_ros2/car_ws/install/ros2_laser_scan_matcher:/home/rose/pi4b_ros2/car_ws/install/lslidar_driver:/home/rose/pi4b_ros2/car_ws/install/lslidar_msgs:/home/rose/pi4b_ros2/car_ws/install/bot_navigation2:/home/rose/pi4b_ros2/car_ws/install/bot_localization:/home/rose/pi4b_ros2/car_ws/install/bot_description:/home/rose/pi4b_ros2/car_ws/install/yolo_counting_pkg:/home/rose/pi4b_ros2/car_ws/install/test_control_pkg:/opt/ros/humble LD_LIBRARY_PATH=/home/rose/pi4b_ros2/car_ws/install/csm/lib:/home/rose/pi4b_ros2/car_ws/install/lslidar_msgs/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake --install /home/rose/pi4b_ros2/car_ws/build/ros2_laser_scan_matcher[0m
+[10.370s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/rose/pi4b_ros2/car_ws/install/ros2_laser_scan_matcher' for CMake config files
+[10.374s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('ros2_laser_scan_matcher', 'cmake_prefix_path')
+[10.376s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/rose/pi4b_ros2/car_ws/install/ros2_laser_scan_matcher/share/ros2_laser_scan_matcher/hook/cmake_prefix_path.ps1'
+[10.379s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/home/rose/pi4b_ros2/car_ws/install/ros2_laser_scan_matcher/share/ros2_laser_scan_matcher/hook/cmake_prefix_path.dsv'
+[10.382s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/rose/pi4b_ros2/car_ws/install/ros2_laser_scan_matcher/share/ros2_laser_scan_matcher/hook/cmake_prefix_path.sh'
+[10.386s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/rose/pi4b_ros2/car_ws/install/ros2_laser_scan_matcher/lib'
+[10.387s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/rose/pi4b_ros2/car_ws/install/ros2_laser_scan_matcher/bin'
+[10.388s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/rose/pi4b_ros2/car_ws/install/ros2_laser_scan_matcher/lib/pkgconfig/ros2_laser_scan_matcher.pc'
+[10.389s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/rose/pi4b_ros2/car_ws/install/ros2_laser_scan_matcher/lib/python3.10/site-packages'
+[10.392s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/rose/pi4b_ros2/car_ws/install/ros2_laser_scan_matcher/bin'
+[10.394s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/rose/pi4b_ros2/car_ws/install/ros2_laser_scan_matcher/share/ros2_laser_scan_matcher/package.ps1'
+[10.397s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package descriptor '/home/rose/pi4b_ros2/car_ws/install/ros2_laser_scan_matcher/share/ros2_laser_scan_matcher/package.dsv'
+[10.402s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/rose/pi4b_ros2/car_ws/install/ros2_laser_scan_matcher/share/ros2_laser_scan_matcher/package.sh'
+[10.406s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/rose/pi4b_ros2/car_ws/install/ros2_laser_scan_matcher/share/ros2_laser_scan_matcher/package.bash'
+[10.409s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/rose/pi4b_ros2/car_ws/install/ros2_laser_scan_matcher/share/ros2_laser_scan_matcher/package.zsh'
+[10.412s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_file_with_runtime_dependencies(/home/rose/pi4b_ros2/car_ws/install/ros2_laser_scan_matcher/share/colcon-core/packages/ros2_laser_scan_matcher)
+[10.416s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_environment_scripts_only(ros2_laser_scan_matcher)
+[10.417s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/rose/pi4b_ros2/car_ws/install/ros2_laser_scan_matcher' for CMake module files
+[10.421s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/rose/pi4b_ros2/car_ws/install/ros2_laser_scan_matcher' for CMake config files
+[10.424s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('ros2_laser_scan_matcher', 'cmake_prefix_path')
+[10.425s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/rose/pi4b_ros2/car_ws/install/ros2_laser_scan_matcher/share/ros2_laser_scan_matcher/hook/cmake_prefix_path.ps1'
+[10.428s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/home/rose/pi4b_ros2/car_ws/install/ros2_laser_scan_matcher/share/ros2_laser_scan_matcher/hook/cmake_prefix_path.dsv'
+[10.431s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/rose/pi4b_ros2/car_ws/install/ros2_laser_scan_matcher/share/ros2_laser_scan_matcher/hook/cmake_prefix_path.sh'
+[10.435s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/rose/pi4b_ros2/car_ws/install/ros2_laser_scan_matcher/lib'
+[10.435s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/rose/pi4b_ros2/car_ws/install/ros2_laser_scan_matcher/bin'
+[10.436s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/rose/pi4b_ros2/car_ws/install/ros2_laser_scan_matcher/lib/pkgconfig/ros2_laser_scan_matcher.pc'
+[10.437s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/rose/pi4b_ros2/car_ws/install/ros2_laser_scan_matcher/lib/python3.10/site-packages'
+[10.440s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/rose/pi4b_ros2/car_ws/install/ros2_laser_scan_matcher/bin'
+[10.441s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/rose/pi4b_ros2/car_ws/install/ros2_laser_scan_matcher/share/ros2_laser_scan_matcher/package.ps1'
+[10.446s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package descriptor '/home/rose/pi4b_ros2/car_ws/install/ros2_laser_scan_matcher/share/ros2_laser_scan_matcher/package.dsv'
+[10.450s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/rose/pi4b_ros2/car_ws/install/ros2_laser_scan_matcher/share/ros2_laser_scan_matcher/package.sh'
+[10.453s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/rose/pi4b_ros2/car_ws/install/ros2_laser_scan_matcher/share/ros2_laser_scan_matcher/package.bash'
+[10.456s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/rose/pi4b_ros2/car_ws/install/ros2_laser_scan_matcher/share/ros2_laser_scan_matcher/package.zsh'
+[10.461s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_file_with_runtime_dependencies(/home/rose/pi4b_ros2/car_ws/install/ros2_laser_scan_matcher/share/colcon-core/packages/ros2_laser_scan_matcher)
+[10.796s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoking command in '/home/rose/pi4b_ros2/car_ws/src/test_control_pkg': PYTHONPATH=/home/rose/pi4b_ros2/car_ws/build/test_control_pkg/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/rose/pi4b_ros2/car_ws/install/test_control_pkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/test_control_pkg build --build-base /home/rose/pi4b_ros2/car_ws/build/test_control_pkg/build install --record /home/rose/pi4b_ros2/car_ws/build/test_control_pkg/install.log --single-version-externally-managed install_data[0m
+[11.034s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoked command in '/home/rose/pi4b_ros2/car_ws/build/lslidar_driver' returned '0': CMAKE_PREFIX_PATH=/home/rose/pi4b_ros2/car_ws/install/lslidar_msgs:/home/rose/pi4b_ros2/car_ws/install/ros2_laser_scan_matcher:/home/rose/pi4b_ros2/car_ws/install/lslidar_driver:/home/rose/pi4b_ros2/car_ws/install/csm:/home/rose/pi4b_ros2/car_ws/install/bot_navigation2:/home/rose/pi4b_ros2/car_ws/install/bot_localization:/home/rose/pi4b_ros2/car_ws/install/bot_description:/home/rose/pi4b_ros2/car_ws/install/yolo_counting_pkg:/home/rose/pi4b_ros2/car_ws/install/test_control_pkg:/opt/ros/humble /usr/bin/cmake --build /home/rose/pi4b_ros2/car_ws/build/lslidar_driver -- -j4 -l4[0m
+[11.046s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoking command in '/home/rose/pi4b_ros2/car_ws/build/lslidar_driver': CMAKE_PREFIX_PATH=/home/rose/pi4b_ros2/car_ws/install/lslidar_msgs:/home/rose/pi4b_ros2/car_ws/install/ros2_laser_scan_matcher:/home/rose/pi4b_ros2/car_ws/install/lslidar_driver:/home/rose/pi4b_ros2/car_ws/install/csm:/home/rose/pi4b_ros2/car_ws/install/bot_navigation2:/home/rose/pi4b_ros2/car_ws/install/bot_localization:/home/rose/pi4b_ros2/car_ws/install/bot_description:/home/rose/pi4b_ros2/car_ws/install/yolo_counting_pkg:/home/rose/pi4b_ros2/car_ws/install/test_control_pkg:/opt/ros/humble /usr/bin/cmake --install /home/rose/pi4b_ros2/car_ws/build/lslidar_driver[0m
+[11.148s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_environment_scripts_only(lslidar_driver)
+[11.150s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/rose/pi4b_ros2/car_ws/install/lslidar_driver' for CMake module files
+[11.169s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/rose/pi4b_ros2/car_ws/install/lslidar_driver' for CMake config files
+[11.186s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoked command in '/home/rose/pi4b_ros2/car_ws/build/lslidar_driver' returned '0': CMAKE_PREFIX_PATH=/home/rose/pi4b_ros2/car_ws/install/lslidar_msgs:/home/rose/pi4b_ros2/car_ws/install/ros2_laser_scan_matcher:/home/rose/pi4b_ros2/car_ws/install/lslidar_driver:/home/rose/pi4b_ros2/car_ws/install/csm:/home/rose/pi4b_ros2/car_ws/install/bot_navigation2:/home/rose/pi4b_ros2/car_ws/install/bot_localization:/home/rose/pi4b_ros2/car_ws/install/bot_description:/home/rose/pi4b_ros2/car_ws/install/yolo_counting_pkg:/home/rose/pi4b_ros2/car_ws/install/test_control_pkg:/opt/ros/humble /usr/bin/cmake --install /home/rose/pi4b_ros2/car_ws/build/lslidar_driver[0m
+[11.188s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('lslidar_driver', 'cmake_prefix_path')
+[11.190s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/rose/pi4b_ros2/car_ws/install/lslidar_driver/share/lslidar_driver/hook/cmake_prefix_path.ps1'
+[11.195s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/home/rose/pi4b_ros2/car_ws/install/lslidar_driver/share/lslidar_driver/hook/cmake_prefix_path.dsv'
+[11.199s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/rose/pi4b_ros2/car_ws/install/lslidar_driver/share/lslidar_driver/hook/cmake_prefix_path.sh'
+[11.204s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/rose/pi4b_ros2/car_ws/install/lslidar_driver/lib'
+[11.205s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/rose/pi4b_ros2/car_ws/install/lslidar_driver/bin'
+[11.206s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/rose/pi4b_ros2/car_ws/install/lslidar_driver/lib/pkgconfig/lslidar_driver.pc'
+[11.208s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/rose/pi4b_ros2/car_ws/install/lslidar_driver/lib/python3.10/site-packages'
+[11.211s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/rose/pi4b_ros2/car_ws/install/lslidar_driver/bin'
+[11.213s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/rose/pi4b_ros2/car_ws/install/lslidar_driver/share/lslidar_driver/package.ps1'
+[11.218s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package descriptor '/home/rose/pi4b_ros2/car_ws/install/lslidar_driver/share/lslidar_driver/package.dsv'
+[11.222s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/rose/pi4b_ros2/car_ws/install/lslidar_driver/share/lslidar_driver/package.sh'
+[11.227s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/rose/pi4b_ros2/car_ws/install/lslidar_driver/share/lslidar_driver/package.bash'
+[11.231s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/rose/pi4b_ros2/car_ws/install/lslidar_driver/share/lslidar_driver/package.zsh'
+[11.235s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_file_with_runtime_dependencies(/home/rose/pi4b_ros2/car_ws/install/lslidar_driver/share/colcon-core/packages/lslidar_driver)
+[11.241s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_environment_scripts_only(lslidar_driver)
+[11.242s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/rose/pi4b_ros2/car_ws/install/lslidar_driver' for CMake module files
+[11.246s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/rose/pi4b_ros2/car_ws/install/lslidar_driver' for CMake config files
+[11.250s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('lslidar_driver', 'cmake_prefix_path')
+[11.252s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/rose/pi4b_ros2/car_ws/install/lslidar_driver/share/lslidar_driver/hook/cmake_prefix_path.ps1'
+[11.256s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/home/rose/pi4b_ros2/car_ws/install/lslidar_driver/share/lslidar_driver/hook/cmake_prefix_path.dsv'
+[11.260s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/rose/pi4b_ros2/car_ws/install/lslidar_driver/share/lslidar_driver/hook/cmake_prefix_path.sh'
+[11.265s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/rose/pi4b_ros2/car_ws/install/lslidar_driver/lib'
+[11.266s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/rose/pi4b_ros2/car_ws/install/lslidar_driver/bin'
+[11.267s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/rose/pi4b_ros2/car_ws/install/lslidar_driver/lib/pkgconfig/lslidar_driver.pc'
+[11.269s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/rose/pi4b_ros2/car_ws/install/lslidar_driver/lib/python3.10/site-packages'
+[11.271s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/rose/pi4b_ros2/car_ws/install/lslidar_driver/bin'
+[11.274s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/rose/pi4b_ros2/car_ws/install/lslidar_driver/share/lslidar_driver/package.ps1'
+[11.279s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package descriptor '/home/rose/pi4b_ros2/car_ws/install/lslidar_driver/share/lslidar_driver/package.dsv'
+[11.283s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/rose/pi4b_ros2/car_ws/install/lslidar_driver/share/lslidar_driver/package.sh'
+[11.288s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/rose/pi4b_ros2/car_ws/install/lslidar_driver/share/lslidar_driver/package.bash'
+[11.292s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/rose/pi4b_ros2/car_ws/install/lslidar_driver/share/lslidar_driver/package.zsh'
+[11.296s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_file_with_runtime_dependencies(/home/rose/pi4b_ros2/car_ws/install/lslidar_driver/share/colcon-core/packages/lslidar_driver)
+[12.312s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoking command in '/home/rose/pi4b_ros2/car_ws/src/yolo_counting_pkg': PYTHONPATH=/home/rose/pi4b_ros2/car_ws/build/yolo_counting_pkg/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/rose/pi4b_ros2/car_ws/install/yolo_counting_pkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/yolo_counting_pkg build --build-base /home/rose/pi4b_ros2/car_ws/build/yolo_counting_pkg/build install --record /home/rose/pi4b_ros2/car_ws/build/yolo_counting_pkg/install.log --single-version-externally-managed install_data[0m
+[13.488s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/rose/pi4b_ros2/car_ws/install/test_control_pkg' for CMake module files
+[13.492s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/rose/pi4b_ros2/car_ws/install/test_control_pkg' for CMake config files
+[13.496s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/rose/pi4b_ros2/car_ws/install/test_control_pkg/lib'
+[13.496s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/rose/pi4b_ros2/car_ws/install/test_control_pkg/bin'
+[13.497s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/rose/pi4b_ros2/car_ws/install/test_control_pkg/lib/pkgconfig/test_control_pkg.pc'
+[13.498s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/rose/pi4b_ros2/car_ws/install/test_control_pkg/lib/python3.10/site-packages'
+[13.498s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('test_control_pkg', 'pythonpath')
+[13.499s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/rose/pi4b_ros2/car_ws/install/test_control_pkg/share/test_control_pkg/hook/pythonpath.ps1'
+[13.501s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoked command in '/home/rose/pi4b_ros2/car_ws/src/test_control_pkg' returned '0': PYTHONPATH=/home/rose/pi4b_ros2/car_ws/build/test_control_pkg/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/rose/pi4b_ros2/car_ws/install/test_control_pkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/test_control_pkg build --build-base /home/rose/pi4b_ros2/car_ws/build/test_control_pkg/build install --record /home/rose/pi4b_ros2/car_ws/build/test_control_pkg/install.log --single-version-externally-managed install_data[0m
+[13.503s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/home/rose/pi4b_ros2/car_ws/install/test_control_pkg/share/test_control_pkg/hook/pythonpath.dsv'
+[13.506s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/rose/pi4b_ros2/car_ws/install/test_control_pkg/share/test_control_pkg/hook/pythonpath.sh'
+[13.511s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/rose/pi4b_ros2/car_ws/install/test_control_pkg/bin'
+[13.511s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_environment_scripts_only(test_control_pkg)
+[13.513s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/rose/pi4b_ros2/car_ws/install/test_control_pkg/share/test_control_pkg/package.ps1'
+[13.516s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package descriptor '/home/rose/pi4b_ros2/car_ws/install/test_control_pkg/share/test_control_pkg/package.dsv'
+[13.519s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/rose/pi4b_ros2/car_ws/install/test_control_pkg/share/test_control_pkg/package.sh'
+[13.522s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/rose/pi4b_ros2/car_ws/install/test_control_pkg/share/test_control_pkg/package.bash'
+[13.525s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/rose/pi4b_ros2/car_ws/install/test_control_pkg/share/test_control_pkg/package.zsh'
+[13.527s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_file_with_runtime_dependencies(/home/rose/pi4b_ros2/car_ws/install/test_control_pkg/share/colcon-core/packages/test_control_pkg)
+[16.398s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/rose/pi4b_ros2/car_ws/install/yolo_counting_pkg' for CMake module files
+[16.400s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoked command in '/home/rose/pi4b_ros2/car_ws/src/yolo_counting_pkg' returned '0': PYTHONPATH=/home/rose/pi4b_ros2/car_ws/build/yolo_counting_pkg/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/rose/pi4b_ros2/car_ws/install/yolo_counting_pkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/yolo_counting_pkg build --build-base /home/rose/pi4b_ros2/car_ws/build/yolo_counting_pkg/build install --record /home/rose/pi4b_ros2/car_ws/build/yolo_counting_pkg/install.log --single-version-externally-managed install_data[0m
+[16.403s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/rose/pi4b_ros2/car_ws/install/yolo_counting_pkg' for CMake config files
+[16.408s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/rose/pi4b_ros2/car_ws/install/yolo_counting_pkg/lib'
+[16.409s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/rose/pi4b_ros2/car_ws/install/yolo_counting_pkg/bin'
+[16.410s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/rose/pi4b_ros2/car_ws/install/yolo_counting_pkg/lib/pkgconfig/yolo_counting_pkg.pc'
+[16.411s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/rose/pi4b_ros2/car_ws/install/yolo_counting_pkg/lib/python3.10/site-packages'
+[16.411s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('yolo_counting_pkg', 'pythonpath')
+[16.412s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/rose/pi4b_ros2/car_ws/install/yolo_counting_pkg/share/yolo_counting_pkg/hook/pythonpath.ps1'
+[16.478s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/home/rose/pi4b_ros2/car_ws/install/yolo_counting_pkg/share/yolo_counting_pkg/hook/pythonpath.dsv'
+[16.566s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/rose/pi4b_ros2/car_ws/install/yolo_counting_pkg/share/yolo_counting_pkg/hook/pythonpath.sh'
+[16.636s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/rose/pi4b_ros2/car_ws/install/yolo_counting_pkg/bin'
+[16.637s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_environment_scripts_only(yolo_counting_pkg)
+[16.639s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/rose/pi4b_ros2/car_ws/install/yolo_counting_pkg/share/yolo_counting_pkg/package.ps1'
+[16.738s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package descriptor '/home/rose/pi4b_ros2/car_ws/install/yolo_counting_pkg/share/yolo_counting_pkg/package.dsv'
+[16.742s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/rose/pi4b_ros2/car_ws/install/yolo_counting_pkg/share/yolo_counting_pkg/package.sh'
+[16.747s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/rose/pi4b_ros2/car_ws/install/yolo_counting_pkg/share/yolo_counting_pkg/package.bash'
+[16.749s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/rose/pi4b_ros2/car_ws/install/yolo_counting_pkg/share/yolo_counting_pkg/package.zsh'
+[16.752s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_file_with_runtime_dependencies(/home/rose/pi4b_ros2/car_ws/install/yolo_counting_pkg/share/colcon-core/packages/yolo_counting_pkg)
+[16.754s] [34mcolcon.colcon_parallel_executor.executor.parallel[0m [1;30mDEBUG[0m [32mclosing loop[0m
+[16.756s] [34mcolcon.colcon_parallel_executor.executor.parallel[0m [1;30mDEBUG[0m [32mloop closed[0m
+[16.757s] [34mcolcon.colcon_parallel_executor.executor.parallel[0m [1;30mDEBUG[0m [32mrun_until_complete finished with '0'[0m
+[16.757s] [34mcolcon.colcon_core.event_reactor[0m [1;30mDEBUG[0m [32mjoining thread[0m
+[16.827s] [34mcolcon.colcon_core.plugin_system[0m [1;30mINFO[0m Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[16.827s] [34mcolcon.colcon_core.plugin_system[0m [1;30mINFO[0m Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[16.828s] [34mcolcon.colcon_notification.desktop_notification[0m [1;30mINFO[0m Sending desktop notification using 'notify2'
+[16.833s] [34mcolcon.colcon_notification.desktop_notification.notify2[0m [1;30mDEBUG[0m [32mFailed to initialize notify2: org.freedesktop.DBus.Error.ServiceUnknown: The name org.freedesktop.Notifications was not provided by any .service files[0m
+[16.833s] [34mcolcon.colcon_core.event_reactor[0m [1;30mDEBUG[0m [32mjoined thread[0m
+[16.835s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating prefix script '/home/rose/pi4b_ros2/car_ws/install/local_setup.ps1'
+[16.840s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating prefix util module '/home/rose/pi4b_ros2/car_ws/install/_local_setup_util_ps1.py'
+[16.847s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating prefix chain script '/home/rose/pi4b_ros2/car_ws/install/setup.ps1'
+[16.856s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating prefix script '/home/rose/pi4b_ros2/car_ws/install/local_setup.sh'
+[16.860s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating prefix util module '/home/rose/pi4b_ros2/car_ws/install/_local_setup_util_sh.py'
+[16.863s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating prefix chain script '/home/rose/pi4b_ros2/car_ws/install/setup.sh'
+[16.872s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating prefix script '/home/rose/pi4b_ros2/car_ws/install/local_setup.bash'
+[16.875s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating prefix chain script '/home/rose/pi4b_ros2/car_ws/install/setup.bash'
+[16.883s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating prefix script '/home/rose/pi4b_ros2/car_ws/install/local_setup.zsh'
+[16.887s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating prefix chain script '/home/rose/pi4b_ros2/car_ws/install/setup.zsh'

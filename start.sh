@@ -200,6 +200,7 @@ CAR_CONTROLLER_CMD="ros2 run test_control_pkg car_controller --ros-args -p seria
     sleep 1
     launch_ros2_command_headless "ros2 run ros2_laser_scan_matcher laser_scan_matcher" "激光扫描匹配" "$LOG_DIR/03_scan_matcher.log"
     sleep 1
+    launch_ros2_command_headless "ros2 launch bot_localization localization.launch.py" "ekf里程计融合"
     launch_ros2_command_headless "ros2 launch bot_description backpack_2d.launch.py" "2D背包导航" "$LOG_DIR/05_backpack_2d.log"
     echo "可用以下命令查看日志："
     echo "  tail -f $LOG_DIR/01_lidar.log"
@@ -218,4 +219,4 @@ CAR_CONTROLLER_CMD="ros2 run test_control_pkg car_controller --ros-args -p seria
 echo "所有命令已提交启动！"
 echo "提示：若终端窗口闪退，可检查命令是否正确、依赖是否安装。"
 
-# 运行示例：./launch_robot.sh
+# 运行示例：./start.sh

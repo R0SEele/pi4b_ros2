@@ -29,31 +29,31 @@ def generate_launch_description():
         output='screen',
     )
 
-    # # robot_localization 节点
-    # robot_localization_node = Node(
-    #     package='robot_localization',
-    #     executable='ekf_node',
-    #     name='ekf_filter_node',
-    #     output='screen',
-    #     parameters=[os.path.join(pkg_share, 'config/ekf.yaml'), {'use_sim_time': False}],
-    #     remappings=[
-    #         ('/odometry/filtered', '/odom'),
-    #     ]
-    # )
+    # robot_localization 节点
+    robot_localization_node = Node(
+        package='robot_localization',
+        executable='ekf_node',
+        name='ekf_filter_node',
+        output='screen',
+        parameters=[os.path.join(pkg_share, 'config/ekf.yaml'), {'use_sim_time': False}],
+        remappings=[
+            ('/odometry/filtered', '/odom'),
+        ]
+    )
 
-    # use_sim_time = LaunchConfiguration('use_sim_time', default='false')
-    # resolution = LaunchConfiguration('resolution', default='0.05')
-    # publish_period_sec = LaunchConfiguration('publish_period_sec', default='1.0')
+    use_sim_time = LaunchConfiguration('use_sim_time', default='false')
+    resolution = LaunchConfiguration('resolution', default='0.05')
+    publish_period_sec = LaunchConfiguration('publish_period_sec', default='1.0')
 
-    # # 配置文件路径
-    # configuration_directory = LaunchConfiguration(
-    #     'configuration_directory',
-    #     default=os.path.join(pkg_share, 'config')
-    # )
-    # configuration_basename = LaunchConfiguration(
-    #     'configuration_basename',
-    #     default='my_robot.lua'
-    # )
+    # 配置文件路径
+    configuration_directory = LaunchConfiguration(
+        'configuration_directory',
+        default=os.path.join(pkg_share, 'config')
+    )
+    configuration_basename = LaunchConfiguration(
+        'configuration_basename',
+        default='my_robot.lua'
+    )
 
     # cartographer 节点
     cartographer_node = Node(
