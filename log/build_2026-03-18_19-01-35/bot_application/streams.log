@@ -1,0 +1,37 @@
+[6.347s] Invoking command in '/home/rose/pi4b_ros2/car_ws/src/bot_application': PYTHONPATH=/home/rose/pi4b_ros2/car_ws/build/bot_application/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/rose/pi4b_ros2/car_ws/install/bot_application/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/bot_application build --build-base /home/rose/pi4b_ros2/car_ws/build/bot_application/build install --record /home/rose/pi4b_ros2/car_ws/build/bot_application/install.log --single-version-externally-managed install_data
+[8.699s] /home/rose/.local/lib/python3.10/site-packages/setuptools/_distutils/dist.py:287: UserWarning: Unknown distribution option: 'tests_require'
+[8.703s]   warnings.warn(msg)
+[11.444s] Traceback (most recent call last):
+[11.454s]   File "/home/rose/pi4b_ros2/car_ws/src/bot_application/setup.py", line 5, in <module>
+[11.464s]     setup(
+[11.477s]   File "/home/rose/.local/lib/python3.10/site-packages/setuptools/__init__.py", line 117, in setup
+[11.515s]     return distutils.core.setup(**attrs)  # type: ignore[return-value]
+[11.535s]   File "/home/rose/.local/lib/python3.10/site-packages/setuptools/_distutils/core.py", line 173, in setup
+[11.581s]     ok = dist.parse_command_line()
+[11.582s]   File "/home/rose/.local/lib/python3.10/site-packages/setuptools/_distutils/dist.py", line 500, in parse_command_line
+[11.584s]     args = self._parse_command_opts(parser, args)
+[11.586s]   File "/home/rose/.local/lib/python3.10/site-packages/setuptools/dist.py", line 1009, in _parse_command_opts
+[11.587s]     nargs = _Distribution._parse_command_opts(self, parser, args)
+[11.587s]   File "/home/rose/.local/lib/python3.10/site-packages/setuptools/_distutils/dist.py", line 559, in _parse_command_opts
+[11.588s]     cmd_class = self.get_command_class(command)
+[11.588s]   File "/home/rose/.local/lib/python3.10/site-packages/setuptools/dist.py", line 850, in get_command_class
+[11.650s]     eps = metadata.entry_points(group='distutils.commands', name=command)
+[11.652s]   File "/usr/lib/python3.10/importlib/metadata/__init__.py", line 1021, in entry_points
+[11.697s]     return SelectableGroups.load(eps).select(**params)
+[11.698s]   File "/usr/lib/python3.10/importlib/metadata/__init__.py", line 459, in load
+[11.699s]     ordered = sorted(eps, key=by_group)
+[11.703s]   File "/usr/lib/python3.10/importlib/metadata/__init__.py", line 1019, in <genexpr>
+[11.708s]     dist.entry_points for dist in unique(distributions())
+[11.708s]   File "/usr/lib/python3.10/importlib/metadata/__init__.py", line 631, in entry_points
+[11.717s]     return EntryPoints._from_text_for(self.read_text('entry_points.txt'), self)
+[11.719s]   File "/usr/lib/python3.10/importlib/metadata/__init__.py", line 381, in _from_text_for
+[11.723s]     return cls(ep._for(dist) for ep in cls._from_text(text))
+[11.728s]   File "/usr/lib/python3.10/importlib/metadata/__init__.py", line 381, in <genexpr>
+[11.730s]     return cls(ep._for(dist) for ep in cls._from_text(text))
+[11.732s]   File "/usr/lib/python3.10/importlib/metadata/__init__.py", line 389, in <genexpr>
+[11.751s]     return (
+[11.755s]   File "/usr/lib/python3.10/importlib/metadata/__init__.py", line 102, in <genexpr>
+[11.756s]     return (
+[11.763s]   File "/usr/lib/python3.10/importlib/metadata/__init__.py", line 110, in read
+[11.764s]     lines = filter(filter_, map(str.strip, text.splitlines()))
+[11.766s] KeyboardInterrupt

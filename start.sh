@@ -177,7 +177,7 @@ if ! check_lidar_network; then
     fi
 fi
 
-CAR_CONTROLLER_CMD="ros2 run test_control_pkg car_controller --ros-args -p serial_port:=$CTRL_PORT -p enable_encoder_odom:=true -p enable_keyboard_control:=true -p send_odom_feedback:=false"
+CAR_CONTROLLER_CMD="ros2 run test_control_pkg car_controller --ros-args -p serial_port:=$CTRL_PORT -p enable_encoder_odom:=true -p enable_keyboard_control:=false -p send_odom_feedback:=false"
 
 # if [ "$HAS_GUI" -eq 1 ]; then
 #     echo "检测到图形环境，使用 $TERMINAL 分窗口启动。"

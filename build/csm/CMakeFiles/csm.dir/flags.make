@@ -6,5 +6,5 @@ CXX_DEFINES = -Dcsm_EXPORTS
 
 CXX_INCLUDES = -I/home/rose/pi4b_ros2/car_ws/src/csm/include -I/home/rose/pi4b_ros2/car_ws/src/csm/src -I/usr/include/eigen3
 
-CXX_FLAGS = -fPIC
+CXX_FLAGS = -O3 -DNDEBUG -fPIC
 

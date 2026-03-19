@@ -1,0 +1,47 @@
+[8.817s] Invoking command in '/home/rose/pi4b_ros2/car_ws/src/bot_application': PYTHONPATH=/home/rose/pi4b_ros2/car_ws/build/bot_application/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/rose/pi4b_ros2/car_ws/install/bot_application/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/bot_application build --build-base /home/rose/pi4b_ros2/car_ws/build/bot_application/build install --record /home/rose/pi4b_ros2/car_ws/build/bot_application/install.log --single-version-externally-managed install_data
+[9.525s] Traceback (most recent call last):
+[9.526s]   File "/home/rose/pi4b_ros2/car_ws/src/bot_application/setup.py", line 1, in <module>
+[9.527s]     from setuptools import find_packages, setup
+[9.528s]   File "/home/rose/.local/lib/python3.10/site-packages/setuptools/__init__.py", line 21, in <module>
+[9.530s]     import _distutils_hack.override  # noqa: F401
+[9.531s]   File "/home/rose/.local/lib/python3.10/site-packages/_distutils_hack/override.py", line 1, in <module>
+[9.531s]     __import__('_distutils_hack').do_override()
+[9.535s]   File "/home/rose/.local/lib/python3.10/site-packages/_distutils_hack/__init__.py", line 89, in do_override
+[9.536s]     ensure_local_distutils()
+[9.536s]   File "/home/rose/.local/lib/python3.10/site-packages/_distutils_hack/__init__.py", line 72, in ensure_local_distutils
+[9.537s]     importlib.import_module('distutils')
+[9.538s]   File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+[9.538s]     return _bootstrap._gcd_import(name[level:], package, level)
+[9.539s]   File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+[9.540s]   File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+[9.541s]   File "<frozen importlib._bootstrap>", line 1002, in _find_and_load_unlocked
+[9.543s]   File "<frozen importlib._bootstrap>", line 945, in _find_spec
+[9.545s]   File "/home/rose/.local/lib/python3.10/site-packages/_distutils_hack/__init__.py", line 109, in find_spec
+[9.546s]     return method()
+[9.547s]   File "/home/rose/.local/lib/python3.10/site-packages/_distutils_hack/__init__.py", line 120, in spec_for_distutils
+[9.548s]     mod = importlib.import_module('setuptools._distutils')
+[9.550s]   File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+[9.551s]     return _bootstrap._gcd_import(name[level:], package, level)
+[9.552s]   File "/home/rose/.local/lib/python3.10/site-packages/setuptools/_distutils/__init__.py", line 12, in <module>
+[9.553s]     importlib.import_module('_distutils_system_mod')
+[9.553s]   File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+[9.554s]     return _bootstrap._gcd_import(name[level:], package, level)
+[9.554s]   File "/usr/lib/python3.10/_distutils_system_mod.py", line 15, in <module>
+[9.555s]     import distutils.sysconfig
+[9.555s]   File "/home/rose/.local/lib/python3.10/site-packages/setuptools/_distutils/sysconfig.py", line 16, in <module>
+[9.557s]     import pathlib
+[9.558s]   File "/usr/lib/python3.10/pathlib.py", line 14, in <module>
+[9.558s]     from urllib.parse import quote_from_bytes as urlquote_from_bytes
+[9.558s]   File "/usr/lib/python3.10/urllib/parse.py", line 39, in <module>
+[9.559s]     import ipaddress
+[9.559s]   File "/usr/lib/python3.10/ipaddress.py", line 2299, in <module>
+[9.559s]     class _IPv6Constants:
+[9.560s]   File "/usr/lib/python3.10/ipaddress.py", line 2303, in _IPv6Constants
+[9.560s]     _multicast_network = IPv6Network('ff00::/8')
+[9.561s]   File "/usr/lib/python3.10/ipaddress.py", line 2256, in __init__
+[9.562s]     self.network_address = IPv6Address(addr)
+[9.567s]   File "/usr/lib/python3.10/ipaddress.py", line 1946, in __init__
+[9.567s]     self._ip = self._ip_int_from_string(addr_str)
+[9.568s]   File "/usr/lib/python3.10/ipaddress.py", line 1694, in _ip_int_from_string
+[9.569s]     parts_lo = len(parts) - skip_index - 1
+[9.571s] KeyboardInterrupt

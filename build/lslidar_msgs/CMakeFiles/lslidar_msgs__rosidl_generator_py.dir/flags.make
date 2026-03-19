@@ -6,5 +6,5 @@ C_DEFINES = -DRCUTILS_ENABLE_FAULT_INJECTION -DROS_PACKAGE_NAME=\"lslidar_msgs\"
 
 C_INCLUDES = -I/home/rose/pi4b_ros2/car_ws/build/lslidar_msgs/rosidl_generator_c -I/home/rose/pi4b_ros2/car_ws/build/lslidar_msgs/rosidl_generator_py -I/usr/include/python3.10 -isystem /opt/ros/humble/include/builtin_interfaces -isystem /opt/ros/humble/include/rosidl_runtime_c -isystem /opt/ros/humble/include/rcutils -isystem /opt/ros/humble/include/rosidl_typesupport_interface -isystem /opt/ros/humble/include/std_msgs
 
-C_FLAGS = -fPIC -Wall -Wextra -std=gnu99
+C_FLAGS = -O3 -DNDEBUG -fPIC -Wall -Wextra -std=gnu99
 

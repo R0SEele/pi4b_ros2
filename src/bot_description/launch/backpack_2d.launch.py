@@ -86,6 +86,6 @@ def generate_launch_description():
         joint_state_publisher_node,
         robot_state_publisher_node,
         robot_localization_node,
-        cartographer_node,
-        occupancy_grid_node,
+        # cartographer_node,
+        # occupancy_grid_node,
     ])

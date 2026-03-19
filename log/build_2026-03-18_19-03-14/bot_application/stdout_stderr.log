@@ -1,0 +1,46 @@
+Traceback (most recent call last):
+  File "/home/rose/pi4b_ros2/car_ws/src/bot_application/setup.py", line 1, in <module>
+    from setuptools import find_packages, setup
+  File "/home/rose/.local/lib/python3.10/site-packages/setuptools/__init__.py", line 21, in <module>
+    import _distutils_hack.override  # noqa: F401
+  File "/home/rose/.local/lib/python3.10/site-packages/_distutils_hack/override.py", line 1, in <module>
+    __import__('_distutils_hack').do_override()
+  File "/home/rose/.local/lib/python3.10/site-packages/_distutils_hack/__init__.py", line 89, in do_override
+    ensure_local_distutils()
+  File "/home/rose/.local/lib/python3.10/site-packages/_distutils_hack/__init__.py", line 72, in ensure_local_distutils
+    importlib.import_module('distutils')
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1002, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 945, in _find_spec
+  File "/home/rose/.local/lib/python3.10/site-packages/_distutils_hack/__init__.py", line 109, in find_spec
+    return method()
+  File "/home/rose/.local/lib/python3.10/site-packages/_distutils_hack/__init__.py", line 120, in spec_for_distutils
+    mod = importlib.import_module('setuptools._distutils')
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "/home/rose/.local/lib/python3.10/site-packages/setuptools/_distutils/__init__.py", line 12, in <module>
+    importlib.import_module('_distutils_system_mod')
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "/usr/lib/python3.10/_distutils_system_mod.py", line 15, in <module>
+    import distutils.sysconfig
+  File "/home/rose/.local/lib/python3.10/site-packages/setuptools/_distutils/sysconfig.py", line 16, in <module>
+    import pathlib
+  File "/usr/lib/python3.10/pathlib.py", line 14, in <module>
+    from urllib.parse import quote_from_bytes as urlquote_from_bytes
+  File "/usr/lib/python3.10/urllib/parse.py", line 39, in <module>
+    import ipaddress
+  File "/usr/lib/python3.10/ipaddress.py", line 2299, in <module>
+    class _IPv6Constants:
+  File "/usr/lib/python3.10/ipaddress.py", line 2303, in _IPv6Constants
+    _multicast_network = IPv6Network('ff00::/8')
+  File "/usr/lib/python3.10/ipaddress.py", line 2256, in __init__
+    self.network_address = IPv6Address(addr)
+  File "/usr/lib/python3.10/ipaddress.py", line 1946, in __init__
+    self._ip = self._ip_int_from_string(addr_str)
+  File "/usr/lib/python3.10/ipaddress.py", line 1694, in _ip_int_from_string
+    parts_lo = len(parts) - skip_index - 1
+KeyboardInterrupt

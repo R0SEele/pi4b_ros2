@@ -1,13 +1,10 @@
-# bot_navigation2/config/nav2_params.yaml
-# 适用于：odom → base_footprint，雷达话题 /scan，物理机器人（非仿真）
-
 amcl:
   ros__parameters:
-    use_sim_time: False
-    alpha1: 0.2
+    use_sim_time: False  # 🔧 修改：从True改为False，节省CPU
+    alpha1: 0.5
     alpha2: 0.2
     alpha3: 0.2
-    alpha4: 0.2
+    alpha4: 0.5
     alpha5: 0.2
     base_frame_id: "base_footprint"
     beam_skip_distance: 0.5
@@ -21,8 +18,8 @@ amcl:
     laser_min_range: -1.0
     laser_model_type: "likelihood_field"
     max_beams: 60
-    max_particles: 2000
-    min_particles: 500
+    max_particles: 1500  # 🔧 优化：从2000降低到800，减少CPU负载
+    min_particles: 500  # 🔧 优化：从500降低到300
     odom_frame_id: "odom"
     pf_err: 0.05
     pf_z: 0.99
@@ -31,11 +28,11 @@ amcl:
     resample_interval: 1
     robot_model_type: "nav2_amcl::DifferentialMotionModel"
     save_pose_rate: 0.5
-    sigma_hit: 0.2
+    sigma_hit: 0.1
     tf_broadcast: true
     transform_tolerance: 1.0
-    update_min_a: 0.2
-    update_min_d: 0.25
+    update_min_a: 0.1  # 🔧 优化：从0.2增大到0.3，减少更新频率
+    update_min_d: 0.1  # 🔧 优化：从0.25增大到0.35
     z_hit: 0.5
     z_max: 0.05
     z_rand: 0.5
@@ -44,11 +41,11 @@ amcl:
 
 bt_navigator:
   ros__parameters:
-    use_sim_time: False
+    use_sim_time: False  # 🔧 修改：从True改为False
     global_frame: map
-    robot_base_frame: base_link  # 如果只有base_footprint，改为base_footprint
+    robot_base_frame: base_link
     odom_topic: /odom
-    bt_loop_duration: 10
+    bt_loop_duration: 50
     default_server_timeout: 20
     plugin_lib_names:
       - nav2_compute_path_to_pose_action_bt_node
@@ -110,7 +107,7 @@ bt_navigator_navigate_to_pose_rclcpp_node:
 controller_server:
   ros__parameters:
     use_sim_time: False
-    controller_frequency: 20.0
+    controller_frequency: 5.0  # 🔧 优化：从20.0降低到5.0，大幅减少CPU负载
     min_x_velocity_threshold: 0.001
     min_y_velocity_threshold: 0.5
     min_theta_velocity_threshold: 0.001
@@ -123,38 +120,37 @@ controller_server:
       plugin: "nav2_controller::SimpleProgressChecker"
       required_movement_radius: 0.5
       movement_time_allowance: 10.0
-
     general_goal_checker:
       stateful: True
       plugin: "nav2_controller::SimpleGoalChecker"
-      xy_goal_tolerance: 0.25
-      yaw_goal_tolerance: 0.25
-
+      xy_goal_tolerance: 0.3
+      yaw_goal_tolerance: 0.8
     FollowPath:
       plugin: "dwb_core::DWBLocalPlanner"
-      debug_trajectory_details: True
-      min_vel_x: 0.0
+      debug_trajectory_details: False  # 🔧 优化：从True改为False，关闭调试节省CPU
+      min_vel_x: 0.02
       min_vel_y: 0.0
       max_vel_x: 0.26
       max_vel_y: 0.0
-      max_vel_theta: 1.0
+      max_vel_theta: 0.3  # 🔧 修改：从1.0->0.5->0.3，进一步降低最大旋转角速度
       min_speed_xy: 0.0
       max_speed_xy: 0.26
       min_speed_theta: 0.0
       acc_lim_x: 2.5
       acc_lim_y: 0.0
-      acc_lim_theta: 3.2
+      acc_lim_theta: 1.5  # 🔧 修改：从3.2降低到1.5，降低旋转加速度
       decel_lim_x: -2.5
       decel_lim_y: 0.0
-      decel_lim_theta: -3.2
-      vx_samples: 20
-      vy_samples: 5
-      vtheta_samples: 20
-      sim_time: 1.7
+      decel_lim_theta: -1.5  # 🔧 修改：从-3.2降低到-1.5
+      vx_samples: 10  # 🔧 优化：从20降低到10，减少采样数量
+      vy_samples: 3   # 🔧 优化：从5降低到3
+      vtheta_samples: 8  # 🔧 修改：从10降低到8，减少角度采样
+      sim_time: 1.4  # 🔧 优化：从1.7稍微降低
       linear_granularity: 0.05
       angular_granularity: 0.025
       transform_tolerance: 0.2
-      xy_goal_tolerance: 0.25
+      xy_goal_tolerance: 0.2
+      yaw_goal_tolerance: 0.25
       trans_stopped_velocity: 0.25
       short_circuit_trajectory_evaluation: True
       stateful: True
@@ -173,10 +169,10 @@ controller_server:
 local_costmap:
   local_costmap:
     ros__parameters:
-      update_frequency: 5.0
-      publish_frequency: 2.0
+      update_frequency: 2.0  # 🔧 优化：从5.0降低到2.0
+      publish_frequency: 1.0  # 🔧 优化：从2.0降低到1.0
       global_frame: odom
-      robot_base_frame: base_link  # 如果只有base_footprint，改为base_footprint
+      robot_base_frame: base_link
       use_sim_time: False
       rolling_window: true
       width: 3
@@ -186,12 +182,12 @@ local_costmap:
       plugins: ["voxel_layer", "inflation_layer"]
       inflation_layer:
         plugin: "nav2_costmap_2d::InflationLayer"
-        cost_scaling_factor: 3.0
-        inflation_radius: 0.55
+        cost_scaling_factor: 5.0
+        inflation_radius: 0.20  # 🔧 优化：从0.55稍微降低
       voxel_layer:
         plugin: "nav2_costmap_2d::VoxelLayer"
         enabled: True
-        publish_voxel_map: True
+        publish_voxel_map: False  # 🔧 优化：从True改为False，减少发布频率
         origin_z: 0.0
         z_resolution: 0.05
         z_voxels: 16
@@ -204,19 +200,22 @@ local_costmap:
           clearing: True
           marking: True
           data_type: "LaserScan"
-          raytrace_max_range: 3.0
+          raytrace_max_range: 2.5  # 🔧 优化：从3.0降低到2.5
           raytrace_min_range: 0.0
-          obstacle_max_range: 2.5
+          obstacle_max_range: 2.0  # 🔧 优化：从2.5降低到2.0
           obstacle_min_range: 0.0
-      always_send_full_costmap: True
+      static_layer:
+        plugin: "nav2_costmap_2d::StaticLayer"
+        map_subscribe_transient_local: True
+      always_send_full_costmap: False  # 🔧 优化：从True改为False
 
 global_costmap:
   global_costmap:
     ros__parameters:
-      update_frequency: 1.0
-      publish_frequency: 1.0
+      update_frequency: 0.5  # 🔧 优化：从1.0降低到0.5
+      publish_frequency: 0.5  # 🔧 优化：从1.0降低到0.5
       global_frame: map
-      robot_base_frame: base_link  # 如果只有base_footprint，改为base_footprint
+      robot_base_frame: base_link
       use_sim_time: False
       robot_radius: 0.22
       resolution: 0.05
@@ -232,23 +231,23 @@ global_costmap:
           clearing: True
           marking: True
           data_type: "LaserScan"
-          raytrace_max_range: 3.0
+          raytrace_max_range: 2.5  # 🔧 优化：从3.0降低到2.5
           raytrace_min_range: 0.0
-          obstacle_max_range: 2.5
+          obstacle_max_range: 2.0  # 🔧 优化：从2.5降低到2.0
           obstacle_min_range: 0.0
       static_layer:
         plugin: "nav2_costmap_2d::StaticLayer"
         map_subscribe_transient_local: True
       inflation_layer:
         plugin: "nav2_costmap_2d::InflationLayer"
-        cost_scaling_factor: 3.0
-        inflation_radius: 0.55
-      always_send_full_costmap: True
+        cost_scaling_factor: 5.0
+        inflation_radius: 0.20
+      always_send_full_costmap: False  # 🔧 优化：从True改为False
 
 map_server:
   ros__parameters:
     use_sim_time: False
-    yaml_filename: "/home/rose/pi4b_ros2/car_ws/src/bot_navigation2/maps/lab_1.yaml"
+    yaml_filename: ""
 
 map_saver:
   ros__parameters:
@@ -260,7 +259,7 @@ map_saver:
 
 planner_server:
   ros__parameters:
-    expected_planner_frequency: 20.0
+    expected_planner_frequency: 5.0  # 🔧 优化：从20.0降低到5.0
     use_sim_time: False
     planner_plugins: ["GridBased"]
     GridBased:
@@ -296,13 +295,13 @@ behavior_server:
     assisted_teleop:
       plugin: "nav2_behaviors/AssistedTeleop"
     global_frame: odom
-    robot_base_frame: base_link  # 如果只有base_footprint，改为base_footprint
+    robot_base_frame: base_link
     transform_tolerance: 0.1
     use_sim_time: False
     simulate_ahead_time: 2.0
-    max_rotational_vel: 1.0
-    min_rotational_vel: 0.4
-    rotational_acc_lim: 3.2
+    max_rotational_vel: 0.3  # 🔧 修改：从1.0->0.5->0.3，降低最大旋转角速度
+    min_rotational_vel: 0.1  # 🔧 修改：从0.4->0.2->0.1，降低最小旋转速度
+    rotational_acc_lim: 1.0  # 🔧 修改：从3.2->1.6->1.0，降低旋转加速度
 
 robot_state_publisher:
   ros__parameters:
@@ -311,7 +310,7 @@ robot_state_publisher:
 waypoint_follower:
   ros__parameters:
     use_sim_time: False
-    loop_rate: 20
+    loop_rate: 5
     stop_on_failure: false
     waypoint_task_executor_plugin: "wait_at_waypoint"
     wait_at_waypoint:
@@ -322,13 +321,13 @@ waypoint_follower:
 velocity_smoother:
   ros__parameters:
     use_sim_time: False
-    smoothing_frequency: 20.0
+    smoothing_frequency: 10.0  # 🔧 优化：从20.0降低到10.0
     scale_velocities: False
     feedback: "OPEN_LOOP"
-    max_velocity: [0.26, 0.0, 1.0]
-    min_velocity: [-0.26, 0.0, -1.0]
-    max_accel: [2.5, 0.0, 3.2]
-    max_decel: [-2.5, 0.0, -3.2]
+    max_velocity: [0.26, 0.0, 0.3]  # 🔧 修改：第三项从1.0->0.5->0.3，进一步降低最大角速度
+    min_velocity: [-0.26, 0.0, -0.3]  # 🔧 修改：第三项从-1.0->-0.5->-0.3
+    max_accel: [2.5, 0.0, 1.0]  # 🔧 修改：第三项从3.2->1.6->1.0
+    max_decel: [-2.5, 0.0, -1.0]  # 🔧 修改：第三项从-3.2->-1.6->-1.0
     odom_topic: "odom"
     odom_duration: 0.1
     deadband_velocity: [0.0, 0.0, 0.0]
