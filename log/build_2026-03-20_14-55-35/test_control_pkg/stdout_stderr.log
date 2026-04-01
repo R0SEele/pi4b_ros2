@@ -1,0 +1,35 @@
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/importlib/metadata/__init__.py", line 927, in read_text
+    return self._path.joinpath(filename).read_text(encoding='utf-8')
+  File "/usr/lib/python3.10/pathlib.py", line 1134, in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+  File "/usr/lib/python3.10/pathlib.py", line 1119, in open
+    return self._accessor.open(self, mode, buffering, encoding, errors,
+FileNotFoundError: [Errno 2] No such file or directory: '/usr/lib/python3/dist-packages/lxml-4.8.0.egg-info/entry_points.txt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/rose/pi4b_ros2/car_ws/src/test_control_pkg/setup.py", line 6, in <module>
+    setup(
+  File "/home/rose/.local/lib/python3.10/site-packages/setuptools/__init__.py", line 117, in setup
+    return distutils.core.setup(**attrs)  # type: ignore[return-value]
+  File "/home/rose/.local/lib/python3.10/site-packages/setuptools/_distutils/core.py", line 148, in setup
+    _setup_distribution = dist = klass(attrs)
+  File "/home/rose/.local/lib/python3.10/site-packages/setuptools/dist.py", line 321, in __init__
+    _Distribution.__init__(self, dist_attrs)
+  File "/home/rose/.local/lib/python3.10/site-packages/setuptools/_distutils/dist.py", line 307, in __init__
+    self.finalize_options()
+  File "/home/rose/.local/lib/python3.10/site-packages/setuptools/dist.py", line 786, in finalize_options
+    defined = metadata.entry_points(group=group)
+  File "/usr/lib/python3.10/importlib/metadata/__init__.py", line 1021, in entry_points
+    return SelectableGroups.load(eps).select(**params)
+  File "/usr/lib/python3.10/importlib/metadata/__init__.py", line 459, in load
+    ordered = sorted(eps, key=by_group)
+  File "/usr/lib/python3.10/importlib/metadata/__init__.py", line 1019, in <genexpr>
+    dist.entry_points for dist in unique(distributions())
+  File "/usr/lib/python3.10/importlib/metadata/__init__.py", line 631, in entry_points
+    return EntryPoints._from_text_for(self.read_text('entry_points.txt'), self)
+  File "/usr/lib/python3.10/importlib/metadata/__init__.py", line 927, in read_text
+    return self._path.joinpath(filename).read_text(encoding='utf-8')
+KeyboardInterrupt

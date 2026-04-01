@@ -26,7 +26,7 @@ setup(
     entry_points={
         'console_scripts': [
             'car_controller = test_control_pkg.car_controller:main', 
-            'unified_car_controller = test_control_pkg.unified_car_controller:main', 
+            'imu = test_control_pkg.imu:main', 
         ],
     },
 )

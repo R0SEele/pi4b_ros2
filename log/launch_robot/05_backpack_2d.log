@@ -1,49 +1,21 @@
-[2026-03-19_15:21:07] 启动: ros2 launch bot_description backpack_2d.launch.py
-[INFO] [launch]: All log files can be found below /home/rose/.ros/log/2026-03-19-15-21-09-040743-rose-desktop-72106
+[2026-04-01_17:33:03] 启动: ros2 launch bot_description backpack_2d.launch.py
+[INFO] [launch]: All log files can be found below /home/rose/.ros/log/2026-04-01-17-33-05-118078-rose-desktop-3142
 [INFO] [launch]: Default logging verbosity is set to INFO
-[INFO] [joint_state_publisher-1]: process started with pid [72218]
-[INFO] [robot_state_publisher-2]: process started with pid [72220]
-[INFO] [ekf_node-3]: process started with pid [72222]
-[robot_state_publisher-2] [INFO] [1773904870.291522382] [robot_state_publisher]: got segment base_footprint
-[robot_state_publisher-2] [INFO] [1773904870.293385200] [robot_state_publisher]: got segment base_link
-[robot_state_publisher-2] [INFO] [1773904870.293517956] [robot_state_publisher]: got segment camera_depth_link
-[robot_state_publisher-2] [INFO] [1773904870.293696969] [robot_state_publisher]: got segment camera_link
-[robot_state_publisher-2] [INFO] [1773904870.293743820] [robot_state_publisher]: got segment front_left_wheel_link
-[robot_state_publisher-2] [INFO] [1773904870.293776948] [robot_state_publisher]: got segment front_right_wheel_link
-[robot_state_publisher-2] [INFO] [1773904870.293809818] [robot_state_publisher]: got segment imu_link
-[robot_state_publisher-2] [INFO] [1773904870.293838835] [robot_state_publisher]: got segment laser
-[robot_state_publisher-2] [INFO] [1773904870.293865131] [robot_state_publisher]: got segment rear_left_wheel_link
-[robot_state_publisher-2] [INFO] [1773904870.293893760] [robot_state_publisher]: got segment rear_right_wheel_link
+[INFO] [joint_state_publisher-1]: process started with pid [3299]
+[INFO] [robot_state_publisher-2]: process started with pid [3301]
+[INFO] [ekf_node-3]: process started with pid [3303]
 [ekf_node-3] use_control is set to true, but acceleration_limits is missing. Will use default values.
-[joint_state_publisher-1] [INFO] [1773904872.052652332] [joint_state_publisher]: Waiting for robot_description to be published on the robot_description topic...
+[robot_state_publisher-2] [INFO] [1775035986.680060664] [robot_state_publisher]: got segment base_footprint
+[robot_state_publisher-2] [INFO] [1775035986.686909578] [robot_state_publisher]: got segment base_link
+[robot_state_publisher-2] [INFO] [1775035986.687067801] [robot_state_publisher]: got segment camera_depth_link
+[robot_state_publisher-2] [INFO] [1775035986.687115088] [robot_state_publisher]: got segment camera_link
+[robot_state_publisher-2] [INFO] [1775035986.687147384] [robot_state_publisher]: got segment front_left_wheel_link
+[robot_state_publisher-2] [INFO] [1775035986.687175234] [robot_state_publisher]: got segment front_right_wheel_link
+[robot_state_publisher-2] [INFO] [1775035986.687202546] [robot_state_publisher]: got segment imu_link
+[robot_state_publisher-2] [INFO] [1775035986.687229340] [robot_state_publisher]: got segment laser
+[robot_state_publisher-2] [INFO] [1775035986.687256596] [robot_state_publisher]: got segment rear_left_wheel_link
+[robot_state_publisher-2] [INFO] [1775035986.687282964] [robot_state_publisher]: got segment rear_right_wheel_link
+[joint_state_publisher-1] [INFO] [1775035988.403323544] [joint_state_publisher]: Waiting for robot_description to be published on the robot_description topic...
 [ekf_node-3] use_control is set to true, but no deceleration_limits specified. Will use acceleration limits.
 [ekf_node-3] use_control is set to true, but no deceleration_gains specified. Will use acceleration gains.
-[ekf_node-3] Failed to meet update rate! Took 0.044665726000000002816seconds. Try decreasing the rate, limiting sensor output frequency, or limiting the number of sensors.
-[ekf_node-3] Failed to meet update rate! Took 0.046317650000000001875seconds. Try decreasing the rate, limiting sensor output frequency, or limiting the number of sensors.
-[ekf_node-3] Failed to meet update rate! Took 0.045528354999999999519seconds. Try decreasing the rate, limiting sensor output frequency, or limiting the number of sensors.
-[ekf_node-3] Failed to meet update rate! Took 0.043818199000000002119seconds. Try decreasing the rate, limiting sensor output frequency, or limiting the number of sensors.
-[ekf_node-3] Failed to meet update rate! Took 0.046843465000000000797seconds. Try decreasing the rate, limiting sensor output frequency, or limiting the number of sensors.
-[ekf_node-3] Failed to meet update rate! Took 0.035938693000000000721seconds. Try decreasing the rate, limiting sensor output frequency, or limiting the number of sensors.
-[ekf_node-3] Failed to meet update rate! Took 0.077117122999999995758seconds. Try decreasing the rate, limiting sensor output frequency, or limiting the number of sensors.
-[ekf_node-3] Failed to meet update rate! Took 0.061805895999999999058seconds. Try decreasing the rate, limiting sensor output frequency, or limiting the number of sensors.
-[robot_state_publisher-2] [INFO] [1773905396.592816185] [rclcpp]: signal_handler(SIGINT/SIGTERM)
-[ekf_node-3] [INFO] [1773905396.607641954] [rclcpp]: signal_handler(SIGINT/SIGTERM)
-[joint_state_publisher-1] Traceback (most recent call last):
-[joint_state_publisher-1]   File "/opt/ros/humble/lib/joint_state_publisher/joint_state_publisher", line 33, in <module>
-[joint_state_publisher-1]     sys.exit(load_entry_point('joint-state-publisher==2.4.0', 'console_scripts', 'joint_state_publisher')())
-[joint_state_publisher-1]   File "/opt/ros/humble/lib/python3.10/site-packages/joint_state_publisher/joint_state_publisher.py", line 466, in main
-[joint_state_publisher-1]     rclpy.spin(jsp)
-[joint_state_publisher-1]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/__init__.py", line 229, in spin
-[joint_state_publisher-1]     executor.spin_once()
-[joint_state_publisher-1]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 776, in spin_once
-[joint_state_publisher-1]     self._spin_once_impl(timeout_sec)
-[joint_state_publisher-1]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 765, in _spin_once_impl
-[joint_state_publisher-1]     handler, entity, node = self.wait_for_ready_callbacks(timeout_sec=timeout_sec)
-[joint_state_publisher-1]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 748, in wait_for_ready_callbacks
-[joint_state_publisher-1]     return next(self._cb_iter)
-[joint_state_publisher-1]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 649, in _wait_for_ready_callbacks
-[joint_state_publisher-1]     raise ExternalShutdownException()
-[joint_state_publisher-1] rclpy.executors.ExternalShutdownException
-[INFO] [robot_state_publisher-2]: process has finished cleanly [pid 72220]
-[INFO] [ekf_node-3]: process has finished cleanly [pid 72222]
-[ERROR] [joint_state_publisher-1]: process has died [pid 72218, exit code 1, cmd '/opt/ros/humble/lib/joint_state_publisher/joint_state_publisher --ros-args'].
+[ekf_node-3] Failed to meet update rate! Took 0.07210916700000000179seconds. Try decreasing the rate, limiting sensor output frequency, or limiting the number of sensors.
