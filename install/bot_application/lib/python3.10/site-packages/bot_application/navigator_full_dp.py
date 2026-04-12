@@ -2,7 +2,7 @@
 """
 完整路径遍历导航器 - 动态规划 TSP 版本
 功能：
-1. RViz交互式选点（用2D Pose Estimate）
+1. RViz交互式选点（用2D Pose Estimate）或从缓存文件读取
 2. 动态规划求解TSP最优路径
 3. 闭环导航（最后回到起点）
 """
@@ -16,6 +16,11 @@ from tf2_ros import LookupException, ConnectivityException, ExtrapolationExcepti
 import math
 import time
 import threading
+import json
+import os
+import argparse
+import itertools
+import re
 
 
 # ====================== 动态规划 TSP 求解器 ======================
@@ -80,7 +85,7 @@ def quaternion_from_euler(roll, pitch, yaw):
 
 # ====================== 完整路径导航节点 ======================
 class FullPathNavigatorDP(BasicNavigator):
-    def __init__(self):
+    def __init__(self, waypoint_cache_file=None, cost_cache_file=None):
         super().__init__('full_path_navigator_dp')
         self.get_logger().info("="*60)
         self.get_logger().info("🚀 完整路径导航器 (DP版本) 已启动")
@@ -103,8 +108,37 @@ class FullPathNavigatorDP(BasicNavigator):
         self.selection_confirmed = False
         self.restart_flag = False
 
+        # 缓存文件路径 (可选)
+        self.waypoint_cache_file = '/home/rose/pi4b_ros2/car_ws/waypoint_cache.json'
+        self.cost_cache_file = '/home/rose/pi4b_ros2/car_ws/cost_cache.json'
+        self.cost_matrix = None  # 从缓存读取的代价矩阵
+        self.use_cache = waypoint_cache_file is not None and os.path.exists(waypoint_cache_file)
+
         # 起点（机器人当前位置）
         self.start_pose = None
+
+        # ====================== 新增：拥挤度数据 ======================
+        self.crowd_data = {}
+
+        # 订阅 YOLO 检测结果
+        self.yolo_sub = self.create_subscription(
+            String,
+            '/yolov8_detections',
+            self.yolo_detection_callback,
+            10
+        )
+
+        # 订阅语音指令
+        self.voice_sub = self.create_subscription(
+            String,
+            '/voice_commands',
+            self.voice_command_callback,
+            10
+        )
+
+        # 发布器
+        self.path_pub = self.create_publisher(Int32MultiArray, '/path_segment_points', 10)
+        self.best_order_pub = self.create_publisher(Int32MultiArray, '/best_waypoint_order', 10)
 
         self.get_logger().info("\n📌 使用说明：")
         self.get_logger().info("   1. 在RViz中点击 '2D Pose Estimate' 按钮")
@@ -147,6 +181,125 @@ class FullPathNavigatorDP(BasicNavigator):
         goal.pose.orientation.z = q[2]
         goal.pose.orientation.w = q[3]
         return goal
+
+    # ====================== 新增：解析 yolov8 话题 ======================
+    def yolo_detection_callback(self, msg):
+        try:
+            data = msg.data
+            spot = None
+            level = None
+            count = 0
+  
+            # 解析 spot
+            match_spot = re.search(r'spot=(\d+)', data)
+            if match_spot:
+                spot = int(match_spot.group(1))
+
+            # 解析 count
+            match_count = re.search(r'count=(\d+)', data)
+            if match_count:
+                count = int(match_count.group(1))
+
+            # 解析 level
+            match_level = re.search(r'level=([A-Z0-9]+)', data)
+            if match_level:
+                level = match_level.group(1)
+
+            # 初始化拥挤度数据
+            if not hasattr(self, '_crowd_initialized'):
+                self._crowd_initialized = True
+                # 初始化所有路点的拥挤度
+                for wp in self.selected_waypoints:
+                    self.crowd_data[wp['id']] = {"level": "L1", "count": 0, "C": 1}
+
+            if spot in self.crowd_data:
+                # 计算拥挤参数 C
+                if count <= 13:
+                    C = 1
+                elif 14 <= count <= 22:
+                    C = 2
+                elif 23 <= count <= 31:
+                    C = 3
+                elif 32 <= count <= 40:
+                    C = 4
+                else:
+                    C = 5
+
+                self.crowd_data[spot] = {
+                    "level": level,
+                    "count": count,
+                    "C": C
+                }
+                self.get_logger().info(f"📊 更新 spot{spot}：人数={count}, 等级={level}, 拥挤参数C={C}")
+        except Exception as e:
+            pass
+
+    # ====================== 新增：解析语音指令话题 ======================
+    def voice_command_callback(self, msg):
+        try:
+            data = msg.data
+            self.get_logger().info(f"📥 收到语音指令: {data}")
+
+            # 解析 command
+            match_command = re.search(r'command=([^,]+)', data)
+            if match_command:
+                command = match_command.group(1)
+                if command == "重新规划路线":
+                    if not self.selection_confirmed:
+                        self.get_logger().warning("⚠️  路点尚未确认，无法重规划")
+                        return
+
+                    self.get_logger().warning("\n🚨 语音指令：准备打断导航！")
+                    # 和键盘监听一样，在独立线程中执行
+                    import threading
+                    threading.Thread(target=self._trigger_restart, daemon=True).start()
+        except Exception as e:
+            self.get_logger().error(f"❌ 语音指令处理失败: {e}")
+
+    def _trigger_restart(self):
+        """在独立线程中触发重规划，和键盘监听保持一致"""
+        self.restart_flag = True
+        self.cancelTask()
+
+    def load_cache(self):
+        """从缓存文件加载路点和代价矩阵"""
+        if not self.waypoint_cache_file or not os.path.exists(self.waypoint_cache_file):
+            return False
+
+        self.get_logger().info(f"📦 加载缓存文件: {self.waypoint_cache_file}")
+
+        try:
+            with open(self.waypoint_cache_file, 'r') as f:
+                wp_data = json.load(f)
+            wp_list = wp_data.get('waypoints', [])
+        except Exception as e:
+            self.get_logger().error(f"❌ 读取路点缓存失败: {e}")
+            return False
+
+        # 尝试加载代价矩阵
+        if self.cost_cache_file and os.path.exists(self.cost_cache_file):
+            try:
+                with open(self.cost_cache_file, 'r') as f:
+                    cost_data = json.load(f)
+                self.cost_matrix = cost_data.get('cost_matrix')
+            except Exception as e:
+                self.get_logger().warning(f"⚠️  读取代价矩阵缓存失败: {e}")
+                self.cost_matrix = None
+
+        self.selected_waypoints = []
+        for i, wp in enumerate(wp_list):
+            self.selected_waypoints.append({
+                'id': i + 1,
+                'x': wp['x'],
+                'y': wp['y'],
+                'yaw': wp['yaw'],
+                'pose': self._create_pose_from_data(wp['x'], wp['y'], wp['yaw'])
+            })
+
+        self.get_logger().info(f"✅ 加载成功: {len(self.selected_waypoints)} 个路点")
+        if self.cost_matrix:
+            self.get_logger().info(f"✅ 已加载代价矩阵")
+        return True
 
     def get_current_robot_pose(self, max_attempts=200):
         self.get_logger().info('🤖 尝试获取机器人位姿...')
@@ -197,51 +350,118 @@ class FullPathNavigatorDP(BasicNavigator):
                 self.cancelTask()
 
     def find_optimal_order(self, start_pose, waypoints):
-        """使用动态规划寻找最优路点顺序"""
+        """使用排列遍历 + 拥挤度加权寻找最优路点顺序"""
         n = len(waypoints)
-        self.get_logger().info(f"\n🔍 计算路径代价矩阵 (n={n})...")
+        wp_ids = [wp['id'] for wp in waypoints]
+
+        # 初始化拥挤度数据
+        for wp_id in wp_ids:
+            if wp_id not in self.crowd_data:
+                self.crowd_data[wp_id] = {"level": "L1", "count": 0, "C": 1}
 
         # 1. 计算起点到所有路点的代价
+        self.get_logger().info(f"\n🔍 计算起点到各路点的代价...")
         start_costs = []
         for i, wp in enumerate(waypoints):
             cost = self.safe_get_path_len(start_pose, wp['pose'], f"起点→{i+1}")
             start_costs.append(cost)
             self.get_logger().info(f"  起点→{i+1}: {cost} 点")
 
-        # 2. 计算路点之间的代价矩阵
-        cost_matrix = [[0] * n for _ in range(n)]
+        # 发布起点到各路点的代价
+        path_msg = Int32MultiArray()
+        path_msg.data = start_costs
+        self.path_pub.publish(path_msg)
+
+        # 2. 获取路点之间的代价矩阵 (使用缓存或重新计算)
+        if self.cost_matrix is not None and len(self.cost_matrix) == n:
+            self.get_logger().info(f"✅ 使用缓存的代价矩阵")
+            cost_matrix = self.cost_matrix
+        else:
+            self.get_logger().info(f"\n🔍 计算路径代价矩阵 (n={n})...")
+            self.get_logger().info(f"   需要计算 {n*(n-1)} 次路径规划，请稍候...")
+            cost_matrix = [[0] * n for _ in range(n)]
+            for i in range(n):
+                for j in range(n):
+                    if i != j:
+                        cost = self.safe_get_path_len(
+                            waypoints[i]['pose'],
+                            waypoints[j]['pose'],
+                            f"{i+1}→{j+1}"
+                        )
+                        cost_matrix[i][j] = cost
+                        self.get_logger().info(f"  {i+1}→{j+1}: {cost} 点")
+
+        # 3. 构建路点间代价字典 (按ID索引)
+        cost_between = {}
         for i in range(n):
+            cost_between[wp_ids[i]] = {}
             for j in range(n):
                 if i != j:
-                    cost = self.safe_get_path_len(
-                        waypoints[i]['pose'],
-                        waypoints[j]['pose'],
-                        f"{i+1}→{j+1}"
-                    )
-                    cost_matrix[i][j] = cost
-                    self.get_logger().info(f"  {i+1}→{j+1}: {cost} 点")
+                    cost_between[wp_ids[i]][wp_ids[j]] = cost_matrix[i][j]
 
-        # 3. 对每个可能的起点，用DP求解
-        self.get_logger().info(f"\n🧮 使用动态规划求解TSP...")
-        min_total = float('inf')
+        # 4. 生成顺序权重 (根据路点数量动态生成)
+        weights = []
+        for i in range(n):
+            # 权重递减: 1.0, 0.6, 0.2, 0.1, 0.05...
+            if i == 0:
+                weights.append(1.0)
+            elif i == 1:
+                weights.append(0.6)
+            elif i == 2:
+                weights.append(0.2)
+            else:
+                weights.append(0.1 / (i - 2))
+
+        # 5. 使用排列遍历寻找最优顺序 (路径 + 拥挤度)
+        self.get_logger().info(f"\n🧮 使用排列遍历 + 拥挤度加权求解最优路径...")
+        self.get_logger().info(f"   顺序权重: {[round(w, 2) for w in weights]}")
+        min_score = float('inf')
         best_order = None
+        best_detail = {}
 
-        for start_idx in range(n):
-            tsp_solver = TSPDynamicProgramming(cost_matrix)
-            path_cost, path_idx = tsp_solver.solve_path_from_start(start_idx)
+        for order in itertools.permutations(wp_ids):
+            # 计算路径代价
+            first_wp_idx = wp_ids.index(order[0])
+            path_cost = start_costs[first_wp_idx]
+            for i in range(n - 1):
+                a = order[i]
+                b = order[i + 1]
+                path_cost += cost_between[a][b]
 
-            total_cost = start_costs[start_idx] + path_cost
+            # 计算拥挤度加权和
+            crowd_sum = 0
+            for i in range(n):
+                wp_id = order[i]
+                c = self.crowd_data[wp_id]["C"]
+                crowd_sum += c * weights[i]
 
-            # 转换为路点ID列表
-            path_wp = [waypoints[i]['id'] for i in path_idx]
+            # 最终总分 = 路径代价 + 拥挤度加权和 × 30
+            total_score = path_cost + crowd_sum * 30
 
-            self.get_logger().info(f"  从{waypoints[start_idx]['id']}出发: 顺序={path_wp}, 总代价={total_cost}")
+            # 选择最小分
+            if total_score < min_score:
+                min_score = total_score
+                best_order = order
+                best_detail = {
+                    "path": path_cost,
+                    "crowd_sum": round(crowd_sum, 2),
+                    "score": round(total_score, 2)
+                }
 
-            if total_cost < min_total:
-                min_total = total_cost
-                best_order = path_idx
+        # 发布最优顺序
+        order_msg = Int32MultiArray()
+        order_msg.data = list(best_order)
+        self.best_order_pub.publish(order_msg)
 
-        return best_order, start_costs, cost_matrix
+        self.get_logger().info("\n" + "="*70)
+        self.get_logger().info(f"🎉 最优顺序：{best_order}")
+        self.get_logger().info(f"📊 路径点数：{best_detail['path']} | 拥挤加权和：{best_detail['crowd_sum']}")
+        self.get_logger().info(f"🏆 最终总分（越小越好）：{best_detail['score']}")
+        self.get_logger().info("="*70)
+
+        # 转换为索引列表返回
+        best_order_idx = [wp_ids.index(wp_id) for wp_id in best_order]
+        return best_order_idx, start_costs, cost_matrix
 
     def run_once(self):
         self.restart_flag = False
@@ -249,15 +469,28 @@ class FullPathNavigatorDP(BasicNavigator):
         self.selected_waypoints = []
 
         self.get_logger().info("\n" + "="*60)
-        self.get_logger().info("📍 等待在RViz中选择路点...")
-        self.get_logger().info("="*60)
-        self.get_logger().info("\n提示：用RViz工具栏的 '2D Pose Estimate' 点击地图添加路点")
-        self.get_logger().info("      选完后按回车确认\n")
 
-        # 等待用户选点
-        while not self.selection_confirmed:
-            rclpy.spin_once(self, timeout_sec=0.1)
-            time.sleep(0.01)
+        # 尝试从缓存加载
+        if self.use_cache:
+            if self.load_cache():
+                self.selection_confirmed = True
+                self.get_logger().info("✅ 使用缓存的路点")
+            else:
+                self.get_logger().warning("⚠️  缓存加载失败，将使用交互式选点")
+                self.use_cache = False
+
+        if not self.selection_confirmed:
+            self.get_logger().info("📍 等待在RViz中选择路点...")
+            self.get_logger().info("="*60)
+            self.get_logger().info("\n提示：用RViz工具栏的 '2D Pose Estimate' 点击地图添加路点")
+            self.get_logger().info("      选完后按回车确认\n")
+
+            # 等待用户选点
+            while not self.selection_confirmed:
+                rclpy.spin_once(self, timeout_sec=0.1)
+                time.sleep(0.01)
+        else:
+            self.get_logger().info("="*60)
 
         if len(self.selected_waypoints) < 2:
             self.get_logger().error("❌ 路点太少，退出")
@@ -334,16 +567,39 @@ class FullPathNavigatorDP(BasicNavigator):
 
 
 def main():
-    rclpy.init()
-    navigator = FullPathNavigatorDP()
+    parser = argparse.ArgumentParser(description='完整路径导航器 (DP版本) - 支持指定配置文件')
+    parser.add_argument('--prefix', type=str, default='',
+                        help='配置文件前缀 (例如: --prefix dp 则使用 dp_waypoint_cache.json 和 dp_cost_cache.json)')
+    parser.add_argument('--waypoints', type=str, default=None,
+                        help='路点缓存文件名 (例如: waypoint_cache.json，不指定则使用交互式选点)')
+    parser.add_argument('--cost', type=str, default=None,
+                        help='代价矩阵缓存文件名 (例如: cost_cache.json)')
+    args = parser.parse_args()
 
-    print("等待导航系统激活...")
-    try:
-        navigator.lifecycleStartup()
-        print("✅ 导航已激活")
-    except Exception as e:
-        print(f"❌ 导航启动失败: {e}")
-        return
+    # 确定配置文件名
+    waypoint_file = None
+    cost_file = None
+    if args.prefix:
+        waypoint_file = f'{args.prefix}_waypoint_cache.json'
+        cost_file = f'{args.prefix}_cost_cache.json'
+    elif args.waypoints:
+        waypoint_file = args.waypoints
+        cost_file = args.cost
+
+    rclpy.init()
+    navigator = FullPathNavigatorDP(waypoint_cache_file=waypoint_file, cost_cache_file=cost_file)
+
+    if waypoint_file:
+        print(f"使用配置文件: {waypoint_file}" + (f", {cost_file}" if cost_file else ""))
+    else:
+        print("使用交互式选点模式")
+    # print("等待导航系统激活...")
+    # try:
+    #     navigator.lifecycleStartup()
+    #     print("✅ 导航已激活")
+    # except Exception as e:
+    #     print(f"❌ 导航启动失败: {e}")
+    #     return
 
     try:
         navigator.run_loop()

@@ -36,9 +36,12 @@ setup(
             'optimized_navigator_dp=bot_application.optimized_navigator_dp:main',
             'navigator_full_dp=bot_application.navigator_full_dp:main',
             'waypoint_selector=bot_application.waypoint_selector:main',
-            'navigator_full_ga=bot_application.navigator_full_ga:main'
+            'navigator_full_ga=bot_application.navigator_full_ga:main',
+            'voice_publisher=bot_application.voice_publisher:main',
+            'navigator_unified=bot_application.navigator_unified:main',
+            'voice_responder_example=bot_application.voice_responder_example:main',
+            'keyboard_controller=bot_application.keyboard_controller:main'
             
-        waypoint_selector
         ],
     },
 )
